@@ -12,7 +12,7 @@ import { FooterBar } from "@/components/landing/FooterBar";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex flex-col bg-[#050505] text-zinc-50 overflow-hidden selection:bg-zinc-800">
+    <div className="relative min-h-screen flex flex-col text-zinc-50 overflow-hidden">
       <BackgroundEffects />
       <Navbar />
       <HeroSection />

@@ -2,16 +2,20 @@
   "brand": {
     "name": "Hindustan Innovation",
     "tagline": "New Gen AI Automation Partner",
-    "email": "landio@support.com",
+    "email": "[EMAIL_ADDRESS]",
     "copyright": "© 2025 Hindustan Innovation",
-    "madeBy": "Framebase"
+    "madeBy": "Hindustan Innovation"
   },
-
   "navbar": {
-    "navLinks": ["Services", "Process", "Pricing", "Blog", "Contact"],
-    "ctaLabel": "Get Template"
+    "navLinks": [
+      "Services",
+      "Process",
+      "Pricing",
+      "Blog",
+      "Contact"
+    ],
+    "ctaLabel": "Get in Touch"
   },
-
   "hero": {
     "pill": "New Gen AI Automation Partner",
     "headingLine1": "Automate Smarter.",
@@ -20,14 +24,12 @@
     "subheading": "AI Automation for Modern Businesses Made Simple",
     "ctaLabel": "Book A Free Call"
   },
-
   "quote": {
     "pill": "We Analyze Your Data",
     "text": "We find what to {automate}, who your users are & how AI can optimize your {workflow}. Best part is we also build and launch {real solutions.}",
     "authorRole": "Co-founder & AI Strategy Lead",
     "authorAvatar": "https://i.pravatar.cc/150?img=11"
   },
-
   "benefits": {
     "pill": "BENEFITS",
     "heading": "Why Choose",
@@ -48,7 +50,6 @@
       }
     ]
   },
-
   "services": {
     "pill": "SERVICES",
     "heading": "Smarter Services,",
@@ -83,7 +84,6 @@
       }
     ]
   },
-
   "features": {
     "pill": "FEATURES",
     "heading": "All features in",
@@ -93,36 +93,53 @@
       {
         "title": "Workflow Automation",
         "description": "Automate complex business processes to boost speed, clarity, and efficiency.",
-        "icons": ["GitMerge", "BrainCircuit"]
+        "icons": [
+          "GitMerge",
+          "BrainCircuit"
+        ]
       },
       {
         "title": "Custom AI Solutions",
         "description": "Build tailored AI systems that align with your business goals and challenges.",
-        "icons": ["SlidersHorizontal", "Settings"]
+        "icons": [
+          "SlidersHorizontal",
+          "Settings"
+        ]
       },
       {
         "title": "AI Assistant",
         "description": "Deploy intelligent virtual agents to streamline tasks.",
-        "icons": ["Bot", "Sparkles"]
+        "icons": [
+          "Bot",
+          "Sparkles"
+        ]
       },
       {
         "title": "Sales & Marketing",
         "description": "Leverage AI to optimize campaigns, track leads, and personalize outreach.",
-        "icons": ["Maximize2", "PieChart"]
+        "icons": [
+          "Maximize2",
+          "PieChart"
+        ]
       },
       {
         "title": "Performance Tracking",
         "description": "Track automation results in real time to improve and scale your workflows.",
-        "icons": ["TrendingUp", "BarChart3"]
+        "icons": [
+          "TrendingUp",
+          "BarChart3"
+        ]
       },
       {
         "title": "Seamless Integrations",
         "description": "Connect your tools and apps for smooth, unified AI-powered workflows.",
-        "icons": ["Plug", "Database"]
+        "icons": [
+          "Plug",
+          "Database"
+        ]
       }
     ]
   },
-
   "process": {
     "pill": "PROCESS",
     "heading": "Our Simple &",
@@ -149,7 +166,6 @@
       }
     ]
   },
-
   "integrations": {
     "pill": "INTEGRATIONS",
     "heading": "Seamless",
@@ -157,7 +173,6 @@
     "subheading": "Interact with all your favorite software without unnecessary fuss",
     "quote": "Our AI automation plugs into your stack to create a unified, intelligent workflow"
   },
-
   "testimonials": {
     "pill": "REVIEWS",
     "heading": "Trusted by",
@@ -201,9 +216,14 @@
         "quote": "Very intuitive. No fluff, just performance. Our internal processes finally feel under control."
       }
     ],
-    "brands": ["Asterisk", "Cooks", "Opal", "Dune", "Oasis"]
+    "brands": [
+      "Asterisk",
+      "Cooks",
+      "Opal",
+      "Dune",
+      "Oasis"
+    ]
   },
-
   "cta": {
     "dividerLabel": "Reach out anytime",
     "heading": "Ready to Automate Smarter?",
@@ -212,24 +232,58 @@
     "subheading": "Schedule a Call and Begin Automating",
     "ctaLabel": "Book A Free Call",
     "socials": [
-      { "label": "X / Twitter", "href": "#", "icon": "twitter" },
-      { "label": "Instagram", "href": "#", "icon": "instagram" },
-      { "label": "Facebook", "href": "#", "icon": "facebook" }
+      {
+        "label": "X / Twitter",
+        "href": "#",
+        "icon": "twitter"
+      },
+      {
+        "label": "Instagram",
+        "href": "#",
+        "icon": "instagram"
+      },
+      {
+        "label": "Facebook",
+        "href": "#",
+        "icon": "facebook"
+      }
     ],
-    "email": "landio@support.com"
+    "email": "[EMAIL_ADDRESS]"
   },
-
   "footer": {
-    "navLinks": ["Services", "Pricing", "Contact", "Blog", "Privacy", "Terms"],
-    "socials": [
-      { "label": "X / Twitter", "href": "#", "icon": "twitter" },
-      { "label": "Facebook", "href": "#", "icon": "facebook" },
-      { "label": "Instagram", "href": "#", "icon": "instagram" },
-      { "label": "Dribbble", "href": "#", "icon": "dribbble" }
+    "navLinks": [
+      "Services",
+      "Pricing",
+      "Contact",
+      "Blog",
+      "Privacy",
+      "Terms"
     ],
-    "copyright": "© 2025 Landio Template",
-    "madeByLabel": "Made by",
-    "madeByName": "Framebase",
-    "email": "landio@support.com"
+    "socials": [
+      {
+        "label": "X / Twitter",
+        "href": "#",
+        "icon": "twitter"
+      },
+      {
+        "label": "Facebook",
+        "href": "#",
+        "icon": "facebook"
+      },
+      {
+        "label": "Instagram",
+        "href": "#",
+        "icon": "instagram"
+      },
+      {
+        "label": "Dribbble",
+        "href": "#",
+        "icon": "dribbble"
+      }
+    ],
+    "copyright": "© 2025 Hindustan Innovation",
+    "madeByLabel": "Made with ❤️ by",
+    "madeByName": "Hindustan Innovation",
+    "email": "[EMAIL_ADDRESS]"
   }
 }
