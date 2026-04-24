@@ -1,9 +1,27 @@
+"use client";
+
+import { motion, type Variants } from "motion/react";
 import {
   GitMerge, BrainCircuit, SlidersHorizontal, Settings,
   Bot, Sparkles, Maximize2, PieChart, TrendingUp,
   BarChart3, Plug, Database, Package, type LucideIcon,
 } from "lucide-react";
 import data from "@/data.json";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 const ICON_MAP: Record<string, LucideIcon> = {
   GitMerge, BrainCircuit, SlidersHorizontal, Settings,
@@ -16,21 +34,36 @@ export function FeaturesSection() {
 
   return (
     <section className="relative z-10 flex flex-col items-center justify-center px-4 py-20 w-full max-w-6xl mx-auto mt-10">
-      <div className="flex items-center gap-2 mb-6 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
-        <Package className="w-4 h-4 text-zinc-300" />
-        <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">{pill}</span>
-      </div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={itemVariants}
+        className="flex flex-col items-center text-center w-full"
+      >
+        <div className="flex items-center gap-2 mb-6 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
+          <Package className="w-4 h-4 text-zinc-300" />
+          <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">{pill}</span>
+        </div>
 
-      <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100 mb-4 text-center">
-        {heading} <span className="font-serif italic font-light text-zinc-300">{headingItalic}</span>
-      </h2>
-      <p className="text-zinc-400 mb-16 text-lg text-center max-w-2xl">{subheading}</p>
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100 mb-4 text-center">
+          {heading} <span className="font-serif italic font-light text-zinc-300">{headingItalic}</span>
+        </h2>
+        <p className="text-zinc-400 mb-16 text-lg text-center max-w-2xl">{subheading}</p>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
+      >
         {cards.map((card) => {
           const [Icon1, Icon2] = card.icons.map((name) => ICON_MAP[name]);
           return (
-            <div
+            <motion.div
+              variants={itemVariants}
               key={card.title}
               className="flex flex-col items-center px-6 py-12 bg-[#0a0a0a] rounded-3xl border border-white/5 shadow-[0_0_30px_rgba(0,0,0,0.5)] group hover:border-white/10 transition-colors"
             >
@@ -45,10 +78,10 @@ export function FeaturesSection() {
               </div>
               <h3 className="text-lg font-semibold text-zinc-100 mb-3 text-center">{card.title}</h3>
               <p className="text-zinc-400 text-center text-sm leading-relaxed">{card.description}</p>
-            </div>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 }

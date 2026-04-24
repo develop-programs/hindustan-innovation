@@ -1,3 +1,6 @@
+"use client";
+
+import { motion, type Variants } from "motion/react";
 import { Sparkles, Eclipse } from "lucide-react";
 import data from "@/data.json";
 
@@ -50,33 +53,66 @@ function NetworkGraphic() {
 
 const GRAPHICS = [<SpeedometerGraphic key="speed" />, <BarChartGraphic key="bar" />, <NetworkGraphic key="net" />];
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
 export function BenefitsSection() {
   const { pill, heading, headingItalic, subheading, cards } = data.benefits;
 
   return (
     <section className="relative z-10 flex flex-col items-center justify-center px-4 py-20 w-full max-w-6xl mx-auto">
-      <div className="flex items-center gap-2 mb-6 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
-        <Sparkles className="w-4 h-4 text-zinc-300" />
-        <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">{pill}</span>
-      </div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={itemVariants}
+        className="flex flex-col items-center text-center w-full"
+      >
+        <div className="flex items-center gap-2 mb-6 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
+          <Sparkles className="w-4 h-4 text-zinc-300" />
+          <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">{pill}</span>
+        </div>
 
-      <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100 mb-4">
-        {heading} <span className="font-serif italic font-light">{headingItalic}</span>
-      </h2>
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100 mb-4">
+          {heading} <span className="font-serif italic font-light">{headingItalic}</span>
+        </h2>
 
-      <p className="text-zinc-400 mb-16 text-lg">{subheading}</p>
+        <p className="text-zinc-400 mb-16 text-lg">{subheading}</p>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full"
+      >
         {cards.map((card, i) => (
-          <div key={card.title} className="flex flex-col items-center p-8 bg-zinc-950 rounded-3xl border border-white/5 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden relative group">
+          <motion.div
+            variants={itemVariants}
+            key={card.title}
+            className="flex flex-col items-center p-8 bg-zinc-950 rounded-3xl border border-white/5 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden relative group"
+          >
             <div className="w-full h-48 flex items-center justify-center mb-6 relative">
               {GRAPHICS[i]}
             </div>
             <h3 className="text-xl font-semibold text-zinc-100 mb-3 text-center">{card.title}</h3>
             <p className="text-zinc-400 text-center text-sm leading-relaxed">{card.description}</p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

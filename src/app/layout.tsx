@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import data from "@/data.json"
 import { cn } from "@/lib/utils";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,8 +23,11 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Landio - AI Automation Partner",
-  description: "AI Automation for Modern Businesses Made Simple",
+  title: data.brand.name,
+  description: data.brand.tagline,
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
