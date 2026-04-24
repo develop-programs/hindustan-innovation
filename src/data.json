@@ -1,0 +1,235 @@
+{
+  "brand": {
+    "name": "Hindustan Innovation",
+    "tagline": "New Gen AI Automation Partner",
+    "email": "landio@support.com",
+    "copyright": "© 2025 Hindustan Innovation",
+    "madeBy": "Framebase"
+  },
+
+  "navbar": {
+    "navLinks": ["Services", "Process", "Pricing", "Blog", "Contact"],
+    "ctaLabel": "Get Template"
+  },
+
+  "hero": {
+    "pill": "New Gen AI Automation Partner",
+    "headingLine1": "Automate Smarter.",
+    "headingLine2": "Grow Faster.",
+    "headingItalic": "With AI.",
+    "subheading": "AI Automation for Modern Businesses Made Simple",
+    "ctaLabel": "Book A Free Call"
+  },
+
+  "quote": {
+    "pill": "We Analyze Your Data",
+    "text": "We find what to {automate}, who your users are & how AI can optimize your {workflow}. Best part is we also build and launch {real solutions.}",
+    "authorRole": "Co-founder & AI Strategy Lead",
+    "authorAvatar": "https://i.pravatar.cc/150?img=11"
+  },
+
+  "benefits": {
+    "pill": "BENEFITS",
+    "heading": "Why Choose",
+    "headingItalic": "Us?",
+    "subheading": "Everything you need to automate, optimize, and scale",
+    "cards": [
+      {
+        "title": "Real-Time Intelligence",
+        "description": "Access accurate, real-time data to drive smarter decisions"
+      },
+      {
+        "title": "Measurable Impact",
+        "description": "Track performance, uncover insights, and achieve data-backed growth"
+      },
+      {
+        "title": "Seamless Integration",
+        "description": "Connect tools, teams, and workflows with intelligent automation"
+      }
+    ]
+  },
+
+  "services": {
+    "pill": "SERVICES",
+    "heading": "Smarter Services,",
+    "headingItalic": "Built with AI",
+    "subheading": "Everything you need to automate operations, boost productivity",
+    "cards": [
+      {
+        "title": "Automate repetitive tasks",
+        "description": "We help you streamline internal operations by automating manual workflows",
+        "graphic": "task-list"
+      },
+      {
+        "title": "Automated Workflows",
+        "description": "Boost efficiency across teams with smart automation. Build intelligent workflows that automate multi-step processes across tools and platforms.",
+        "graphic": "workflow-nodes",
+        "colSpan": 2
+      },
+      {
+        "title": "Real-Time Intelligence",
+        "description": "Make smarter decisions with live data insights. Tap into real-time data.",
+        "graphic": "search-ui"
+      },
+      {
+        "title": "Custom AI Agent Development",
+        "description": "We develop custom AI agents that integrate seamlessly with your tools",
+        "graphic": "code-editor"
+      },
+      {
+        "title": "AI Strategy Consulting",
+        "description": "Get expert guidance to implement AI solutions that drive business growth",
+        "graphic": "strategy-nodes"
+      }
+    ]
+  },
+
+  "features": {
+    "pill": "FEATURES",
+    "heading": "All features in",
+    "headingItalic": "one place",
+    "subheading": "Everything you need to automate operations, boost productivity",
+    "cards": [
+      {
+        "title": "Workflow Automation",
+        "description": "Automate complex business processes to boost speed, clarity, and efficiency.",
+        "icons": ["GitMerge", "BrainCircuit"]
+      },
+      {
+        "title": "Custom AI Solutions",
+        "description": "Build tailored AI systems that align with your business goals and challenges.",
+        "icons": ["SlidersHorizontal", "Settings"]
+      },
+      {
+        "title": "AI Assistant",
+        "description": "Deploy intelligent virtual agents to streamline tasks.",
+        "icons": ["Bot", "Sparkles"]
+      },
+      {
+        "title": "Sales & Marketing",
+        "description": "Leverage AI to optimize campaigns, track leads, and personalize outreach.",
+        "icons": ["Maximize2", "PieChart"]
+      },
+      {
+        "title": "Performance Tracking",
+        "description": "Track automation results in real time to improve and scale your workflows.",
+        "icons": ["TrendingUp", "BarChart3"]
+      },
+      {
+        "title": "Seamless Integrations",
+        "description": "Connect your tools and apps for smooth, unified AI-powered workflows.",
+        "icons": ["Plug", "Database"]
+      }
+    ]
+  },
+
+  "process": {
+    "pill": "PROCESS",
+    "heading": "Our Simple &",
+    "headingItalic": "Smart Process",
+    "subheading": "Everything you need to collaborate, create, and scale, all in one place.",
+    "steps": [
+      {
+        "step": 1,
+        "number": "01",
+        "title": "Discover & Analyze",
+        "description": "We audit your existing workflows, tools, and customer data to uncover inefficiencies and automation opportunities. Every system is mapped for clarity."
+      },
+      {
+        "step": 2,
+        "number": "02",
+        "title": "Design & Build",
+        "description": "We architect custom AI automation solutions tailored to your needs, building robust pipelines and intelligent agents that integrate with your existing stack."
+      },
+      {
+        "step": 3,
+        "number": "03",
+        "title": "Launch & Scale",
+        "description": "We deploy, monitor, and continuously optimize your automation. As your business grows, your systems scale seamlessly alongside it."
+      }
+    ]
+  },
+
+  "integrations": {
+    "pill": "INTEGRATIONS",
+    "heading": "Seamless",
+    "headingItalic": "Integrations",
+    "subheading": "Interact with all your favorite software without unnecessary fuss",
+    "quote": "Our AI automation plugs into your stack to create a unified, intelligent workflow"
+  },
+
+  "testimonials": {
+    "pill": "REVIEWS",
+    "heading": "Trusted by",
+    "headingItalic": "Visionaries",
+    "subheading": "Hear from real users who achieved success with our automation",
+    "reviews": [
+      {
+        "name": "Daniel Kim",
+        "role": "Operations Lead at Flowtips",
+        "avatar": "https://i.pravatar.cc/150?img=20",
+        "quote": "Truly impressive. The AI assistant is fast, accurate, and blends into our daily ops without friction."
+      },
+      {
+        "name": "Priya Mehra",
+        "role": "CTO at Brightwork Labs",
+        "avatar": "https://i.pravatar.cc/150?img=21",
+        "quote": "Game-changer. Automation flows run flawlessly. Our team now focuses only on what really matters."
+      },
+      {
+        "name": "Elena Rodriguez",
+        "role": "Product Manager at Nexora",
+        "avatar": "https://i.pravatar.cc/150?img=22",
+        "quote": "Smooth setup. Their system replaced three tools. We saw improvements in just the first week."
+      },
+      {
+        "name": "Marcus Thompson",
+        "role": "Marketing Director at ClearShift",
+        "avatar": "https://i.pravatar.cc/150?img=23",
+        "quote": "Surprisingly simple. The AI adapts quickly. Our campaigns are now running 2x more efficiently."
+      },
+      {
+        "name": "Sarah Wong",
+        "role": "Analytics Manager at Corehub",
+        "avatar": "https://i.pravatar.cc/150?img=24",
+        "quote": "Huge time-saver. Data is better organized. The insights we get now are actionable and fast."
+      },
+      {
+        "name": "Ravi Shah",
+        "role": "COO at PeakFlow Solutions",
+        "avatar": "https://i.pravatar.cc/150?img=25",
+        "quote": "Very intuitive. No fluff, just performance. Our internal processes finally feel under control."
+      }
+    ],
+    "brands": ["Asterisk", "Cooks", "Opal", "Dune", "Oasis"]
+  },
+
+  "cta": {
+    "dividerLabel": "Reach out anytime",
+    "heading": "Ready to Automate Smarter?",
+    "headingLine2": "Let's",
+    "headingItalic": "Build Together",
+    "subheading": "Schedule a Call and Begin Automating",
+    "ctaLabel": "Book A Free Call",
+    "socials": [
+      { "label": "X / Twitter", "href": "#", "icon": "twitter" },
+      { "label": "Instagram", "href": "#", "icon": "instagram" },
+      { "label": "Facebook", "href": "#", "icon": "facebook" }
+    ],
+    "email": "landio@support.com"
+  },
+
+  "footer": {
+    "navLinks": ["Services", "Pricing", "Contact", "Blog", "Privacy", "Terms"],
+    "socials": [
+      { "label": "X / Twitter", "href": "#", "icon": "twitter" },
+      { "label": "Facebook", "href": "#", "icon": "facebook" },
+      { "label": "Instagram", "href": "#", "icon": "instagram" },
+      { "label": "Dribbble", "href": "#", "icon": "dribbble" }
+    ],
+    "copyright": "© 2025 Landio Template",
+    "madeByLabel": "Made by",
+    "madeByName": "Framebase",
+    "email": "landio@support.com"
+  }
+}
