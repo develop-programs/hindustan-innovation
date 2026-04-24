@@ -62,7 +62,7 @@ export function HeroSection() {
         />
 
         {/* Radial Gradient to prevent sharp edges */}
-        <div className="absolute inset-0 w-full h-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+        <div className="absolute inset-0 w-full h-full mask-[radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
       </div>
     </main>
   );
