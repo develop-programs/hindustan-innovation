@@ -22,7 +22,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Landio - AI Automation Partner",
+  title: "Hindustaan Innovation",
   description: "AI Automation for Modern Businesses Made Simple",
 };
 
@@ -34,6 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={cn("h-full", "antialiased", "dark", geistSans.variable, geistMono.variable, "font-sans", inter.variable, playfair.variable)}
     >
       <body className="min-h-full flex flex-col bg-zinc-950 text-zinc-50">{children}</body>

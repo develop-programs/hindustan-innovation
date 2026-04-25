@@ -1,10 +1,10 @@
 {
   "brand": {
-    "name": "Hindustan Innovation",
+    "name": "Hindustaan Innovation",
     "tagline": "New Gen AI Automation Partner",
-    "email": "[EMAIL_ADDRESS]",
-    "copyright": "© 2025 Hindustan Innovation",
-    "madeBy": "Hindustan Innovation"
+    "email": "info@hundustaan.in",
+    "copyright": "© 2026 Hindustaan Innovation",
+    "madeBy": "Hindustaan Innovation"
   },
   "navbar": {
     "navLinks": [
@@ -281,9 +281,9 @@
         "icon": "dribbble"
       }
     ],
-    "copyright": "© 2025 Hindustan Innovation",
+    "copyright": "© 2026 Hindustaan Innovation",
     "madeByLabel": "Made with ❤️ by",
-    "madeByName": "Hindustan Innovation",
-    "email": "[EMAIL_ADDRESS]"
+    "madeByName": "Hindustaan Innovation",
+    "email": "info@hundustaan.in"
   }
 }
