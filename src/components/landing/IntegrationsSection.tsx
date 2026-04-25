@@ -47,7 +47,7 @@ export function IntegrationsSection() {
   return (
     <>
       {/* ── Integrations ── */}
-      <section className="relative z-10 flex flex-col items-center justify-center px-4 py-20 w-full max-w-6xl mx-auto mt-10 overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-gradient-to-r after:from-transparent after:via-white/20 after:to-transparent" id="integrations">
+      <section className="relative z-10 flex flex-col items-center justify-center px-4 py-20 w-full max-w-6xl mx-auto mt-10 overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-gradient-to-r after:from-transparent after:via-white/20 after:to-transparent " id="integrations">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -71,7 +71,7 @@ export function IntegrationsSection() {
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
           variants={containerVariants}
-          className="w-full max-w-xl bg-radial-[at_20%_75%] from-black/50 via-black/10 to-white/10 border-t-2 border-white/40 rounded-3xl py-8 overflow-hidden relative"
+          className="w-full max-w-xl bg-radial-[at_20%_75%] from-black/50 via-black/10 to-white/10 border-t-2 border-white/25 rounded-3xl outline outline-white/10 py-8 overflow-hidden relative"
         >
 
           <div className="flex flex-col gap-6">
@@ -108,7 +108,7 @@ export function IntegrationsSection() {
         >
           &ldquo;{integrations.quote}&rdquo;
         </motion.p>
-        <div className="absolute mx-auto -bottom-80 size-100 rounded-full bg-white/40 blur-3xl" />
+        <div className="absolute mx-auto -bottom-100 size-150 rounded-full bg-white/25 blur-3xl" />
       </section>
 
       {/* ── Testimonials ── */}
