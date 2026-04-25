@@ -7,6 +7,7 @@ import {
   FlaskConical, HardDrive, Mail, MapPin, Check, ArrowUpRight,
   Sparkles, Layers,
 } from "lucide-react";
+import { AnimatedList } from "../ui/animated-list";
 
 // ─── Mini graphic components (matches home page style) ────────────────────────
 
@@ -36,17 +37,24 @@ function IconClusterGraphic({ icons, accent }: { icons: React.ReactNode[]; accen
 }
 
 function TagListGraphic({ tags }: { tags: string[] }) {
+  // Triple the tags so AnimatedList has enough items to loop continuously
+  const loopedTags = [...tags, ...tags, ...tags];
   return (
-    <div className="w-full h-40 flex flex-col gap-2 justify-center mb-6">
-      {tags.map((t, i) => (
-        <div key={t} className={`flex items-center justify-between bg-zinc-900/80 border border-white/5 rounded-xl px-3 py-2 shadow ${i === 1 ? "w-full" : "w-[90%]"}`}>
-          <div className="flex items-center gap-2">
-            <Check className="w-3 h-3 text-zinc-500" />
-            <span className="text-[11px] text-zinc-400 font-medium">{t}</span>
+    <div className="w-full h-40 flex flex-col mb-6 relative overflow-hidden mask-[linear-gradient(to_bottom,white_40%,transparent_100%)]">
+      <AnimatedList delay={1200} className="w-full gap-2">
+        {loopedTags.map((t, i) => (
+          <div
+            key={`${t}-${i}`}
+            className={`flex items-center justify-between bg-zinc-900/80 border border-white/5 rounded-xl px-3 py-2 shadow ${i % tags.length === 1 ? "w-full" : "w-[90%]"}`}
+          >
+            <div className="flex items-center gap-2">
+              <Check className="w-3 h-3 text-zinc-500" />
+              <span className="text-[11px] text-zinc-400 font-medium">{t}</span>
+            </div>
+            <ArrowUpRight className="w-3 h-3 text-zinc-600" />
           </div>
-          <ArrowUpRight className="w-3 h-3 text-zinc-600" />
-        </div>
-      ))}
+        ))}
+      </AnimatedList>
     </div>
   );
 }
@@ -366,7 +374,7 @@ function Card({ card }: { card: ServiceCard }) {
 
   return (
     <div
-      className={`${spanClass} flex flex-col p-8 bg-zinc-950 rounded-3xl border border-white/5 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden relative group hover:border-white/10 transition-all duration-300`}
+      className={`${spanClass} flex flex-col p-8 bg-zinc-950 rounded-3xl border-t-2 border-white/25 outline outline-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden relative group transition-all duration-300`}
     >
       {/* subtle glow on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl" />
