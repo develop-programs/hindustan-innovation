@@ -8,6 +8,28 @@ import {
   Sparkles, Layers,
 } from "lucide-react";
 import { AnimatedList } from "../ui/animated-list";
+import { motion, type Variants } from "motion/react";
+import servicesData from "@/services.json";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const IconMap: Record<string, React.FC<any>> = {
+  Globe, Smartphone, Palette, ShoppingCart, Code2, Megaphone, Wrench,
+  Bot, Brain, TrendingUp, Eye, Cpu, Cloud, Server, GitBranch, Shield,
+  Database, Monitor, Plug, Lock, Package, BarChart2, Zap, Settings,
+  FlaskConical, HardDrive, Mail, MapPin, Sparkles, Layers
+};
 
 // ─── Mini graphic components (matches home page style) ────────────────────────
 
@@ -101,251 +123,26 @@ interface Group {
   cards: ServiceCard[];
 }
 
-const GROUPS: Group[] = [
-  // ── Web & App ──────────────────────────────────────────────────────────────
-  {
-    id: "web-app",
-    pill: "WEB & APP",
-    heading: "Build Your Digital",
-    headingItalic: "Presence",
-    subheading: "Full-stack websites, mobile apps, and stunning UI/UX designs",
-    cards: [
-      {
-        id: "web-dev", title: "Web Development", icon: <Globe className="w-7 h-7" />, accent: "text-blue-400",
-        description: "From static sites to complex web apps with admin panels, e-commerce, portfolios and custom solutions.",
-        items: ["Static Website", "Dynamic + Admin Panel", "E-commerce Store", "Custom Web App", "Portfolio & Landing Page"],
-        graphic: "tags", graphicTags: ["Static Website", "E-commerce Store", "Custom Web App"],
-        colSpan: 3,
-      },
-      {
-        id: "app-dev", title: "App Development", icon: <Smartphone className="w-7 h-7" />, accent: "text-purple-400",
-        description: "Native Android & iOS apps, and cross-platform builds with React Native / Flutter.",
-        items: ["Android App", "iOS App", "React Native / Flutter", "Custom Business Apps"],
-        graphic: "cluster",
-        graphicIcons: [<Smartphone key="s" className="w-7 h-7" />, <Globe key="g" className="w-4 h-4" />, <Code2 key="c" className="w-4 h-4" />],
-        colSpan: 3,
-      },
-      {
-        id: "ui-ux", title: "UI/UX Design", icon: <Palette className="w-7 h-7" />, accent: "text-pink-400",
-        description: "Pixel-perfect designs in Figma & Adobe XD — websites, apps and dashboard redesigns.",
-        items: ["Website UI Design", "Mobile App UI", "Dashboard Design", "Redesign Existing Site"],
-        graphic: "nodes",
-        colSpan: 2,
-      },
-      {
-        id: "ecommerce", title: "E-commerce Solutions", icon: <ShoppingCart className="w-7 h-7" />, accent: "text-green-400",
-        description: "Complete online stores with payment gateways, cart systems, and product management.",
-        items: ["Online Store Setup", "Razorpay / Stripe", "Cart & Checkout", "Product Management"],
-        graphic: "tags", graphicTags: ["Payment Gateway", "Cart System", "Product Mgmt"],
-        colSpan: 2,
-      },
-      {
-        id: "software", title: "Custom Software", icon: <Code2 className="w-7 h-7" />, accent: "text-orange-400",
-        description: "School ERP, CRM, and Inventory systems — tailored to your exact business workflow.",
-        items: ["School Management", "CRM System", "ERP Solutions", "Inventory Management"],
-        graphic: "cluster",
-        graphicIcons: [<Code2 key="c" className="w-7 h-7" />, <Settings key="s" className="w-4 h-4" />, <Database key="d" className="w-4 h-4" />, <Layers key="l" className="w-4 h-4" />],
-        colSpan: 2,
-      },
-    ],
-  },
-
-  // ── Marketing & Support ────────────────────────────────────────────────────
-  {
-    id: "marketing",
-    pill: "MARKETING & SUPPORT",
-    heading: "Grow Faster,",
-    headingItalic: "Stay Strong",
-    subheading: "Digital marketing campaigns and ongoing website maintenance & support",
-    cards: [
-      {
-        id: "marketing", title: "Digital Marketing", icon: <Megaphone className="w-7 h-7" />, accent: "text-yellow-400",
-        description: "SEO, Social Media, Google Ads and Content Marketing to grow your online audience.",
-        items: ["SEO Optimization", "Social Media Marketing", "Google Ads", "Content Marketing"],
-        graphic: "nodes", colSpan: 4,
-      },
-      {
-        id: "maintenance", title: "Maintenance & Support", icon: <Wrench className="w-7 h-7" />, accent: "text-cyan-400",
-        description: "Keep your site fast and secure with ongoing bug fixes, updates and performance tuning.",
-        items: ["Website Maintenance", "Bug Fixing", "Performance Optimization", "Security Updates"],
-        graphic: "tags", graphicTags: ["Bug Fixing", "Performance", "Security Updates"],
-      },
-    ],
-  },
-
-  // ── AI Services ────────────────────────────────────────────────────────────
-  {
-    id: "ai",
-    pill: "AI SERVICES",
-    heading: "Intelligent Solutions,",
-    headingItalic: "Powered by AI",
-    subheading: "Chatbots, NLP, machine learning, computer vision and custom AI systems",
-    cards: [
-      {
-        id: "chatbot", title: "AI Chatbot Development", icon: <Bot className="w-7 h-7" />, accent: "text-indigo-400",
-        description: "Website, WhatsApp & Telegram bots that automate customer support and generate leads.",
-        items: ["Website Chatbots", "WhatsApp / Telegram Bots", "AI FAQ Bots", "Lead Generation Bots"],
-        graphic: "cluster",
-        graphicIcons: [<Bot key="b" className="w-7 h-7" />, <Mail key="m" className="w-4 h-4" />, <Sparkles key="sp" className="w-4 h-4" />],
-        colSpan: 4,
-      },
-      {
-        id: "nlp", title: "NLP Services", icon: <Brain className="w-7 h-7" />, accent: "text-violet-400",
-        description: "Text analysis, sentiment detection, auto-reply systems and language translation.",
-        items: ["Text Analysis", "Sentiment Analysis", "Auto Reply Systems", "Language Translation"],
-        graphic: "tags", graphicTags: ["Sentiment Analysis", "Auto Reply", "Translation"],
-      },
-      {
-        id: "ml", title: "Machine Learning", icon: <TrendingUp className="w-7 h-7" />, accent: "text-emerald-400",
-        description: "Prediction systems, recommendation engines (like Amazon/Netflix), and fraud detection.",
-        items: ["Prediction Systems", "Recommendation Engine", "Fraud Detection"],
-        graphic: "nodes",
-      },
-      {
-        id: "vision", title: "Computer Vision", icon: <Eye className="w-7 h-7" />, accent: "text-rose-400",
-        description: "Image recognition, face detection, OCR and object detection solutions.",
-        items: ["Image Recognition", "Face Detection", "OCR (Text from Image)", "Object Detection"],
-        graphic: "cluster",
-        graphicIcons: [<Eye key="e" className="w-7 h-7" />, <Monitor key="m" className="w-4 h-4" />, <Cpu key="c" className="w-4 h-4" />],
-      },
-      {
-        id: "custom-ai", title: "Custom AI Solutions", icon: <Cpu className="w-7 h-7" />, accent: "text-sky-400",
-        description: "AI dashboards, automation tools, and AI integration into your existing systems.",
-        items: ["AI-based Dashboards", "Automation Tools", "AI System Integration"],
-        graphic: "tags", graphicTags: ["AI Dashboards", "Automation", "Integration"],
-        colSpan: 2,
-      },
-    ],
-  },
-
-  // ── Cloud Computing ─────────────────────────────────────────────────────────
-  {
-    id: "cloud",
-    pill: "CLOUD COMPUTING",
-    heading: "Scale Without",
-    headingItalic: "Limits",
-    subheading: "AWS, GCP, Azure — hosting, migration, DevOps, security and monitoring",
-    cards: [
-      {
-        id: "cloud-host", title: "Cloud Hosting & Deployment", icon: <Cloud className="w-7 h-7" />, accent: "text-teal-400",
-        description: "Deploy websites and apps on AWS, Google Cloud or Azure with scalable infrastructure.",
-        items: ["Website Hosting", "App Deployment", "AWS / GCP / Azure", "Scalable Setup"],
-        graphic: "nodes", colSpan: 4,
-      },
-      {
-        id: "devops", title: "DevOps & CI/CD", icon: <GitBranch className="w-7 h-7" />, accent: "text-lime-400",
-        description: "Auto deployment pipelines with Git, Docker, Kubernetes and Jenkins.",
-        items: ["Auto Deployment", "Git Integration", "CI/CD Pipelines", "Docker & Kubernetes"],
-        graphic: "cluster",
-        graphicIcons: [<GitBranch key="g" className="w-7 h-7" />, <Server key="s" className="w-4 h-4" />, <Settings key="st" className="w-4 h-4" />],
-      },
-      {
-        id: "cloud-sec", title: "Cloud Security", icon: <Shield className="w-7 h-7" />, accent: "text-red-400",
-        description: "Data encryption, backup systems, firewall setup and access control for your cloud.",
-        items: ["Data Encryption", "Backup Systems", "Firewall Setup", "Access Control"],
-        graphic: "tags", graphicTags: ["Data Encryption", "Firewall", "Access Control"],
-      },
-      {
-        id: "migration", title: "Cloud Migration", icon: <Server className="w-7 h-7" />, accent: "text-amber-400",
-        description: "Move from local servers to the cloud — database migration and legacy system upgrades.",
-        items: ["Local → Cloud Transfer", "Database Migration", "Legacy Upgrade"],
-        graphic: "nodes",
-      },
-      {
-        id: "cloud-store", title: "Cloud Storage & Monitoring", icon: <Database className="w-7 h-7" />, accent: "text-fuchsia-400",
-        description: "Secure file storage, backup & recovery, auto-scaling and server performance monitoring.",
-        items: ["Secure File Storage", "Backup & Recovery", "Cost Optimization", "Auto Scaling"],
-        graphic: "cluster",
-        graphicIcons: [<Database key="d" className="w-7 h-7" />, <Monitor key="m" className="w-4 h-4" />, <BarChart2 key="b" className="w-4 h-4" />, <Shield key="s" className="w-4 h-4" />],
-        colSpan: 2,
-      },
-    ],
-  },
-
-  // ── Advanced Add-ons ────────────────────────────────────────────────────────
-  {
-    id: "addons",
-    pill: "ADVANCED ADD-ONS",
-    heading: "More Power,",
-    headingItalic: "More Growth",
-    subheading: "APIs, cybersecurity, SaaS, analytics, automation, ERP, consulting and more",
-    cards: [
-      {
-        id: "api", title: "API Development & Integration", icon: <Plug className="w-7 h-7" />, accent: "text-blue-300",
-        description: "Connect Razorpay, Stripe, Twilio and build custom APIs for system-to-system integration.",
-        items: ["Custom API Dev", "Payment APIs", "SMS / Email APIs", "System Integration"],
-        graphic: "nodes", colSpan: 4,
-      },
-      {
-        id: "cyber", title: "Cybersecurity", icon: <Lock className="w-7 h-7" />, accent: "text-red-300",
-        description: "Website security audits, vulnerability testing, SSL hardening and data protection.",
-        items: ["Security Audit", "Vulnerability Testing", "SSL Hardening", "Data Protection"],
-        graphic: "tags", graphicTags: ["Security Audit", "SSL Setup", "Data Protection"],
-      },
-      {
-        id: "saas", title: "SaaS Product Development", icon: <Package className="w-7 h-7" />, accent: "text-violet-300",
-        description: "Build subscription-based SaaS with multi-user dashboards and role-based access.",
-        items: ["Subscription Software", "Multi-user Dashboards", "Role-based Access", "CRM / School SaaS"],
-        graphic: "cluster",
-        graphicIcons: [<Package key="p" className="w-7 h-7" />, <Settings key="s" className="w-4 h-4" />, <Globe key="g" className="w-4 h-4" />],
-      },
-      {
-        id: "analytics", title: "Data Analytics & BI", icon: <BarChart2 className="w-7 h-7" />, accent: "text-green-300",
-        description: "Power BI & Tableau dashboards, real-time analytics and actionable business insights.",
-        items: ["Data Dashboards", "Reports & Insights", "Real-time Analytics", "Power BI / Tableau"],
-        graphic: "tags", graphicTags: ["Data Dashboards", "Real-time Analytics", "Power BI"],
-        colSpan: 4,
-      },
-      {
-        id: "automation", title: "Automation Services", icon: <Zap className="w-7 h-7" />, accent: "text-yellow-300",
-        description: "Workflow, email and CRM automation with intelligent task scheduling.",
-        items: ["Workflow Automation", "Email Automation", "CRM Automation", "Task Scheduling"],
-        graphic: "nodes",
-      },
-      {
-        id: "erp", title: "ERP & CRM Customization", icon: <Settings className="w-7 h-7" />, accent: "text-cyan-300",
-        description: "Business management software, customer tracking and sales pipeline systems.",
-        items: ["Business Management", "Customer Tracking", "Sales Pipeline"],
-        graphic: "cluster",
-        graphicIcons: [<Settings key="s" className="w-7 h-7" />, <BarChart2 key="b" className="w-4 h-4" />, <Plug key="p" className="w-4 h-4" />],
-      },
-      {
-        id: "consulting", title: "AI Training & Consulting", icon: <FlaskConical className="w-7 h-7" />, accent: "text-indigo-300",
-        description: "Help businesses adopt AI — strategy planning, model selection and implementation.",
-        items: ["AI Strategy Planning", "Model Selection", "Implementation Support"],
-        graphic: "tags", graphicTags: ["AI Strategy", "Model Selection", "Consulting"],
-      },
-      {
-        id: "hosting", title: "Domain, Hosting & Email", icon: <Mail className="w-7 h-7" />, accent: "text-pink-300",
-        description: "Domain registration, business email setup and hosting management via GoDaddy & Hostinger.",
-        items: ["Domain Registration", "Business Email", "Hosting Management", "GoDaddy / Hostinger"],
-        graphic: "cluster",
-        graphicIcons: [<Mail key="m" className="w-7 h-7" />, <Globe key="g" className="w-4 h-4" />, <Server key="s" className="w-4 h-4" />],
-        colSpan: 4,
-      },
-      {
-        id: "backup", title: "Backup & Disaster Recovery", icon: <HardDrive className="w-7 h-7" />, accent: "text-rose-300",
-        description: "Data backup systems, recovery planning and cloud restore setup so you never lose data.",
-        items: ["Data Backup", "Recovery Planning", "Cloud Restore"],
-        graphic: "nodes",
-      },
-      {
-        id: "perf", title: "Performance & Testing", icon: <TrendingUp className="w-7 h-7" />, accent: "text-lime-300",
-        description: "Website speed, database & server tuning — plus manual, automated & performance QA testing.",
-        items: ["Speed Optimization", "Database Tuning", "Manual Testing", "Automation Testing"],
-        graphic: "tags", graphicTags: ["Speed Optimization", "DB Tuning", "QA Testing"],
-      },
-      {
-        id: "it", title: "IT Consulting & Digital Transformation", icon: <MapPin className="w-7 h-7" />, accent: "text-sky-300",
-        description: "Take your business offline → online with process digitization and a technology roadmap.",
-        items: ["Offline → Online", "Process Digitization", "Technology Roadmap"],
-        graphic: "cluster",
-        graphicIcons: [<MapPin key="m" className="w-7 h-7" />, <Globe key="g" className="w-4 h-4" />, <Sparkles key="sp" className="w-4 h-4" />],
-        colSpan: 4,
-      },
-    ],
-  },
-];
+// Map JSON string icons to Lucide components
+const GROUPS: Group[] = servicesData.categories.map((group: any) => ({
+  id: group.id,
+  pill: group.pill,
+  heading: group.heading,
+  headingItalic: group.headingItalic,
+  subheading: group.subheading,
+  cards: group.cards.map((card: any) => {
+    const IconComponent = IconMap[card.icon] || Globe;
+    return {
+      ...card,
+      icon: <IconComponent className="w-7 h-7" />,
+      graphicIcons: card.graphicIcons?.map((iconName: string, i: number) => {
+        const GraphicIcon = IconMap[iconName] || Globe;
+        const sizeClass = i === 0 ? "w-7 h-7" : "w-4 h-4";
+        return <GraphicIcon key={`${card.id}-${i}`} className={sizeClass} />;
+      }),
+    };
+  }),
+}));
 
 // ─── Single card ──────────────────────────────────────────────────────────────
 
@@ -373,8 +170,9 @@ function Card({ card }: { card: ServiceCard }) {
   const spanClass = COL_SPAN[card.colSpan ?? 2] ?? "md:col-span-2";
 
   return (
-    <div
-      className={`${spanClass} flex flex-col p-8 bg-zinc-950 rounded-3xl border-t-2 border-white/25 outline outline-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden relative group transition-all duration-300`}
+    <motion.div
+      variants={itemVariants}
+      className={`${spanClass} flex flex-col p-8 bg-zinc-950 rounded-3xl border border-white/5 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden relative group hover:border-white/10 transition-all duration-300`}
     >
       {/* subtle glow on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl" />
@@ -398,7 +196,7 @@ function Card({ card }: { card: ServiceCard }) {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -407,23 +205,37 @@ function Card({ card }: { card: ServiceCard }) {
 function GroupSection({ group }: { group: Group }) {
   return (
     <section className="relative z-10 flex flex-col items-center justify-center px-4 py-20 w-full max-w-6xl mx-auto">
-      {/* Pill */}
-      <div className="flex items-center gap-2 mb-6 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
-        <Layers className="w-4 h-4 text-zinc-300" />
-        <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">{group.pill}</span>
-      </div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={itemVariants}
+        className="flex flex-col items-center text-center w-full"
+      >
+        {/* Pill */}
+        <div className="flex items-center gap-2 mb-6 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
+          <Layers className="w-4 h-4 text-zinc-300" />
+          <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">{group.pill}</span>
+        </div>
 
-      <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100 mb-4 text-center">
-        {group.heading}{" "}
-        <span className="font-serif italic font-light text-zinc-300">{group.headingItalic}</span>
-      </h2>
-      <p className="text-zinc-400 mb-16 text-lg text-center max-w-2xl">{group.subheading}</p>
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100 mb-4 text-center">
+          {group.heading}{" "}
+          <span className="font-serif italic font-light text-zinc-300">{group.headingItalic}</span>
+        </h2>
+        <p className="text-zinc-400 mb-16 text-lg text-center max-w-2xl">{group.subheading}</p>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-6 w-full">
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        className="grid grid-cols-1 md:grid-cols-6 gap-6 w-full"
+      >
         {group.cards.map((card) => (
           <Card key={card.id} card={card} />
         ))}
-      </div>
+      </motion.div>
 
       {/* section divider */}
       <div className="mt-20 w-full h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />

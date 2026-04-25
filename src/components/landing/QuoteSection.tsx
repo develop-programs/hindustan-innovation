@@ -35,10 +35,10 @@ export function QuoteSection() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.2 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="relative z-10 flex flex-col items-center justify-center px-4 py-24 w-full max-w-4xl mx-auto text-center mt-10 overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent"
+      className="relative z-10 flex flex-col items-center gap-12 justify-center px-4 py-32 w-full max-w-4xl mx-auto text-center mt-10 overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent"
     >
       {/* Pill */}
-      <div className="flex items-center gap-2 mb-10 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
+      <div className="flex items-center gap-2 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
         <Star className="w-4 h-4 text-zinc-200 fill-zinc-200" />
         <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">
           {pill}
@@ -46,7 +46,7 @@ export function QuoteSection() {
       </div>
 
       {/* Quote Text */}
-      <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.6] tracking-tight text-zinc-400 mb-12 max-w-3xl">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.6] tracking-tight text-zinc-400  max-w-3xl">
         <FormattedQuote text={text} />&quot;
       </h2>
 
