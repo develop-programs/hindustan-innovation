@@ -20,17 +20,17 @@
   },
   "hero": {
     "pill": "New Gen AI Automation Partner",
-    "headingLine1": "Automate Smarter.",
-    "headingLine2": "Grow Faster.",
-    "headingItalic": "With AI.",
-    "subheading": "AI Automation for Modern Businesses Made Simple",
+    "headingLine1": "Build Smarter",
+    "headingLine2": "Scale Faster.",
+    "headingItalic": "With AI & Technology.",
+    "subheading": "From Websites to AI Automation & Cloud — We Build Complete Digital Solutions for Modern Businesses",
     "ctaLabel": "Book A Free Call"
   },
   "quote": {
     "pill": "We Analyze Your Data",
     "text": "We find what to {automate}, who your users are & how AI can optimize your {workflow}. Best part is we also build and launch {real solutions.}",
-    "authorRole": "Co-founder & AI Strategy Lead",
-    "authorAvatar": "https://i.pravatar.cc/150?img=11"
+    "authorRole": "Hindustaan Innovation Team",
+    "authorAvatar": "/logo.png"
   },
   "benefits": {
     "pill": "BENEFITS",
@@ -38,19 +38,19 @@
     "headingItalic": "Us?",
     "subheading": "Everything you need to automate, optimize, and scale",
     "cards": [
-      {
-        "title": "Real-Time Intelligence",
-        "description": "Access accurate, real-time data to drive smarter decisions"
-      },
-      {
-        "title": "Measurable Impact",
-        "description": "Track performance, uncover insights, and achieve data-backed growth"
-      },
-      {
-        "title": "Seamless Integration",
-        "description": "Connect tools, teams, and workflows with intelligent automation"
-      }
-    ]
+  {
+    "title": "All-in-One Tech Partner",
+    "description": "From development to AI and cloud, everything under one roof"
+  },
+  {
+    "title": "Scalable Architecture",
+    "description": "Build systems that grow with your business"
+  },
+  {
+    "title": "Automation First Approach",
+    "description": "Reduce manual work and increase efficiency using AI"
+  }
+]
   },
   "services": {
     "pill": "SERVICES",
@@ -151,20 +151,20 @@
       {
         "step": 1,
         "number": "01",
-        "title": "Discover & Analyze",
-        "description": "We audit your existing workflows, tools, and customer data to uncover inefficiencies and automation opportunities. Every system is mapped for clarity."
+        "title": "Consult & Strategy",
+        "description": "We understand your business goals and define a technology roadmap"
       },
       {
         "step": 2,
         "number": "02",
-        "title": "Design & Build",
-        "description": "We architect custom AI automation solutions tailored to your needs, building robust pipelines and intelligent agents that integrate with your existing stack."
+        "title": "Design & Development",
+        "description": "We build scalable systems using modern technologies and AI"
       },
       {
         "step": 3,
         "number": "03",
-        "title": "Launch & Scale",
-        "description": "We deploy, monitor, and continuously optimize your automation. As your business grows, your systems scale seamlessly alongside it."
+        "title": "Launch & Growth",
+        "description": "We deploy, optimize, and help you scale continuously"
       }
     ]
   },
@@ -181,43 +181,43 @@
     "headingItalic": "Visionaries",
     "subheading": "Hear from real users who achieved success with our automation",
     "reviews": [
-      {
-        "name": "Daniel Kim",
-        "role": "Operations Lead at Flowtips",
-        "avatar": "https://i.pravatar.cc/150?img=20",
-        "quote": "Truly impressive. The AI assistant is fast, accurate, and blends into our daily ops without friction."
-      },
-      {
-        "name": "Priya Mehra",
-        "role": "CTO at Brightwork Labs",
-        "avatar": "https://i.pravatar.cc/150?img=21",
-        "quote": "Game-changer. Automation flows run flawlessly. Our team now focuses only on what really matters."
-      },
-      {
-        "name": "Elena Rodriguez",
-        "role": "Product Manager at Nexora",
-        "avatar": "https://i.pravatar.cc/150?img=22",
-        "quote": "Smooth setup. Their system replaced three tools. We saw improvements in just the first week."
-      },
-      {
-        "name": "Marcus Thompson",
-        "role": "Marketing Director at ClearShift",
-        "avatar": "https://i.pravatar.cc/150?img=23",
-        "quote": "Surprisingly simple. The AI adapts quickly. Our campaigns are now running 2x more efficiently."
-      },
-      {
-        "name": "Sarah Wong",
-        "role": "Analytics Manager at Corehub",
-        "avatar": "https://i.pravatar.cc/150?img=24",
-        "quote": "Huge time-saver. Data is better organized. The insights we get now are actionable and fast."
-      },
-      {
-        "name": "Ravi Shah",
-        "role": "COO at PeakFlow Solutions",
-        "avatar": "https://i.pravatar.cc/150?img=25",
-        "quote": "Very intuitive. No fluff, just performance. Our internal processes finally feel under control."
-      }
-    ],
+  {
+    "name": "Rahul Sharma",
+    "role": "Operations Manager at FlowEdge Solutions",
+    "avatar": "https://i.pravatar.cc/150?img=11",
+    "quote": "AI automation ne humare daily operations ko kaafi smooth bana diya. Team ki productivity clearly improve hui hai."
+  },
+  {
+    "name": "Priya Verma",
+    "role": "CTO at BrightTech Labs",
+    "avatar": "https://i.pravatar.cc/150?img=12",
+    "quote": "Unke automation workflows ne humare processes ko completely transform kar diya. Execution bahut clean hai."
+  },
+  {
+    "name": "Amit Patel",
+    "role": "Founder at Nexora Digital",
+    "avatar": "https://i.pravatar.cc/150?img=13",
+    "quote": "Setup fast tha aur results first month me hi visible the. Highly recommended for growing startups."
+  },
+  {
+    "name": "Sneha Gupta",
+    "role": "Marketing Head at ClearGrowth",
+    "avatar": "https://i.pravatar.cc/150?img=14",
+    "quote": "Campaign automation ke baad humari efficiency double ho gayi. Time saving kaafi noticeable hai."
+  },
+  {
+    "name": "Rohit Agarwal",
+    "role": "Analytics Lead at DataCore India",
+    "avatar": "https://i.pravatar.cc/150?img=15",
+    "quote": "Real-time insights aur dashboards ne decision making ko kaafi fast aur accurate bana diya."
+  },
+  {
+    "name": "Neha Singh",
+    "role": "COO at PeakFlow Systems",
+    "avatar": "https://i.pravatar.cc/150?img=16",
+    "quote": "Simple implementation, powerful results. Humare internal workflows ab kaafi optimized hain."
+  }
+],
     "brands": [
       "Asterisk",
       "Cooks",
