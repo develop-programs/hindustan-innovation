@@ -82,17 +82,17 @@ function TaskListGraphic() {
 
 function WorkflowNodesGraphic() {
   return (
-    <div className="w-full h-48 flex items-center justify-center mb-6 relative">
-      <div className="relative z-10 w-20 h-20 bg-zinc-950 rounded-full border border-white/10 shadow-[0_0_40px_rgba(255,255,255,0.05)] flex items-center justify-center">
+    <div className="w-full h-48 flex items-center justify-center mb-6 relative group">
+      <div className="relative z-10 w-20 h-20 bg-zinc-950 rounded-full border border-white/10 shadow-[0_0_40px_rgba(255,255,255,0.05)] flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
         <Sparkles className="w-8 h-8 text-zinc-200" />
       </div>
-      <div className="absolute top-[20%] left-[20%] w-10 h-10 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg"><Mail className="w-5 h-5 text-zinc-500" /></div>
-      <div className="absolute top-[10%] left-[45%] w-10 h-10 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg"><Cpu className="w-5 h-5 text-zinc-500" /></div>
-      <div className="absolute top-[60%] left-[25%] w-12 h-12 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg"><User className="w-6 h-6 text-zinc-500" /></div>
-      <div className="absolute top-[15%] right-[25%] w-8 h-8 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg"><FileText className="w-4 h-4 text-zinc-500" /></div>
-      <div className="absolute top-[30%] right-[10%] w-12 h-12 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg"><span className="text-zinc-500 font-bold font-serif text-lg">X</span></div>
-      <div className="absolute bottom-[20%] right-[30%] w-12 h-12 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg"><span className="text-zinc-500 font-bold font-serif text-xl">N</span></div>
-      <div className="absolute bottom-[25%] left-[55%] w-8 h-8 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg"><Box className="w-4 h-4 text-zinc-500" /></div>
+      <div className="absolute top-[20%] left-[20%] w-10 h-10 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1"><Mail className="w-5 h-5 text-zinc-500" /></div>
+      <div className="absolute top-[10%] left-[45%] w-10 h-10 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-105 group-hover:translate-x-1"><Cpu className="w-5 h-5 text-zinc-500" /></div>
+      <div className="absolute top-[60%] left-[25%] w-12 h-12 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-x-1"><User className="w-6 h-6 text-zinc-500" /></div>
+      <div className="absolute top-[15%] right-[25%] w-8 h-8 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-105 group-hover:translate-y-1"><FileText className="w-4 h-4 text-zinc-500" /></div>
+      <div className="absolute top-[30%] right-[10%] w-12 h-12 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-x-1"><span className="text-zinc-500 font-bold font-serif text-lg">X</span></div>
+      <div className="absolute bottom-[20%] right-[30%] w-12 h-12 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-105 group-hover:-translate-y-1"><span className="text-zinc-500 font-bold font-serif text-xl">N</span></div>
+      <div className="absolute bottom-[25%] left-[55%] w-8 h-8 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:translate-x-1"><Box className="w-4 h-4 text-zinc-500" /></div>
     </div>
   );
 }
@@ -186,6 +186,13 @@ function StrategyNodesGraphic() {
         <svg className="absolute inset-0 w-full h-full text-zinc-800 stroke-current z-0">
           <line x1="35%" y1="35%" x2="70%" y2="70%" strokeWidth="1.5" />
         </svg>
+        <motion.div
+          className="absolute w-2 h-2 bg-zinc-300 rounded-full z-20"
+          initial={{ left: "35%", top: "35%" }}
+          animate={{ left: "70%", top: "70%" }}
+          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+          style={{ transform: "translate(-50%, -50%)" }}
+        />
         <div className="absolute top-[10%] left-[15%] w-16 h-16 rounded-full border border-white/10 flex items-center justify-center bg-zinc-950 shadow-lg z-10">
           <BarChart2 className="w-6 h-6 text-zinc-400" />
         </div>
