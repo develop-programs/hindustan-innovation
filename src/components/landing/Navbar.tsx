@@ -32,10 +32,12 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center">
-          <button type="button" className="flex items-center gap-2 bg-zinc-900/50 backdrop-blur-md border border-white/10 hover:bg-zinc-800/80 text-zinc-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-            <Sparkles className="w-4 h-4 text-zinc-400" />
-            {ctaLabel}
-          </button>
+          <Link href="/contact">
+            <button type="button" className="flex items-center gap-2 bg-zinc-900/50 backdrop-blur-md border border-white/10 hover:bg-zinc-800/80 text-zinc-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+              <Sparkles className="w-4 h-4 text-zinc-400" />
+              {ctaLabel}
+            </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -66,10 +68,12 @@ export function Navbar() {
               </Link>
             )}
           </nav>
-          <button type="button" className="flex items-center justify-center gap-2 bg-white text-black hover:bg-zinc-200 px-4 py-3 rounded-xl text-sm font-semibold transition-colors w-full shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-            <Sparkles className="w-4 h-4" />
-            {ctaLabel}
-          </button>
+          <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+            <button type="button" className="flex items-center justify-center gap-2 bg-white text-black hover:bg-zinc-200 px-4 py-3 rounded-xl text-sm font-semibold transition-colors w-full shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+              <Sparkles className="w-4 h-4" />
+              {ctaLabel}
+            </button>
+          </Link>
         </div>
       )}
     </header>
