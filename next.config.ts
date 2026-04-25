@@ -2,9 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   turbopack: {
-    root: "C:\\Users\\patel\\OneDrive\\Desktop\\hindustan-innovation",
-  },
-  /* config options here */
+    root: "C:\\Users\\HP\\Desktop\\hindustan-innovation",
+  },  /* config options here */
   images: {
     remotePatterns: [
       {

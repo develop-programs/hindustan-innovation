@@ -8,7 +8,12 @@
   },
   "navbar": {
     "navLinks": [
+      "Home",
       "Services",
+      "Porfolio",
+      "About",
+      "Blog",
+      "Career",
       "Contact"
     ],
     "ctaLabel": "Get in Touch"
