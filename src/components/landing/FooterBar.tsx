@@ -1,5 +1,6 @@
 import { Eclipse } from "lucide-react";
 import data from "@/data.json";
+import Image from "next/image";
 
 function FooterSocialIcon({ icon }: { icon: string }) {
   if (icon === "twitter") return (
@@ -38,7 +39,7 @@ export function FooterBar() {
       <div className="flex items-center justify-between max-w-7xl mx-auto mb-6">
         <div className="flex items-center gap-2">
           <div className="bg-zinc-800/80 p-1.5 rounded-full ring-1 ring-white/10">
-            <Eclipse className="w-4 h-4 text-zinc-300" />
+            <Image src="/logo.png" alt="logo" width={20} height={20} />
           </div>
           <span className="text-base font-medium tracking-tight text-zinc-100">{name}</span>
         </div>
