@@ -99,8 +99,13 @@ function WorkflowNodesGraphic() {
 
 function SearchUIGraphic() {
   return (
-    <div className="w-full h-48 flex flex-col items-center justify-center mb-6 relative">
-      <div className="w-full bg-zinc-900/50 rounded-2xl border border-white/5 p-4 shadow-xl">
+    <div className="w-full h-52 flex flex-col items-center justify-center mb-8 mt-2 relative">
+      {/* Main Card (Top) */}
+      <motion.div 
+        animate={{ y: [0, -8, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="relative w-full h-full bg-zinc-900/50 rounded-2xl border-t-2 border-slate-300/50 p-4 shadow-2xl z-20 flex flex-col justify-center"
+      >
         <div className="flex items-center gap-2 bg-zinc-950 border border-white/10 rounded-full px-3 py-2 mb-4">
           <span className="text-[10px] text-zinc-500 flex-1">Research anything...</span>
           <div className="bg-zinc-800 text-zinc-300 text-[10px] px-2 py-0.5 rounded-full font-medium">Search</div>
@@ -119,15 +124,30 @@ function SearchUIGraphic() {
             <ArrowUpRight className="w-3 h-3 text-zinc-600" />
           </div>
         </div>
-      </div>
+      </motion.div>
+
+      {/* Background Card 2 (Lowest) */}
+      <motion.div 
+        animate={{ y: [-24, -40, -24], scale: [0.9, 0.85, 0.9] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute w-full h-full bg-[#0d0d0d] rounded-2xl border-t-2 border-slate-300/50 z-0 opacity-40 shadow-2xl" 
+      />
+
+      {/* Background Card 1 (Middle) */}
+      <motion.div 
+        animate={{ y: [-12, -24, -12], scale: [0.95, 0.92, 0.95] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute w-full h-full bg-[#0d0d0d] rounded-2xl border-t-2 border-slate-300/50 z-10 opacity-70 shadow-2xl" 
+      />
     </div>
   );
 }
 
 function CodeEditorGraphic() {
   return (
-    <div className="w-full h-48 flex items-center justify-center mb-6 relative">
-      <div className="w-full h-full bg-[#0d0d0d] rounded-2xl border border-white/10 shadow-xl overflow-hidden flex flex-col">
+    <div className="w-full h-52 flex flex-col items-center justify-center mb-8 mt-2 relative">
+      {/* Main Card (Top) */}
+      <div className="relative w-full h-full bg-[#0d0d0d] rounded-2xl border-t-2 border-slate-300/50 overflow-hidden flex flex-col z-20">
         <div className="flex items-center justify-between px-4 py-2 bg-zinc-900/40 border-b border-white/5">
           <div className="flex items-center gap-1.5">
             <div className="w-2 h-2 rounded-full bg-zinc-700" />
@@ -148,6 +168,13 @@ function CodeEditorGraphic() {
           <div className="flex mt-2"><span className="text-zinc-600 w-4"></span><span className="pl-4">def evaluate_task(self):</span></div>
         </div>
       </div>
+
+      {/* Background Card 2 (Lowest) */}
+      <div className="absolute w-full h-full bg-[#0d0d0d] rounded-2xl border-t-2 border-slate-300/50 -translate-y-6 scale-90 z-0 opacity-40 shadow-2xl" />
+
+      {/* Background Card 1 (Middle) */}
+      <div className="absolute w-full h-full bg-[#0d0d0d] rounded-2xl border-t-2 border-slate-300/50 -translate-y-3 scale-95 z-10 opacity-70 shadow-2xl" />
+
     </div>
   );
 }

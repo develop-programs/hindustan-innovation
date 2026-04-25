@@ -53,7 +53,7 @@ export function ProcessSection() {
               <TabsTrigger
                 key={s.number}
                 value={s.number}
-                className="flex-1 py-4 rounded-2xl text-sm font-semibold transition-all duration-300 bg-transparent text-zinc-600 hover:bg-white/5 hover:text-zinc-400 data-[state=active]:bg-[#151515] data-[state=active]:text-zinc-200 data-[state=active]:shadow-md data-[state=active]:border data-[state=active]:border-white/5 outline-none"
+                className="flex-1 py-4 rounded-lg text-sm font-semibold transition-all duration-300 bg-transparent text-zinc-600 hover:bg-white/5 hover:text-zinc-400 data-active:border-t-2 data-active:border-white/25"
               >
                 STEP {s.step}
               </TabsTrigger>

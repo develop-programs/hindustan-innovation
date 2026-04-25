@@ -1,0 +1,365 @@
+{
+  "hero": {
+    "pill": "All Services",
+    "heading": "Everything You Need,",
+    "headingItalic": "All in One Place",
+    "subheading": "From Web & App Development to AI, Cloud, and Digital Marketing — end-to-end solutions that power your business forward.",
+    "ctaText": "Explore All Services",
+    "ctaLink": "#categories"
+  },
+  "ctaBanner": {
+    "pill": "Ready to get started?",
+    "heading": "Not sure which service",
+    "headingItalic": "fits you?",
+    "subheading": "Book a free consultation call and our experts will help you choose the right solution for your business goals.",
+    "ctaText": "Book Free Call",
+    "ctaLink": "#contact"
+  },
+  "categories": [
+    {
+      "id": "web-app",
+      "pill": "WEB & APP",
+      "heading": "Build Your Digital",
+      "headingItalic": "Presence",
+      "subheading": "Full-stack websites, mobile apps, and stunning UI/UX designs",
+      "cards": [
+        {
+          "id": "web-dev",
+          "title": "Web Development",
+          "icon": "Globe",
+          "accent": "text-blue-400",
+          "description": "From static sites to complex web apps with admin panels, e-commerce, portfolios and custom solutions.",
+          "items": ["Static Website", "Dynamic + Admin Panel", "E-commerce Store", "Custom Web App", "Portfolio & Landing Page"],
+          "graphic": "tags",
+          "graphicTags": ["Static Website", "E-commerce Store", "Custom Web App"],
+          "colSpan": 3
+        },
+        {
+          "id": "app-dev",
+          "title": "App Development",
+          "icon": "Smartphone",
+          "accent": "text-purple-400",
+          "description": "Native Android & iOS apps, and cross-platform builds with React Native / Flutter.",
+          "items": ["Android App", "iOS App", "React Native / Flutter", "Custom Business Apps"],
+          "graphic": "cluster",
+          "graphicIcons": ["Smartphone", "Globe", "Code2"],
+          "colSpan": 3
+        },
+        {
+          "id": "ui-ux",
+          "title": "UI/UX Design",
+          "icon": "Palette",
+          "accent": "text-pink-400",
+          "description": "Pixel-perfect designs in Figma & Adobe XD — websites, apps and dashboard redesigns.",
+          "items": ["Website UI Design", "Mobile App UI", "Dashboard Design", "Redesign Existing Site"],
+          "graphic": "nodes",
+          "colSpan": 2
+        },
+        {
+          "id": "ecommerce",
+          "title": "E-commerce Solutions",
+          "icon": "ShoppingCart",
+          "accent": "text-green-400",
+          "description": "Complete online stores with payment gateways, cart systems, and product management.",
+          "items": ["Online Store Setup", "Razorpay / Stripe", "Cart & Checkout", "Product Management"],
+          "graphic": "tags",
+          "graphicTags": ["Payment Gateway", "Cart System", "Product Mgmt"],
+          "colSpan": 2
+        },
+        {
+          "id": "software",
+          "title": "Custom Software",
+          "icon": "Code2",
+          "accent": "text-orange-400",
+          "description": "School ERP, CRM, and Inventory systems — tailored to your exact business workflow.",
+          "items": ["School Management", "CRM System", "ERP Solutions", "Inventory Management"],
+          "graphic": "cluster",
+          "graphicIcons": ["Code2", "Settings", "Database", "Layers"],
+          "colSpan": 2
+        }
+      ]
+    },
+    {
+      "id": "marketing",
+      "pill": "MARKETING & SUPPORT",
+      "heading": "Grow Faster,",
+      "headingItalic": "Stay Strong",
+      "subheading": "Digital marketing campaigns and ongoing website maintenance & support",
+      "cards": [
+        {
+          "id": "marketing",
+          "title": "Digital Marketing",
+          "icon": "Megaphone",
+          "accent": "text-yellow-400",
+          "description": "SEO, Social Media, Google Ads and Content Marketing to grow your online audience.",
+          "items": ["SEO Optimization", "Social Media Marketing", "Google Ads", "Content Marketing"],
+          "graphic": "nodes",
+          "colSpan": 4
+        },
+        {
+          "id": "maintenance",
+          "title": "Maintenance & Support",
+          "icon": "Wrench",
+          "accent": "text-cyan-400",
+          "description": "Keep your site fast and secure with ongoing bug fixes, updates and performance tuning.",
+          "items": ["Website Maintenance", "Bug Fixing", "Performance Optimization", "Security Updates"],
+          "graphic": "tags",
+          "graphicTags": ["Bug Fixing", "Performance", "Security Updates"],
+          "colSpan": 2
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "pill": "AI SERVICES",
+      "heading": "Intelligent Solutions,",
+      "headingItalic": "Powered by AI",
+      "subheading": "Chatbots, NLP, machine learning, computer vision and custom AI systems",
+      "cards": [
+        {
+          "id": "chatbot",
+          "title": "AI Chatbot Development",
+          "icon": "Bot",
+          "accent": "text-indigo-400",
+          "description": "Website, WhatsApp & Telegram bots that automate customer support and generate leads.",
+          "items": ["Website Chatbots", "WhatsApp / Telegram Bots", "AI FAQ Bots", "Lead Generation Bots"],
+          "graphic": "cluster",
+          "graphicIcons": ["Bot", "Mail", "Sparkles"],
+          "colSpan": 4
+        },
+        {
+          "id": "nlp",
+          "title": "NLP Services",
+          "icon": "Brain",
+          "accent": "text-violet-400",
+          "description": "Text analysis, sentiment detection, auto-reply systems and language translation.",
+          "items": ["Text Analysis", "Sentiment Analysis", "Auto Reply Systems", "Language Translation"],
+          "graphic": "tags",
+          "graphicTags": ["Sentiment Analysis", "Auto Reply", "Translation"],
+          "colSpan": 2
+        },
+        {
+          "id": "ml",
+          "title": "Machine Learning",
+          "icon": "TrendingUp",
+          "accent": "text-emerald-400",
+          "description": "Prediction systems, recommendation engines (like Amazon/Netflix), and fraud detection.",
+          "items": ["Prediction Systems", "Recommendation Engine", "Fraud Detection"],
+          "graphic": "nodes",
+          "colSpan": 2
+        },
+        {
+          "id": "vision",
+          "title": "Computer Vision",
+          "icon": "Eye",
+          "accent": "text-rose-400",
+          "description": "Image recognition, face detection, OCR and object detection solutions.",
+          "items": ["Image Recognition", "Face Detection", "OCR (Text from Image)", "Object Detection"],
+          "graphic": "cluster",
+          "graphicIcons": ["Eye", "Monitor", "Cpu"],
+          "colSpan": 2
+        },
+        {
+          "id": "custom-ai",
+          "title": "Custom AI Solutions",
+          "icon": "Cpu",
+          "accent": "text-sky-400",
+          "description": "AI dashboards, automation tools, and AI integration into your existing systems.",
+          "items": ["AI-based Dashboards", "Automation Tools", "AI System Integration"],
+          "graphic": "tags",
+          "graphicTags": ["AI Dashboards", "Automation", "Integration"],
+          "colSpan": 2
+        }
+      ]
+    },
+    {
+      "id": "cloud",
+      "pill": "CLOUD COMPUTING",
+      "heading": "Scale Without",
+      "headingItalic": "Limits",
+      "subheading": "AWS, GCP, Azure — hosting, migration, DevOps, security and monitoring",
+      "cards": [
+        {
+          "id": "cloud-host",
+          "title": "Cloud Hosting & Deployment",
+          "icon": "Cloud",
+          "accent": "text-teal-400",
+          "description": "Deploy websites and apps on AWS, Google Cloud or Azure with scalable infrastructure.",
+          "items": ["Website Hosting", "App Deployment", "AWS / GCP / Azure", "Scalable Setup"],
+          "graphic": "nodes",
+          "colSpan": 4
+        },
+        {
+          "id": "devops",
+          "title": "DevOps & CI/CD",
+          "icon": "GitBranch",
+          "accent": "text-lime-400",
+          "description": "Auto deployment pipelines with Git, Docker, Kubernetes and Jenkins.",
+          "items": ["Auto Deployment", "Git Integration", "CI/CD Pipelines", "Docker & Kubernetes"],
+          "graphic": "cluster",
+          "graphicIcons": ["GitBranch", "Server", "Settings"],
+          "colSpan": 2
+        },
+        {
+          "id": "cloud-sec",
+          "title": "Cloud Security",
+          "icon": "Shield",
+          "accent": "text-red-400",
+          "description": "Data encryption, backup systems, firewall setup and access control for your cloud.",
+          "items": ["Data Encryption", "Backup Systems", "Firewall Setup", "Access Control"],
+          "graphic": "tags",
+          "graphicTags": ["Data Encryption", "Firewall", "Access Control"],
+          "colSpan": 2
+        },
+        {
+          "id": "migration",
+          "title": "Cloud Migration",
+          "icon": "Server",
+          "accent": "text-amber-400",
+          "description": "Move from local servers to the cloud — database migration and legacy system upgrades.",
+          "items": ["Local → Cloud Transfer", "Database Migration", "Legacy Upgrade"],
+          "graphic": "nodes",
+          "colSpan": 2
+        },
+        {
+          "id": "cloud-store",
+          "title": "Cloud Storage & Monitoring",
+          "icon": "Database",
+          "accent": "text-fuchsia-400",
+          "description": "Secure file storage, backup & recovery, auto-scaling and server performance monitoring.",
+          "items": ["Secure File Storage", "Backup & Recovery", "Cost Optimization", "Auto Scaling"],
+          "graphic": "cluster",
+          "graphicIcons": ["Database", "Monitor", "BarChart2", "Shield"],
+          "colSpan": 2
+        }
+      ]
+    },
+    {
+      "id": "addons",
+      "pill": "ADVANCED ADD-ONS",
+      "heading": "More Power,",
+      "headingItalic": "More Growth",
+      "subheading": "APIs, cybersecurity, SaaS, analytics, automation, ERP, consulting and more",
+      "cards": [
+        {
+          "id": "api",
+          "title": "API Development & Integration",
+          "icon": "Plug",
+          "accent": "text-blue-300",
+          "description": "Connect Razorpay, Stripe, Twilio and build custom APIs for system-to-system integration.",
+          "items": ["Custom API Dev", "Payment APIs", "SMS / Email APIs", "System Integration"],
+          "graphic": "nodes",
+          "colSpan": 4
+        },
+        {
+          "id": "cyber",
+          "title": "Cybersecurity",
+          "icon": "Lock",
+          "accent": "text-red-300",
+          "description": "Website security audits, vulnerability testing, SSL hardening and data protection.",
+          "items": ["Security Audit", "Vulnerability Testing", "SSL Hardening", "Data Protection"],
+          "graphic": "tags",
+          "graphicTags": ["Security Audit", "SSL Setup", "Data Protection"],
+          "colSpan": 2
+        },
+        {
+          "id": "saas",
+          "title": "SaaS Product Development",
+          "icon": "Package",
+          "accent": "text-violet-300",
+          "description": "Build subscription-based SaaS with multi-user dashboards and role-based access.",
+          "items": ["Subscription Software", "Multi-user Dashboards", "Role-based Access", "CRM / School SaaS"],
+          "graphic": "cluster",
+          "graphicIcons": ["Package", "Settings", "Globe"],
+          "colSpan": 2
+        },
+        {
+          "id": "analytics",
+          "title": "Data Analytics & BI",
+          "icon": "BarChart2",
+          "accent": "text-green-300",
+          "description": "Power BI & Tableau dashboards, real-time analytics and actionable business insights.",
+          "items": ["Data Dashboards", "Reports & Insights", "Real-time Analytics", "Power BI / Tableau"],
+          "graphic": "tags",
+          "graphicTags": ["Data Dashboards", "Real-time Analytics", "Power BI"],
+          "colSpan": 4
+        },
+        {
+          "id": "automation",
+          "title": "Automation Services",
+          "icon": "Zap",
+          "accent": "text-yellow-300",
+          "description": "Workflow, email and CRM automation with intelligent task scheduling.",
+          "items": ["Workflow Automation", "Email Automation", "CRM Automation", "Task Scheduling"],
+          "graphic": "nodes",
+          "colSpan": 2
+        },
+        {
+          "id": "erp",
+          "title": "ERP & CRM Customization",
+          "icon": "Settings",
+          "accent": "text-cyan-300",
+          "description": "Business management software, customer tracking and sales pipeline systems.",
+          "items": ["Business Management", "Customer Tracking", "Sales Pipeline"],
+          "graphic": "cluster",
+          "graphicIcons": ["Settings", "BarChart2", "Plug"],
+          "colSpan": 2
+        },
+        {
+          "id": "consulting",
+          "title": "AI Training & Consulting",
+          "icon": "FlaskConical",
+          "accent": "text-indigo-300",
+          "description": "Help businesses adopt AI — strategy planning, model selection and implementation.",
+          "items": ["AI Strategy Planning", "Model Selection", "Implementation Support"],
+          "graphic": "tags",
+          "graphicTags": ["AI Strategy", "Model Selection", "Consulting"],
+          "colSpan": 2
+        },
+        {
+          "id": "hosting",
+          "title": "Domain, Hosting & Email",
+          "icon": "Mail",
+          "accent": "text-pink-300",
+          "description": "Domain registration, business email setup and hosting management via GoDaddy & Hostinger.",
+          "items": ["Domain Registration", "Business Email", "Hosting Management", "GoDaddy / Hostinger"],
+          "graphic": "cluster",
+          "graphicIcons": ["Mail", "Globe", "Server"],
+          "colSpan": 4
+        },
+        {
+          "id": "backup",
+          "title": "Backup & Disaster Recovery",
+          "icon": "HardDrive",
+          "accent": "text-rose-300",
+          "description": "Data backup systems, recovery planning and cloud restore setup so you never lose data.",
+          "items": ["Data Backup", "Recovery Planning", "Cloud Restore"],
+          "graphic": "nodes",
+          "colSpan": 2
+        },
+        {
+          "id": "perf",
+          "title": "Performance & Testing",
+          "icon": "TrendingUp",
+          "accent": "text-lime-300",
+          "description": "Website speed, database & server tuning — plus manual, automated & performance QA testing.",
+          "items": ["Speed Optimization", "Database Tuning", "Manual Testing", "Automation Testing"],
+          "graphic": "tags",
+          "graphicTags": ["Speed Optimization", "DB Tuning", "QA Testing"],
+          "colSpan": 2
+        },
+        {
+          "id": "it",
+          "title": "IT Consulting & Digital Transformation",
+          "icon": "MapPin",
+          "accent": "text-sky-300",
+          "description": "Take your business offline → online with process digitization and a technology roadmap.",
+          "items": ["Offline → Online", "Process Digitization", "Technology Roadmap"],
+          "graphic": "cluster",
+          "graphicIcons": ["MapPin", "Globe", "Sparkles"],
+          "colSpan": 4
+        }
+      ]
+    }
+  ]
+}

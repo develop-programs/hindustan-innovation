@@ -9,9 +9,6 @@
   "navbar": {
     "navLinks": [
       "Services",
-      "Process",
-      "Pricing",
-      "Blog",
       "Contact"
     ],
     "ctaLabel": "Get in Touch"
@@ -313,6 +310,33 @@
       }
     ],
     "email": "[EMAIL_ADDRESS]"
+  },
+  "contactPage": {
+    "pill": "CONTACT",
+    "heading": "Reach Us",
+    "headingItalic": "Anytime",
+    "subheading": "Have questions or need help? We're here for you",
+    "emailUs": {
+      "title": "Email Us",
+      "description": "Facing technical challenges or product concerns? We're here to assist",
+      "email": "landio@support.com"
+    },
+    "contactSales": {
+      "title": "Contact Sales",
+      "description": "Let's collaborate on custom solutions or discuss product insights",
+      "linkText": "Book a call",
+      "linkHref": "#"
+    },
+    "form": {
+      "heading": "We'd love to help! Let us know how",
+      "fields": {
+        "name": { "label": "Full Name", "placeholder": "Ikta Sollork" },
+        "email": { "label": "Email Address", "placeholder": "landio@support.com" },
+        "subject": { "label": "Subject Of Interest", "placeholder": "Regarding Product" },
+        "message": { "label": "How may we assist you?", "placeholder": "Give us more info.." }
+      },
+      "submitLabel": "Send Your Message"
+    }
   },
   "footer": {
     "navLinks": [
