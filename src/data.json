@@ -2,7 +2,7 @@
   "brand": {
     "name": "Hindustaan Innovation",
     "tagline": "New Gen AI Automation Partner",
-    "email": "info@hundustaan.in",
+    "email": "info@hindustaan.in",
     "copyright": "© 2026 Hindustaan Innovation",
     "madeBy": "Hindustaan Innovation"
   },
@@ -314,7 +314,7 @@
         "icon": "facebook"
       }
     ],
-    "email": "[EMAIL_ADDRESS]"
+    "email": "info@hindustaan.in"
   },
   "contactPage": {
     "pill": "CONTACT",
@@ -324,7 +324,7 @@
     "emailUs": {
       "title": "Email Us",
       "description": "Facing technical challenges or product concerns? We're here to assist",
-      "email": "landio@support.com"
+      "email": "info@hindustaan.in"
     },
     "contactSales": {
       "title": "Contact Sales",
@@ -335,10 +335,22 @@
     "form": {
       "heading": "We'd love to help! Let us know how",
       "fields": {
-        "name": { "label": "Full Name", "placeholder": "Ikta Sollork" },
-        "email": { "label": "Email Address", "placeholder": "landio@support.com" },
-        "subject": { "label": "Subject Of Interest", "placeholder": "Regarding Product" },
-        "message": { "label": "How may we assist you?", "placeholder": "Give us more info.." }
+        "name": {
+          "label": "Full Name",
+          "placeholder": "Ikta Sollork"
+        },
+        "email": {
+          "label": "Email Address",
+          "placeholder": "info@hindustaan.in"
+        },
+        "subject": {
+          "label": "Subject Of Interest",
+          "placeholder": "Regarding Product"
+        },
+        "message": {
+          "label": "How may we assist you?",
+          "placeholder": "Give us more info.."
+        }
       },
       "submitLabel": "Send Your Message"
     }
@@ -377,6 +389,6 @@
     "copyright": "© 2026 Hindustaan Innovation",
     "madeByLabel": "Made with ❤️ by",
     "madeByName": "Hindustaan Innovation",
-    "email": "info@hundustaan.in"
+    "email": "info@hindustaan.in"
   }
 }

@@ -172,16 +172,16 @@ function Card({ card }: { card: ServiceCard }) {
   return (
     <motion.div
       variants={itemVariants}
-      className={`${spanClass} flex flex-col p-8 bg-zinc-950 rounded-3xl border border-white/5 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden relative group hover:border-white/10 transition-all duration-300`}
+      className={`${spanClass} flex flex-col p-8 bg-zinc-950 rounded-3xl border-t-2 border-slate-300/50 outline  outline-slate-800 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden relative group  transition-all duration-300`}
     >
       {/* subtle glow on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl" />
+      <div className="absolute inset-0 bg-linear-to-br from-white/2 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl" />
 
       {renderGraphic()}
 
       {/* Icon + Title */}
       <div className="flex items-center gap-3 mb-3">
-        <div className={`flex-shrink-0 ${card.accent}`}>{card.icon}</div>
+        <div className={`shrink-0 ${card.accent}`}>{card.icon}</div>
         <h3 className="text-xl font-semibold text-zinc-100">{card.title}</h3>
       </div>
 
@@ -191,7 +191,7 @@ function Card({ card }: { card: ServiceCard }) {
       <div className="mt-auto grid grid-cols-2 gap-x-4 gap-y-1.5">
         {card.items.map((item) => (
           <div key={item} className="flex items-center gap-1.5 text-xs text-zinc-500">
-            <Check className={`w-3 h-3 flex-shrink-0 ${card.accent}`} />
+            <Check className={`w-3 h-3 shrink-0 ${card.accent}`} />
             {item}
           </div>
         ))}
@@ -225,7 +225,7 @@ function GroupSection({ group }: { group: Group }) {
         <p className="text-zinc-400 mb-16 text-lg text-center max-w-2xl">{group.subheading}</p>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -238,7 +238,7 @@ function GroupSection({ group }: { group: Group }) {
       </motion.div>
 
       {/* section divider */}
-      <div className="mt-20 w-full h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
+      <div className="mt-20 w-full h-px bg-linear-to-r from-transparent via-white/8 to-transparent" />
     </section>
   );
 }
