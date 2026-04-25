@@ -15,26 +15,15 @@ export function Navbar() {
       </Link>
 
       <nav className="hidden md:flex items-center space-x-1 bg-zinc-900/50 backdrop-blur-md border border-white/5 rounded-full px-1 py-1">
-        {navLinks.map((item) => {
-          const isServices = item.toLowerCase() === "services";
-          return isServices ? (
-            <Link
-              key={item}
-              href="/services"
-              className="px-5 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-white/5 rounded-full transition-all duration-300"
-            >
-              {item}
-            </Link>
-          ) : (
-            <a
-              key={item}
-              href={`${item.toLowerCase()}`}
-              className="px-5 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-white/5 rounded-full transition-all duration-300"
-            >
-              {item}
-            </a>
-          );
-        })}
+        {navLinks.map((item) =>
+          <Link
+            key={item}
+            href={item.toLowerCase() === "home" ? "/" : `/${item.toLowerCase()}`}
+            className="px-5 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-white/5 rounded-full transition-all duration-300"
+          >
+            {item}
+          </Link>
+        )}
       </nav>
 
       <div className="flex items-center">
