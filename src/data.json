@@ -181,49 +181,49 @@
     "headingItalic": "Visionaries",
     "subheading": "Hear from real users who achieved success with our automation",
     "reviews": [
-  {
-    "name": "Rahul Sharma",
-    "role": "Operations Manager at FlowEdge Solutions",
-    "avatar": "https://i.pravatar.cc/150?img=11",
-    "quote": "AI automation ne humare daily operations ko kaafi smooth bana diya. Team ki productivity clearly improve hui hai."
-  },
-  {
-    "name": "Priya Verma",
-    "role": "CTO at BrightTech Labs",
-    "avatar": "https://i.pravatar.cc/150?img=12",
-    "quote": "Unke automation workflows ne humare processes ko completely transform kar diya. Execution bahut clean hai."
-  },
-  {
-    "name": "Amit Patel",
-    "role": "Founder at Nexora Digital",
-    "avatar": "https://i.pravatar.cc/150?img=13",
-    "quote": "Setup fast tha aur results first month me hi visible the. Highly recommended for growing startups."
-  },
-  {
-    "name": "Sneha Gupta",
-    "role": "Marketing Head at ClearGrowth",
-    "avatar": "https://i.pravatar.cc/150?img=14",
-    "quote": "Campaign automation ke baad humari efficiency double ho gayi. Time saving kaafi noticeable hai."
-  },
-  {
-    "name": "Rohit Agarwal",
-    "role": "Analytics Lead at DataCore India",
-    "avatar": "https://i.pravatar.cc/150?img=15",
-    "quote": "Real-time insights aur dashboards ne decision making ko kaafi fast aur accurate bana diya."
-  },
-  {
-    "name": "Neha Singh",
-    "role": "COO at PeakFlow Systems",
-    "avatar": "https://i.pravatar.cc/150?img=16",
-    "quote": "Simple implementation, powerful results. Humare internal workflows ab kaafi optimized hain."
-  }
-],
+      {
+        "name": "Rahul Sharma",
+        "role": "Operations Manager at FlowEdge Solutions",
+        "avatar": "https://randomuser.me/api/portraits/men/75.jpg",
+        "quote": "AI automation has made our daily operations incredibly smooth. The improvement in team productivity is clearly visible."
+      },
+      {
+        "name": "Priya Verma",
+        "role": "CTO at BrightTech Labs",
+        "avatar": "https://randomuser.me/api/portraits/women/68.jpg",
+        "quote": "Their automation workflows have completely transformed our processes. The execution is clean and highly efficient."
+      },
+      {
+        "name": "Amit Patel",
+        "role": "Founder at Nexora Digital",
+        "avatar": "https://randomuser.me/api/portraits/men/77.jpg",
+        "quote": "Quick setup with results visible within the first month itself. Highly recommended for any growing startup."
+      },
+      {
+        "name": "Sneha Gupta",
+        "role": "Marketing Head at ClearGrowth",
+        "avatar": "https://randomuser.me/api/portraits/women/72.jpg",
+        "quote": "Our efficiency doubled after campaign automation. The time saved every week is incredibly noticeable."
+      },
+      {
+        "name": "Rohit Agarwal",
+        "role": "Analytics Lead at DataCore India",
+        "avatar": "https://randomuser.me/api/portraits/men/80.jpg",
+        "quote": "Real-time insights and dashboards have made our decision-making much faster and more accurate than before."
+      },
+      {
+        "name": "Neha Singh",
+        "role": "COO at PeakFlow Systems",
+        "avatar": "https://randomuser.me/api/portraits/women/79.jpg",
+        "quote": "Simple implementation, powerful results. Our internal workflows are now fully optimized and running smoothly."
+      }
+    ],
     "brands": [
-      "Asterisk",
-      "Cooks",
-      "Opal",
-      "Dune",
-      "Oasis"
+      "Startup Clients",
+      "E-commerce Businesses",
+      "Local Enterprises",
+      "Digital Agencies",
+      "SaaS Founders"
     ]
   },
   "successStories": {
@@ -233,28 +233,28 @@
     "subheading": "See how our AI automation has transformed businesses across industries",
     "stories": [
       {
-        "name": "Sarah Jenkins",
-        "role": "CEO at TechCorp",
-        "avatar": "https://i.pravatar.cc/150?img=32",
-        "quote": "Our revenue increased by 30% within the first quarter of implementing their AI agents."
+        "name": "Vikram Malhotra",
+        "role": "CEO at TechNova India",
+        "avatar": "https://i.pravatar.cc/150?img=52",
+        "quote": "Our revenue grew by 30% within the very first quarter. The AI agents have truly been a game changer for us."
       },
       {
-        "name": "Michael Chen",
-        "role": "Founder at StartupX",
-        "avatar": "https://i.pravatar.cc/150?img=33",
-        "quote": "The automation workflows saved our team over 100 hours of manual work every week."
+        "name": "Kavita Joshi",
+        "role": "Founder at SprintUp Ventures",
+        "avatar": "https://i.pravatar.cc/150?img=53",
+        "quote": "The automation workflows helped our team save over 100 hours every week. Efficiency has improved tremendously."
       },
       {
-        "name": "Emma Watson",
-        "role": "Director of Operations at Global Logistics",
-        "avatar": "https://i.pravatar.cc/150?img=34",
-        "quote": "We achieved a 99.9% accuracy rate in data processing thanks to their custom AI solutions."
+        "name": "Arjun Nair",
+        "role": "Director of Operations at IndoLogix",
+        "avatar": "https://i.pravatar.cc/150?img=54",
+        "quote": "Custom AI solutions brought our data processing accuracy to 99.9%. The results have impressed everyone on the team."
       }
     ],
     "metrics": [
-      "10x ROI",
-      "50% Cost Reduction",
-      "24/7 Automation"
+      "3x Productivity Boost",
+      "60% Manual Work Reduced",
+      "24/7 Automated Operations"
     ]
   },
   "faq": {
