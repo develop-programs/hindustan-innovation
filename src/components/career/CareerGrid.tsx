@@ -17,13 +17,31 @@ const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" } 
+  },
+};
+
+const cardHoverVariants: Variants = {
+  rest: { 
+    y: 0, 
+    scale: 1,
+    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)"
+  },
+  hover: { 
+    y: -8, 
+    scale: 1.02,
+    boxShadow: "0 20px 50px rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 255, 255, 0.05)"
+  },
 };
 
 const IconMap: Record<string, React.FC<any>> = {
@@ -112,7 +130,6 @@ interface JobCard {
   graphic: "cluster" | "tags" | "nodes";
   graphicIcons?: React.ReactNode[];
   graphicTags?: string[];
-  colSpan?: number;
 }
 
 interface Department {
@@ -146,13 +163,6 @@ const DEPARTMENTS: Department[] = careersData.departments.map((dept: any) => ({
 
 // ─── Single card ──────────────────────────────────────────────────────────────
 
-const COL_SPAN: Record<number, string> = {
-  2: "md:col-span-2",
-  3: "md:col-span-3",
-  4: "md:col-span-4",
-  6: "md:col-span-6",
-};
-
 function JobCardComponent({ card }: { card: JobCard }) {
   const renderGraphic = () => {
     if (card.graphic === "tags" && card.graphicTags)
@@ -167,36 +177,61 @@ function JobCardComponent({ card }: { card: JobCard }) {
     );
   };
 
-  const spanClass = COL_SPAN[card.colSpan ?? 2] ?? "md:col-span-2";
-
   return (
     <motion.div
       variants={itemVariants}
-      className={`${spanClass} flex flex-col p-8 bg-zinc-950 rounded-3xl border-t-2 border-slate-300/50 outline outline-slate-800 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden relative group transition-all duration-300`}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
+      whileHover="hover"
+      whileTap={{ scale: 0.98 }}
+      custom={cardHoverVariants}
+      className="flex flex-col p-8 bg-zinc-950 rounded-2xl border border-white/10 overflow-hidden relative group"
     >
-      <div className="absolute inset-0 bg-linear-to-br from-white/2 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl" />
+      {/* Animated border glow on hover */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileHover={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
+        className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/5 to-transparent pointer-events-none"
+      />
 
-      {renderGraphic()}
+      {/* Inner glow effect */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileHover={{ opacity: 0.5 }}
+        transition={{ duration: 0.3 }}
+        className="absolute -inset-px rounded-2xl bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10 pointer-events-none blur-sm"
+      />
 
-      <div className="flex items-center gap-3 mb-3">
-        <div className={`shrink-0 ${card.accent}`}>{card.icon}</div>
-        <h3 className="text-xl font-semibold text-zinc-100">{card.title}</h3>
+      <div className="relative z-10">
+        {renderGraphic()}
+
+        <div className="flex items-center gap-3 mb-3">
+          <div className={`shrink-0 ${card.accent}`}>{card.icon}</div>
+          <h3 className="text-lg font-semibold text-zinc-100">{card.title}</h3>
+        </div>
+
+        <p className="text-zinc-400 text-sm leading-relaxed mb-5">{card.description}</p>
+
+        <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 mb-6">
+          {card.items.map((item) => (
+            <div key={item} className="flex items-center gap-1.5 text-xs text-zinc-500">
+              <Check className={`w-3 h-3 shrink-0 ${card.accent}`} />
+              {item}
+            </div>
+          ))}
+        </div>
+
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.2 }}
+        >
+          <Link href={`/career/${card.id}`} className="inline-flex items-center justify-center w-full gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors">
+            View Details <ArrowUpRight className="w-4 h-4" />
+          </Link>
+        </motion.div>
       </div>
-
-      <p className="text-zinc-400 text-sm leading-relaxed mb-5">{card.description}</p>
-
-      <div className="mt-auto grid grid-cols-2 gap-x-4 gap-y-1.5 mb-6">
-        {card.items.map((item) => (
-          <div key={item} className="flex items-center gap-1.5 text-xs text-zinc-500">
-            <Check className={`w-3 h-3 shrink-0 ${card.accent}`} />
-            {item}
-          </div>
-        ))}
-      </div>
-
-      <Link href={`/career/${card.id}`} className="inline-flex items-center justify-center w-full gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors mt-auto">
-        View Details <ArrowUpRight className="w-4 h-4" />
-      </Link>
     </motion.div>
   );
 }
@@ -230,7 +265,7 @@ function DepartmentSection({ dept }: { dept: Department }) {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
-        className="grid grid-cols-1 md:grid-cols-6 gap-6 w-full"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
       >
         {dept.jobs.map((job) => (
           <JobCardComponent key={job.id} card={job} />
