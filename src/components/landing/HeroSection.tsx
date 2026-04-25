@@ -28,14 +28,14 @@ export function HeroSection() {
   const { pill, headingLine1, headingLine2, headingItalic, subheading, ctaLabel } = data.hero;
 
   return (
-    <div className="relative min-h-dvh flex flex-col overflow-hidden">
+    <div className="relative min-h-dvh flex flex-col overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent">
       <Navbar />
       <BackgroundEffects />
       <motion.main
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 pt-16 md:pt-20 pb-10 md:pb-0 w-full max-w-5xl mx-auto mb-16 md:mb-32 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent"
+        className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 pt-16 md:pt-20 pb-10 md:pb-0 w-full max-w-5xl mx-auto mb-16 md:mb-32"
       >
         <div className="grid gap-6 md:gap-8 justify-items-center w-full">
           {/* Central Icon */}
