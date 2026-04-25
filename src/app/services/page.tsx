@@ -18,8 +18,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <div className="relative min-h-screen flex flex-col text-zinc-50 overflow-hidden">
-      <BackgroundEffects />
-      <Navbar />
+
       <ServicesHero />
       <ServicesCategoryGrid />
       <ServicesCtaBanner />
