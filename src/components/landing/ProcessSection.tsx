@@ -45,7 +45,7 @@ export function ProcessSection() {
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
         variants={itemVariants}
-        className="w-full bg-[#0a0a0a] border border-white/5 rounded-[2rem] p-6 md:p-10 shadow-[0_0_50px_rgba(0,0,0,0.5)]"
+        className="w-full bg-black border-t-2 border-white/25 outline outline-white/10 rounded-[2rem] p-6 md:p-10"
       >
         <Tabs defaultValue={steps[0].number} className="w-full">
           <TabsList className="flex items-center gap-4 mb-16 bg-transparent p-0 w-full h-auto">

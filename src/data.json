@@ -224,6 +224,70 @@
       "Oasis"
     ]
   },
+  "successStories": {
+    "pill": "SUCCESS STORIES",
+    "heading": "Proven",
+    "headingItalic": "Results",
+    "subheading": "See how our AI automation has transformed businesses across industries",
+    "stories": [
+      {
+        "name": "Sarah Jenkins",
+        "role": "CEO at TechCorp",
+        "avatar": "https://i.pravatar.cc/150?img=32",
+        "quote": "Our revenue increased by 30% within the first quarter of implementing their AI agents."
+      },
+      {
+        "name": "Michael Chen",
+        "role": "Founder at StartupX",
+        "avatar": "https://i.pravatar.cc/150?img=33",
+        "quote": "The automation workflows saved our team over 100 hours of manual work every week."
+      },
+      {
+        "name": "Emma Watson",
+        "role": "Director of Operations at Global Logistics",
+        "avatar": "https://i.pravatar.cc/150?img=34",
+        "quote": "We achieved a 99.9% accuracy rate in data processing thanks to their custom AI solutions."
+      }
+    ],
+    "metrics": [
+      "10x ROI",
+      "50% Cost Reduction",
+      "24/7 Automation"
+    ]
+  },
+  "faq": {
+    "pill": "FAQ'S",
+    "heading": "Frequently Asked",
+    "headingItalic": "Questions",
+    "subheading": "Find quick answers to the most common support questions",
+    "contactBox": {
+      "title": "Still Have Questions?",
+      "text": "Still have questions? Feel free to get in touch with us today!",
+      "buttonLabel": "Ask A Question"
+    },
+    "questions": [
+      {
+        "question": "What types of processes can you automate?",
+        "answer": "We specialize in automating repetitive workflows across operations, marketing, sales, and customer support using AI and custom logic."
+      },
+      {
+        "question": "Do I need technical knowledge to use your service?",
+        "answer": "Not at all. We handle the technical implementation from end to end, providing you with simple, ready-to-use interfaces."
+      },
+      {
+        "question": "Can you integrate with our existing tools?",
+        "answer": "Yes, we integrate seamlessly with most popular CRMs, marketing platforms, and operational tools through APIs and webhooks."
+      },
+      {
+        "question": "How long does implementation take?",
+        "answer": "Depending on complexity, typical implementations range from 2 to 6 weeks, including testing and team training."
+      },
+      {
+        "question": "Is your AI secure and compliant?",
+        "answer": "Absolutely. Security is our top priority. We use enterprise-grade encryption and adhere strictly to industry data compliance standards."
+      }
+    ]
+  },
   "cta": {
     "dividerLabel": "Reach out anytime",
     "heading": "Ready to Automate Smarter?",

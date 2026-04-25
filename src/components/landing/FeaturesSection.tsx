@@ -67,7 +67,7 @@ export function FeaturesSection() {
               key={card.title}
               className="flex flex-col items-center px-6 py-12 bg-black rounded-3xl border-t-2 border-white/25 outline outline-white/10 shadow-[0_0_30px_rgba(0,0,0,0.5)] group transition-colors space-y-12"
             >
-              <div className="p-4 bg-[#151515] rounded-xl border border-white/5 flex items-center justify-center shadow-inner relative group-hover:scale-110 transition-all duration-500 flex items-center gap-6">
+              <div className="p-4 bg-[#151515] rounded-xl border border-white/5 flex items-center justify-center shadow-inner relative group-hover:scale-110 transition-all duration-500 gap-6">
                 <div className="flex items-center justify-center w-1/2 h-full">
                   {Icon1 && <Icon1 className="w-5 h-5 text-zinc-400 group-hover:text-zinc-200 transition-colors" />}
                 </div>

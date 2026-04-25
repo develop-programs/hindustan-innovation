@@ -1,0 +1,84 @@
+"use client";
+
+import { motion, type Variants } from "motion/react";
+import data from "@/data.json";
+
+const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+        },
+    },
+};
+
+const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+export default function SuccessStories() {
+    const successStories = data.successStories;
+    return (
+        <section className="relative z-10 flex flex-col items-center justify-center px-4 py-20 w-full max-w-6xl
+      bg-radial mx-auto mt-10 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent overflow-hidden" id="success-stories">
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.2 }}
+                variants={itemVariants}
+                className="flex flex-col items-center text-center w-full"
+            >
+                <div className="flex items-center gap-2 mb-6 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
+                    <span className="text-zinc-300 text-xs">★</span>
+                    <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">{successStories.pill}</span>
+                </div>
+
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100 mb-4 text-center">
+                    {successStories.heading} <span className="font-serif italic font-light text-zinc-300">{successStories.headingItalic}</span>
+                </h2>
+                <p className="text-zinc-400 mb-14 text-base text-center max-w-xl">{successStories.subheading}</p>
+            </motion.div>
+
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.2 }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-16"
+            >
+                {successStories.stories.map((story) => (
+                    <motion.div variants={itemVariants} key={story.name} className="flex flex-col p-6 bg-black rounded-2xl border-t-2 border-white/25 outline outline-white/10 hover:border-white/10 transition-colors">
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="w-9 h-9 rounded-full bg-zinc-700 border border-white/10 overflow-hidden shrink-0">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img src={story.avatar} alt={story.name} className="w-full h-full object-cover" />
+                            </div>
+                            <div>
+                                <div className="text-xs font-semibold text-zinc-100">{story.name}</div>
+                                <div className="text-[10px] text-zinc-500">{story.role}</div>
+                            </div>
+                        </div>
+                        <p className="text-zinc-400 text-xs leading-relaxed">&ldquo;{story.quote}&rdquo;</p>
+                    </motion.div>
+                ))}
+            </motion.div>
+
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.2 }}
+                variants={itemVariants}
+                className="flex flex-wrap items-center justify-center gap-8 md:gap-12 w-full border-t border-white/5 pt-10"
+            >
+                {successStories.metrics.map((metric, i) => (
+                    <span key={metric} className={`text-zinc-500 font-semibold tracking-wide text-base hover:text-zinc-300 transition-colors cursor-pointer ${i % 2 !== 0 ? "underline underline-offset-4" : ""}`}>
+                        {metric}
+                    </span>
+                ))}
+            </motion.div>
+            <div className="absolute mx-auto -bottom-150 size-200 rounded-full bg-slate-500/10 blur-3xl" />
+        </section>
+    )
+}

@@ -162,7 +162,7 @@ function StrategyNodesGraphic() {
         <div className="absolute top-[10%] left-[15%] w-16 h-16 rounded-full border border-white/10 flex items-center justify-center bg-zinc-950 shadow-lg z-10">
           <BarChart2 className="w-6 h-6 text-zinc-400" />
         </div>
-        <div className="absolute bottom-[10%] right-[10%] w-20 h-20 rounded-full border border-white/10 flex items-center justify-center bg-zinc-950 shadow-lg z-10 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+        <div className="absolute bottom-[10%] right-[10%] w-20 h-20 rounded-full border border-white/10 flex items-center justify-center bg-zinc-950 shadow-lg z-10">
           <Sparkles className="w-6 h-6 text-zinc-200" />
         </div>
         <div className="absolute bottom-[35%] left-[25%] w-6 h-6 rounded-full border border-white/5 z-10" />
@@ -213,7 +213,7 @@ export function ServicesSection() {
           <motion.div
             variants={itemVariants}
             key={card.title}
-            className={`${"colSpan" in card && card.colSpan === 2 ? "md:col-span-2" : "md:col-span-1"} flex flex-col p-8 bg-zinc-950 rounded-3xl border border-white/5 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden relative group`}
+            className={`${"colSpan" in card && card.colSpan === 2 ? "md:col-span-2" : "md:col-span-1"} flex flex-col p-8 bg-black rounded-3xl border-t-2 border-white/25 outline outline-white/10 overflow-hidden relative group`}
           >
             {GRAPHICS[card.graphic]}
             <h3 className="text-xl font-semibold text-zinc-100 mb-3">{card.title}</h3>

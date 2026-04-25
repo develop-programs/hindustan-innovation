@@ -1,17 +1,25 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    root: "C:\\Users\\patel\\OneDrive\\Desktop\\hindustan-innovation",
+  },
   /* config options here */
   images: {
-    domains: ["framerusercontent.com", "images.unsplash.com", "plus.unsplash.com"],
-    // remotePatterns: [
-    //   {
-    //     protocol: "https",
-    //     hostname: "**",
-    //     pathname: "**",
-    //     port: "**",
-    //   },
-    // ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "framerusercontent.com",
+        // pathname: "**",
+        // port: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        // pathname: "**",
+        // port: "**",
+      },
+    ],
   },
 };
 

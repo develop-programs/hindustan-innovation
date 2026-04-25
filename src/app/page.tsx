@@ -9,12 +9,14 @@ import { ProcessSection } from "@/components/landing/ProcessSection";
 import { IntegrationsSection } from "@/components/landing/IntegrationsSection";
 import { CtaFooter } from "@/components/landing/CtaFooter";
 import { FooterBar } from "@/components/landing/FooterBar";
+import Testimonial from "@/components/landing/Testimonial";
+import SuccessStories from "@/components/landing/SuccessStories";
+import FaqSection from "@/components/landing/FaqSection";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen flex flex-col text-zinc-50 overflow-hidden">
-      <BackgroundEffects />
-      <Navbar />
+
       <HeroSection />
       <QuoteSection />
       <BenefitsSection />
@@ -22,6 +24,9 @@ export default function Home() {
       <FeaturesSection />
       <ProcessSection />
       <IntegrationsSection />
+      <Testimonial />
+      <SuccessStories />
+      <FaqSection />
       <CtaFooter />
       <FooterBar />
     </div>

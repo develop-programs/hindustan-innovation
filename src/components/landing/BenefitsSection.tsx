@@ -72,7 +72,7 @@ export function BenefitsSection() {
   const { pill, heading, headingItalic, subheading, cards } = data.benefits;
 
   return (
-    <section className="relative z-10 flex flex-col items-center justify-center px-4 py-20 w-full max-w-6xl mx-auto">
+    <section className="relative z-10 flex flex-col items-center justify-center px-4 py-20 w-full max-w-6xl mx-auto overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -103,7 +103,7 @@ export function BenefitsSection() {
           <motion.div
             variants={itemVariants}
             key={card.title}
-            className="flex flex-col items-center p-8 bg-zinc-950 rounded-3xl border border-white/5 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden relative group"
+            className="flex flex-col items-center p-8 bg-black rounded-3xl border-t-2 border-white/25 outline outline-white/10 overflow-hidden relative group"
           >
             <div className="w-full h-48 flex items-center justify-center mb-6 relative">
               {GRAPHICS[i]}
@@ -113,6 +113,7 @@ export function BenefitsSection() {
           </motion.div>
         ))}
       </motion.div>
+      <div className="absolute mx-auto -bottom-150 size-200 rounded-full bg-slate-500/10 blur-3xl" />
     </section>
   );
 }

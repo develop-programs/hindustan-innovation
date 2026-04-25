@@ -35,7 +35,7 @@ export function QuoteSection() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.2 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="relative z-10 flex flex-col items-center justify-center px-4 py-24 w-full max-w-4xl mx-auto text-center mt-10"
+      className="relative z-10 flex flex-col items-center justify-center px-4 py-24 w-full max-w-4xl mx-auto text-center mt-10 overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent"
     >
       {/* Pill */}
       <div className="flex items-center gap-2 mb-10 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
@@ -58,6 +58,7 @@ export function QuoteSection() {
         </div>
         <span className="text-sm font-medium text-zinc-200">{authorRole}</span>
       </div>
+       <div className="absolute mx-auto -bottom-150 size-200 rounded-full bg-slate-500/10 blur-3xl" />
     </motion.section>
   );
 }
