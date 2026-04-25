@@ -1,116 +1,107 @@
 "use client";
-import { useState } from "react";
-import { Activity, TrendingUp, Zap, Landmark, ShoppingCart } from "lucide-react";
+
+import { motion, type Variants } from "motion/react";
+import { Activity } from "lucide-react";
 import data from "@/data.json";
+import Image from "next/image";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const IMAGE_MAP: Record<number, string> = {
+  1: "https://framerusercontent.com/images/iWjIPE13Flu0JP6l05DPEJQ.png?width=1602&height=1048",
+  2: "https://framerusercontent.com/images/NlShinj3SRLiU2GpzFKbH8loPs.png?width=1808&height=1124",
+  3: "https://framerusercontent.com/images/T5LD7i0AQslhhwPvWrkU4ENnc.png?width=1536&height=1011",
+};
 
 export function ProcessSection() {
-  const [activeStep, setActiveStep] = useState(0);
   const { pill, heading, headingItalic, subheading, steps } = data.process;
-  const current = steps[activeStep];
 
   return (
     <section className="relative z-10 flex flex-col items-center justify-center px-4 py-20 w-full max-w-6xl mx-auto mt-10" id="process">
-      <div className="flex items-center gap-2 mb-6 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
-        <Activity className="w-4 h-4 text-zinc-300" />
-        <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">{pill}</span>
-      </div>
-
-      <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100 mb-4 text-center">
-        {heading} <span className="font-serif italic font-light text-zinc-300">{headingItalic}</span>
-      </h2>
-      <p className="text-zinc-400 mb-16 text-lg text-center max-w-2xl">{subheading}</p>
-
-      <div className="w-full bg-[#0a0a0a] border border-white/5 rounded-[2rem] p-6 md:p-10 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-        {/* Step Navigation */}
-        <div className="flex items-center gap-4 mb-16">
-          {steps.map((s, i) => (
-            <button
-              key={s.step}
-              onClick={() => setActiveStep(i)}
-              className={`flex-1 py-4 rounded-2xl text-sm font-semibold transition-all duration-300 ${
-                activeStep === i
-                  ? "bg-[#151515] text-zinc-200 shadow-md border border-white/5"
-                  : "bg-transparent text-zinc-600 hover:bg-white/5 hover:text-zinc-400"
-              }`}
-            >
-              STEP {s.step}
-            </button>
-          ))}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={itemVariants}
+        className="flex flex-col items-center text-center w-full"
+      >
+        <div className="flex items-center gap-2 mb-6 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
+          <Activity className="w-4 h-4 text-zinc-300" />
+          <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">{pill}</span>
         </div>
 
-        {/* Content */}
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
-          {/* Dashboard Mockup */}
-          <div className="flex-1 w-full relative min-h-[350px] flex items-center justify-center">
-            <div className="absolute left-0 top-0 w-[85%] bg-[#0f0f0f] border border-white/5 rounded-2xl p-5 shadow-2xl flex flex-col gap-4">
-              <div className="flex gap-4">
-                <div className="flex-1 bg-[#151515] border border-white/5 rounded-xl p-3">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-[10px] text-zinc-500">Customers</span>
-                    <span className="text-[8px] bg-zinc-800 text-zinc-300 px-1.5 py-0.5 rounded">+10.5%</span>
-                  </div>
-                  <div className="text-lg font-semibold text-zinc-200 mb-2">-32%</div>
-                  <svg viewBox="0 0 100 30" className="w-full h-8 overflow-visible" preserveAspectRatio="none">
-                    <path d="M0,20 Q10,15 20,25 T40,15 T60,20 T80,10 T100,15" fill="none" stroke="#52525b" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
-                </div>
-                <div className="flex-1 bg-[#151515] border border-white/5 rounded-xl p-3">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-[10px] text-zinc-500">Debt Management</span>
-                    <span className="text-[8px] bg-zinc-800 text-zinc-300 px-1.5 py-0.5 rounded">-10.5%</span>
-                  </div>
-                  <div className="text-lg font-semibold text-zinc-200 mb-2">-54%</div>
-                  <svg viewBox="0 0 100 30" className="w-full h-8 overflow-visible" preserveAspectRatio="none">
-                    <path d="M0,15 Q10,25 20,15 T40,25 T60,20 T80,25 T100,15" fill="none" stroke="#52525b" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
-                </div>
-              </div>
-              <div className="bg-[#151515] border border-white/5 rounded-xl p-4 flex justify-between items-center">
-                <div>
-                  <div className="text-[10px] text-zinc-500 mb-1">Sales</div>
-                  <div className="text-xl font-bold text-zinc-200">$103,428 <span className="text-[10px] text-zinc-500 font-normal">/ month</span></div>
-                </div>
-                <div className="w-10 h-10 bg-zinc-800/50 rounded-lg flex items-center justify-center">
-                  <ShoppingCart className="w-5 h-5 text-zinc-400" />
-                </div>
-              </div>
-            </div>
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100 mb-4 text-center">
+          {heading} <span className="font-serif italic font-light text-zinc-300">{headingItalic}</span>
+        </h2>
+        <p className="text-zinc-400 mb-16 text-lg text-center max-w-2xl">{subheading}</p>
+      </motion.div>
 
-            <div className="absolute right-0 bottom-[-20px] w-[75%] bg-[#121212] border border-white/10 rounded-2xl p-5 shadow-[0_20px_40px_rgba(0,0,0,0.8)] z-10">
-              <div className="text-xs font-medium text-zinc-400 mb-4">Module Systems</div>
-              <div className="flex flex-col gap-4">
-                {[
-                  { Icon: TrendingUp, label: "Marketing & ads", score: 82 },
-                  { Icon: Zap, label: "AI Automation", score: 14 },
-                  { Icon: Landmark, label: "Money & Finance", score: 44 },
-                ].map(({ Icon, label, score }) => (
-                  <div key={label} className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-zinc-800/80 rounded-md flex items-center justify-center shrink-0">
-                      <Icon className="w-4 h-4 text-zinc-300" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex justify-between items-center mb-1.5">
-                        <span className="text-[10px] text-zinc-300">{label}</span>
-                        <span className="text-[10px] text-zinc-500">{score}%</span>
-                      </div>
-                      <div className="w-full h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-                        <div className="h-full bg-zinc-400 rounded-full" style={{ width: `${score}%` }} />
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={itemVariants}
+        className="w-full bg-[#0a0a0a] border border-white/5 rounded-[2rem] p-6 md:p-10 shadow-[0_0_50px_rgba(0,0,0,0.5)]"
+      >
+        <Tabs defaultValue={steps[0].number} className="w-full">
+          <TabsList className="flex items-center gap-4 mb-16 bg-transparent p-0 w-full h-auto">
+            {steps.map((s) => (
+              <TabsTrigger
+                key={s.number}
+                value={s.number}
+                className="flex-1 py-4 rounded-2xl text-sm font-semibold transition-all duration-300 bg-transparent text-zinc-600 hover:bg-white/5 hover:text-zinc-400 data-[state=active]:bg-[#151515] data-[state=active]:text-zinc-200 data-[state=active]:shadow-md data-[state=active]:border data-[state=active]:border-white/5 outline-none"
+              >
+                STEP {s.step}
+              </TabsTrigger>
+            ))}
+          </TabsList>
 
-          {/* Text */}
-          <div className="flex-1 max-w-md">
-            <div className="text-zinc-600 font-serif italic text-xl mb-2 border-b border-zinc-800 pb-4 inline-block">{current.number}</div>
-            <h3 className="text-2xl md:text-3xl font-bold text-zinc-100 mb-4 mt-4">{current.title}</h3>
-            <p className="text-zinc-400 leading-relaxed text-sm md:text-base">{current.description}</p>
+          <div className="relative" style={{ perspective: "1000px" }}>
+            {steps.map((s) => (
+              <TabsContent key={s.number} value={s.number} className="mt-0 w-full outline-none data-[state=inactive]:hidden">
+                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+                  {/* Dashboard Image */}
+                  <div className="flex-1 w-full relative h-56 lg:h-110 flex items-center justify-center overflow-hidden">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95, rotateY: 5, y: 20 }}
+                      animate={{ opacity: 1, scale: 1, rotateY: 0, y: 0 }}
+                      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                      className="relative w-full h-full overflow-hidden"
+                    >
+                      <Image
+                        src={IMAGE_MAP[s.step]}
+                        alt={s.title}
+                        className="w-full h-full object-contain object-center"
+                        width={1920}
+                        height={1080}
+                        priority={s.step === 1}
+                        decoding="async"
+                      />
+                    </motion.div>
+                  </div>
+
+                  {/* Text */}
+                  <div className="flex-1 max-w-md">
+                    <motion.div
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                      <div className="text-zinc-600 font-serif italic text-xl mb-2 border-b border-zinc-800 pb-4 inline-block">{s.number}</div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-zinc-100 mb-4 mt-4">{s.title}</h3>
+                      <p className="text-zinc-400 leading-relaxed text-sm md:text-base">{s.description}</p>
+                    </motion.div>
+                  </div>
+                </div>
+              </TabsContent>
+            ))}
           </div>
-        </div>
-      </div>
+        </Tabs>
+      </motion.div>
     </section>
   );
 }

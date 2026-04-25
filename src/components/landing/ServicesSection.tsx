@@ -1,23 +1,81 @@
+"use client";
+
+import { motion, type Variants } from "motion/react";
 import { Layers, Scissors, Check, RotateCcw, User, Mail, Cpu, FileText, Box, Blocks, Smartphone, Target, Search, Code2, BarChart2, Sparkles, ArrowUpRight } from "lucide-react";
 import data from "@/data.json";
+import { AnimatedList } from "../ui/animated-list";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 function TaskListGraphic() {
+  const tasks = [
+    {
+      id: "task-1",
+      name: "Social media post",
+      icon: <Scissors className="w-4 h-4 text-zinc-400" />,
+      status: <Check className="w-4 h-4 text-emerald-500" />,
+    },
+    {
+      id: "task-2",
+      name: "Employee Tracking",
+      icon: <User className="w-4 h-4 text-zinc-400" />,
+      status: <RotateCcw className="w-4 h-4 text-blue-500" />,
+    },
+    {
+      id: "task-3",
+      name: "Client Onboarding",
+      icon: <Mail className="w-4 h-4 text-zinc-400" />,
+      status: <Check className="w-4 h-4 text-emerald-500" />,
+    },
+    {
+      id: "task-4",
+      name: "Data Analysis",
+      icon: <BarChart2 className="w-4 h-4 text-zinc-400" />,
+      status: <Check className="w-4 h-4 text-emerald-500" />,
+    },
+    {
+      id: "task-5",
+      name: "System Update",
+      icon: <Cpu className="w-4 h-4 text-zinc-400" />,
+      status: <RotateCcw className="w-4 h-4 text-blue-500" />,
+    },
+    {
+      id: "task-6",
+      name: "Inventory Check",
+      icon: <Box className="w-4 h-4 text-zinc-400" />,
+      status: <Check className="w-4 h-4 text-emerald-500" />,
+    },
+  ];
+
   return (
-    <div className="w-full h-48 flex flex-col items-center justify-center gap-4 mb-6 relative">
-      <div className="flex items-center justify-between w-[90%] bg-zinc-900 border border-white/5 rounded-xl p-3 shadow-lg">
-        <div className="flex items-center gap-3 text-zinc-300">
-          <Scissors className="w-4 h-4 text-zinc-500" />
-          <span className="text-xs font-medium">Social media post</span>
-        </div>
-        <Check className="w-4 h-4 text-zinc-500" />
-      </div>
-      <div className="flex items-center justify-between w-[100%] bg-zinc-900/80 border border-white/5 rounded-xl p-3 shadow-lg">
-        <div className="flex items-center gap-3 text-zinc-300">
-          <User className="w-4 h-4 text-zinc-500" />
-          <span className="text-xs font-medium">Employee Tracking</span>
-        </div>
-        <RotateCcw className="w-4 h-4 text-zinc-500" />
-      </div>
+    <div className="w-full h-48 flex flex-col mb-6 relative overflow-hidden mask-[linear-gradient(to_bottom,white_40%,transparent_100%)]">
+      <AnimatedList delay={1500} className="w-full">
+        {tasks.map((task) => (
+          <div
+            key={task.id}
+            className="flex items-center justify-between w-full bg-zinc-900 border border-white/5 rounded-xl p-3 shadow-lg"
+          >
+            <div className="flex items-center gap-3 text-zinc-300">
+              {task.icon}
+              <span className="text-xs font-medium">{task.name}</span>
+            </div>
+            {task.status}
+          </div>
+        ))}
+      </AnimatedList>
     </div>
   );
 }
@@ -126,28 +184,43 @@ export function ServicesSection() {
 
   return (
     <section className="relative z-10 flex flex-col items-center justify-center px-4 py-20 w-full max-w-6xl mx-auto" id="services">
-      <div className="flex items-center gap-2 mb-6 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
-        <Layers className="w-4 h-4 text-zinc-300" />
-        <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">{pill}</span>
-      </div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={itemVariants}
+        className="flex flex-col items-center text-center w-full"
+      >
+        <div className="flex items-center gap-2 mb-6 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
+          <Layers className="w-4 h-4 text-zinc-300" />
+          <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">{pill}</span>
+        </div>
 
-      <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100 mb-4 text-center">
-        {heading} <span className="font-serif italic font-light text-zinc-300">{headingItalic}</span>
-      </h2>
-      <p className="text-zinc-400 mb-16 text-lg text-center max-w-2xl">{subheading}</p>
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100 mb-4 text-center">
+          {heading} <span className="font-serif italic font-light text-zinc-300">{headingItalic}</span>
+        </h2>
+        <p className="text-zinc-400 mb-16 text-lg text-center max-w-2xl">{subheading}</p>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full"
+      >
         {cards.map((card) => (
-          <div
+          <motion.div
+            variants={itemVariants}
             key={card.title}
             className={`${"colSpan" in card && card.colSpan === 2 ? "md:col-span-2" : "md:col-span-1"} flex flex-col p-8 bg-zinc-950 rounded-3xl border border-white/5 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden relative group`}
           >
             {GRAPHICS[card.graphic]}
             <h3 className="text-xl font-semibold text-zinc-100 mb-3">{card.title}</h3>
             <p className="text-zinc-400 text-sm leading-relaxed max-w-lg">{card.description}</p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

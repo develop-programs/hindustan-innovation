@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import { Star } from "lucide-react";
 import data from "@/data.json";
 
@@ -27,7 +30,13 @@ export function QuoteSection() {
   const { pill, text, authorRole, authorAvatar } = data.quote;
 
   return (
-    <section className="relative z-10 flex flex-col items-center justify-center px-4 py-24 w-full max-w-4xl mx-auto text-center mt-10">
+    <motion.section
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative z-10 flex flex-col items-center justify-center px-4 py-24 w-full max-w-4xl mx-auto text-center mt-10"
+    >
       {/* Pill */}
       <div className="flex items-center gap-2 mb-10 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
         <Star className="w-4 h-4 text-zinc-200 fill-zinc-200" />
@@ -49,6 +58,6 @@ export function QuoteSection() {
         </div>
         <span className="text-sm font-medium text-zinc-200">{authorRole}</span>
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -1,45 +1,68 @@
+"use client";
+
+import { motion, type Variants } from "motion/react";
 import { ArrowUpRight, Eclipse } from "lucide-react";
 import data from "@/data.json";
 import Image from "next/image";
 import { SparklesCore } from "../ui/sparkles";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
 export function HeroSection() {
   const { pill, headingLine1, headingLine2, headingItalic, subheading, ctaLabel } = data.hero;
 
   return (
-    <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 w-full max-w-5xl mx-auto mb-32">
+    <motion.main
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 w-full max-w-5xl mx-auto mb-32"
+    >
       {/* Central Icon */}
-      <div className="relative mb-12 animate-fade-in-up flex items-center ">
+      <motion.div variants={itemVariants} className="relative mb-12 flex items-center ">
         <div className="absolute inset-0 rounded-full" />
         <Image src="/logo.png" alt="Logo" width={100} height={100} decoding="async" loading="lazy" fetchPriority="high" className="size-24" />
         <div className="text-2xl w-44 font-bold tracking-none  text-zinc-100 uppercase">{data.brand.name}</div>
-      </div>
+      </motion.div>
 
       {/* Pill */}
-      <div className="flex items-center gap-2 mb-8 animate-fade-in-up" style={{ animationDelay: "100ms" }}>
+      <motion.div variants={itemVariants} className="flex items-center gap-2 mb-8">
         <div className="w-2 h-2 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)]" />
         <span className="text-xs font-bold tracking-wider text-zinc-300 uppercase">
           {pill}
         </span>
-      </div>
+      </motion.div>
 
       {/* Hero Heading */}
-      <h1 className="text-center text-5xl md:text-7xl lg:text-[4.5rem] font-bold leading-[1.1] tracking-tight mb-6 animate-fade-in-up bg-radial from-white/50 to-black/60 text-transparent bg-clip-text" style={{ animationDelay: "200ms" }}>
+      <motion.h1 variants={itemVariants} className="text-center text-5xl md:text-7xl lg:text-[4.5rem] font-bold leading-[1.1] tracking-tight mb-6 bg-radial from-white/50 to-black/60 text-transparent bg-clip-text">
         <span className="text-zinc-200">{headingLine1} </span>
         <span className="text-zinc-400">{headingLine2.split(" ")[0]}</span>
         <br />
         <span className="text-zinc-400">{headingLine2.split(" ").slice(1).join(" ")} </span>
         <span className="font-serif italic text-zinc-300 font-light pr-2">{headingItalic}</span>
-      </h1>
+      </motion.h1>
 
       {/* Subheading */}
-      <p className="text-lg md:text-xl text-zinc-400 max-w-2xl text-center mb-10 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
+      <motion.p variants={itemVariants} className="text-lg md:text-xl text-zinc-400 max-w-2xl text-center mb-10">
         {subheading}
-      </p>
+      </motion.p>
 
       {/* CTA Button */}
-      <div className="animate-fade-in-up" style={{ animationDelay: "400ms" }}>
+      <motion.div variants={itemVariants}>
         <HoverBorderGradient
           containerClassName="rounded-2xl"
           as="button"
@@ -47,9 +70,9 @@ export function HeroSection() {
         >
           <span>Book A Call</span>
         </HoverBorderGradient>
-      </div>
+      </motion.div>
 
-      <div className="w-80 h-40 relative rounded-t-full">
+      <motion.div variants={itemVariants} className="w-80 h-40 relative rounded-t-full mt-10">
         {/* Gradients */}
         {/* Core component */}
         <SparklesCore
@@ -63,7 +86,7 @@ export function HeroSection() {
 
         {/* Radial Gradient to prevent sharp edges */}
         <div className="absolute inset-0 w-full h-full mask-[radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
-      </div>
-    </main>
+      </motion.div>
+    </motion.main>
   );
 }
