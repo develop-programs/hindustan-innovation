@@ -1,9 +1,10 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { FooterBar } from "@/components/landing/FooterBar";
-import { BackgroundEffects } from "@/components/landing/BackgroundEffects";
 import { Shield } from "lucide-react";
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Privacy Policy | Hindustaan Innovations",
   description: "How Hindustaan Innovations collects, uses, and protects your personal information.",
 };

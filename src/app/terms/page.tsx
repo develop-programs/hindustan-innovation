@@ -1,9 +1,10 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { FooterBar } from "@/components/landing/FooterBar";
-import { BackgroundEffects } from "@/components/landing/BackgroundEffects";
 import { FileText } from "lucide-react";
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Terms of Service | Hindustaan Innovations",
   description: "Read the terms and conditions for using Hindustaan Innovations services and website.",
 };

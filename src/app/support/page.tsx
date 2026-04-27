@@ -1,11 +1,12 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { FooterBar } from "@/components/landing/FooterBar";
-import { BackgroundEffects } from "@/components/landing/BackgroundEffects";
 import { CtaFooter } from "@/components/landing/CtaFooter";
 import { HeadphonesIcon, Mail, MessageCircle, Clock, Zap, BookOpen, BarChart2, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Support | Hindustaan Innovations",
   description: "Get help from the Hindustaan Innovations support team. We're available 24/7 for all our clients.",
 };

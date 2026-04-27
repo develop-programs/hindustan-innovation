@@ -1,11 +1,11 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { FooterBar } from "@/components/landing/FooterBar";
-import { BackgroundEffects } from "@/components/landing/BackgroundEffects";
 import { CtaFooter } from "@/components/landing/CtaFooter";
 import { ArrowUpRight, BarChart2, TrendingUp, Zap, Users, Clock, Star } from "lucide-react";
 import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Case Studies | Hindustaan Innovations",
   description: "Explore real-world results from our AI automation and digital solutions — measurable impact for Indian businesses.",
 };
