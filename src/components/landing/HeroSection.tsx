@@ -8,6 +8,7 @@ import { SparklesCore } from "../ui/sparkles";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
 import { BackgroundEffects } from "./BackgroundEffects";
 import { Navbar } from "./Navbar";
+import Link from "next/link";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -69,13 +70,15 @@ export function HeroSection() {
 
           {/* CTA Button */}
           <motion.div variants={itemVariants} className="mt-2 md:mt-0">
-            <HoverBorderGradient
-              containerClassName="rounded-2xl"
-              as="button"
-              className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 px-8 md:px-10 py-2 text-sm md:text-base"
-            >
-              <span>{ctaLabel || "Book A Call"}</span>
-            </HoverBorderGradient>
+            <Link href="tel:+9294512259" target="_blank" rel="noopener noreferrer">
+              <HoverBorderGradient
+                containerClassName="rounded-2xl"
+                as="button"
+                className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 px-8 md:px-10 py-2 text-sm md:text-base"
+              >
+                <span>{ctaLabel || "Book A Call"}</span>
+              </HoverBorderGradient>
+            </Link>
           </motion.div>
 
         </div>
