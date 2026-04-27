@@ -2,6 +2,7 @@
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { motion, type Variants } from "motion/react";
 import servicesData from "@/services.json";
+import Link from "next/link";
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -43,12 +44,13 @@ export function ServicesCtaBanner() {
             </p>
           </div>
 
-          <a
-            href={ctaBanner.ctaLink}
+          <Link href="tel:+917712994005"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex-shrink-0 inline-flex items-center gap-2 bg-white text-zinc-900 hover:bg-zinc-100 px-8 py-3.5 rounded-xl text-sm font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
           >
             {ctaBanner.ctaText} <ArrowUpRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </motion.section>

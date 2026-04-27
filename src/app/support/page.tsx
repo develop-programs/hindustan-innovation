@@ -41,7 +41,7 @@ const CHANNELS = [
     title: "Book a Call",
     desc: "Schedule a 1-on-1 call with our team to discuss your project, troubleshoot issues, or plan next steps.",
     action: "Book a Call",
-    href: "/contact",
+    href: "tel:+917712994005",
     badge: "Priority",
     badgeColor: "text-purple-400 bg-purple-500/10 border-purple-500/20",
   },

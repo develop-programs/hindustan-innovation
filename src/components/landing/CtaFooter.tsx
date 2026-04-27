@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import data from "@/data.json";
+import Link from "next/link";
 
 function SocialIcon({ icon }: { icon: string }) {
   if (icon === "twitter") return (
@@ -41,12 +42,12 @@ export function CtaFooter() {
       </h2>
 
       <p className="text-zinc-600 dark:text-zinc-400 text-base mb-10">{subheading}</p>
-
-      <button className="group flex items-center gap-3 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-black px-8 py-4 rounded-xl font-semibold text-base hover:bg-zinc-800 dark:hover:bg-white transition-all shadow-[0_8px_30px_rgba(0,0,0,0.2)] dark:shadow-[0_8px_30px_rgba(255,255,255,0.1)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_8px_40px_rgba(255,255,255,0.2)] mb-12">
-        {ctaLabel}
-        <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-      </button>
-
+      <Link href="tel:+917712994005" target="_blank" rel="noopener noreferrer">
+        <button className="group flex items-center gap-3 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-black px-8 py-4 rounded-xl font-semibold text-base hover:bg-zinc-800 dark:hover:bg-white transition-all shadow-[0_8px_30px_rgba(0,0,0,0.2)] dark:shadow-[0_8px_30px_rgba(255,255,255,0.1)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_8px_40px_rgba(255,255,255,0.2)] mb-12">
+          {ctaLabel}
+          <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+        </button>
+      </Link>
       <div className="flex items-center gap-6 mb-8 text-zinc-600 dark:text-zinc-500">
         {socials.map((s, i) => (
           <span key={s.label} className="flex items-center gap-6">
