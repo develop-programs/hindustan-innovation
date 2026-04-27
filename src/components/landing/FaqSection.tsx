@@ -11,7 +11,7 @@ export default function FaqSection() {
 
     return (
         <section className="relative z-10 flex flex-col items-center justify-center px-4 py-20 
-        outline rounded-2xl dark:outline-slate-500 w-full max-w-6xl mx-auto overflow-hidden after:absolute after:top-0 after:left-0 after:w-full after:h-full dark:after:bg-linear-to-b after:from-transparent after:via-transparent after:to-black/20 dark:after:to-black/80 after:-z-10 after:pointer-events-none" id="faq">
+        outline rounded-2xl  w-full max-w-6xl mx-auto overflow-hidden after:absolute after:top-0 after:left-0 after:w-full after:h-full dark:after:bg-linear-to-b after:from-transparent after:via-transparent after:to-black/20 dark:after:to-black/80 after:-z-10 after:pointer-events-none" id="faq">
             <div className="flex flex-col items-center text-center w-full mb-16">
                 <div className="flex items-center gap-2 mb-6 bg-zinc-100/40 dark:bg-zinc-900/40 backdrop-blur-md border border-black/10 dark:border-white/5 rounded-full px-4 py-1.5 shadow-lg">
                     <MessageCircleQuestion className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-300" />

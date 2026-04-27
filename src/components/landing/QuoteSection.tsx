@@ -54,7 +54,7 @@ export function QuoteSection() {
       <div className="flex items-center gap-4">
         <div className="w-11 h-11 rounded-full overflow-hidden bg-zinc-200 dark:bg-zinc-800 border border-black/10 dark:border-white/10 shadow-md">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={authorAvatar} alt={authorRole} className="w-full h-full object-cover invert dark:invert" />
+          <img src={authorAvatar} alt={authorRole} className="w-full h-full object-cover invert dark:invert-0" />
         </div>
         <span className="text-sm font-medium text-zinc-700 dark:text-zinc-200">{authorRole}</span>
       </div>
