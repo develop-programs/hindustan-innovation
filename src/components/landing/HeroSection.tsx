@@ -70,7 +70,7 @@ export function HeroSection() {
 
           {/* CTA Button */}
           <motion.div variants={itemVariants} className="mt-2 md:mt-0">
-            <Link href="tel:+9294512259" target="_blank" rel="noopener noreferrer">
+            <Link href="tel:+917712994005" target="_blank" rel="noopener noreferrer">
               <HoverBorderGradient
                 containerClassName="rounded-2xl"
                 as="button"

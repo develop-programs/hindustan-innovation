@@ -27,6 +27,7 @@ import { BackgroundEffects } from "@/components/landing/BackgroundEffects";
 import { Navbar } from "@/components/landing/Navbar";
 import { CtaFooter } from "@/components/landing/CtaFooter";
 import { FooterBar } from "@/components/landing/FooterBar";
+import Link from "next/link";
 
 // ─── Animation Variants ──────────────────────────────────────────────────────
 
@@ -578,6 +579,8 @@ function HowWeHelp() {
         className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-14"
       >
         <p className="text-zinc-400 text-sm">Ready to get started?</p>
+            <Link href="tel:+917712994005" target="_blank" rel="noopener noreferrer">
+    
         <button
           type="button"
           className="flex items-center gap-2 bg-zinc-900/50 backdrop-blur-md border border-white/10 hover:bg-zinc-800/80 text-zinc-200 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 hover:border-white/20"
@@ -585,6 +588,7 @@ function HowWeHelp() {
           Book a Free Call
           <ArrowUpRight className="w-4 h-4" />
         </button>
+        </Link>
       </motion.div>
     </section>
   );

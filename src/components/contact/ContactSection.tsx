@@ -81,7 +81,7 @@ export function ContactSection() {
                             <p className="text-zinc-400 text-sm mb-6 leading-relaxed">
                                 {contactPage.contactSales.description}
                             </p>
-                            <a href={contactPage.contactSales.linkHref} className="text-sm font-medium text-zinc-300 hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white/50 w-fit">
+                            <a href="tel:+917712994005" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-zinc-300 hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white/50 w-fit">
                                 {contactPage.contactSales.linkText}
                             </a>
                         </motion.div>

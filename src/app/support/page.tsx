@@ -1,11 +1,12 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { FooterBar } from "@/components/landing/FooterBar";
-import { BackgroundEffects } from "@/components/landing/BackgroundEffects";
 import { CtaFooter } from "@/components/landing/CtaFooter";
 import { HeadphonesIcon, Mail, MessageCircle, Clock, Zap, BookOpen, BarChart2, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Support | Hindustaan Innovations",
   description: "Get help from the Hindustaan Innovations support team. We're available 24/7 for all our clients.",
 };
@@ -40,7 +41,7 @@ const CHANNELS = [
     title: "Book a Call",
     desc: "Schedule a 1-on-1 call with our team to discuss your project, troubleshoot issues, or plan next steps.",
     action: "Book a Call",
-    href: "/contact",
+    href: "tel:+917712994005",
     badge: "Priority",
     badgeColor: "text-purple-400 bg-purple-500/10 border-purple-500/20",
   },

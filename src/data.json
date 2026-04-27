@@ -2,7 +2,7 @@
   "brand": {
     "name": "Hindustaan Innovations",
     "tagline": "New Gen AI Automation Partner",
-    "email": "info@hindustaan.in",
+    "email": "connect@hindustaan.in",
     "copyright": "© 2026 Hindustaan Innovations",
     "madeBy": "Hindustaan Innovations",
     "whatsapp": "https://wa.me/919999999999"
@@ -350,7 +350,7 @@
         "icon": "facebook"
       }
     ],
-    "email": "info@hindustaan.in"
+    "email": "connect@hindustaan.in"
   },
   "contactPage": {
     "pill": "CONTACT",
@@ -360,7 +360,7 @@
     "emailUs": {
       "title": "Email Us",
       "description": "Facing technical challenges or product concerns? We're here to assist",
-      "email": "info@hindustaan.in"
+      "email": "connect@hindustaan.in"
     },
     "contactSales": {
       "title": "Contact Sales",
@@ -377,7 +377,7 @@
         },
         "email": {
           "label": "Email Address",
-          "placeholder": "info@hindustaan.in"
+          "placeholder": "connect@hindustaan.in"
         },
         "subject": {
           "label": "Subject Of Interest",
@@ -424,6 +424,6 @@
     "copyright": "© 2026 Hindustaan Innovations",
     "madeByLabel": "Made with ❤️ by",
     "madeByName": "Hindustaan Innovations",
-    "email": "info@hindustaan.in"
+    "email": "connect@hindustaan.in"
   }
 }

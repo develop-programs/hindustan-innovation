@@ -1,11 +1,11 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { FooterBar } from "@/components/landing/FooterBar";
-import { BackgroundEffects } from "@/components/landing/BackgroundEffects";
 import { CtaFooter } from "@/components/landing/CtaFooter";
 import { BookOpen, ChevronRight, Search, Zap, Globe, Bot, Cloud, Code2, Smartphone, ShoppingCart, Megaphone } from "lucide-react";
 import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Documentation | Hindustaan Innovations",
   description: "Guides, references, and how-tos for all Hindustaan Innovations services and platforms.",
 };
