@@ -35,7 +35,7 @@ export function CareerCtaBanner() {
           headingItalic: "application",
           subheading: "We're always on the lookout for great talent.",
           ctaText: "Apply Now",
-          ctaLink: "mailto:info@hindustaan.in",
+          ctaLink: "https://forms.gle/3tG7K6VcD7z5Q8VD7",
         });
       } finally {
         setLoading(false);

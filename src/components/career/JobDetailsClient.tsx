@@ -6,6 +6,7 @@ import { ArrowLeft, CheckCircle2, ArrowUpRight, MapPin, Briefcase, Clock, Users 
 import { motion } from "motion/react";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { redirect } from "next/navigation";
 
 interface Job {
   id: string;
@@ -73,47 +74,6 @@ export default function JobDetailsClient({ job }: { job: Job }) {
       portfolio: "",
       message: "",
     });
-  };
-
-  const handleApplicationSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setSubmitStatus(null);
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch("/api/forms", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: applicationForm.name,
-          email: applicationForm.email,
-          interest: `Career Application: ${job.title}`,
-          message: applicationForm.message,
-          phone: applicationForm.phone,
-          experience: applicationForm.experience,
-          portfolio: applicationForm.portfolio,
-          jobId: job.id,
-          jobTitle: job.title,
-          jobDepartment: job.department,
-          jobUrl,
-        }),
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.error || "Failed to submit application");
-      }
-
-      setSubmitStatus({ type: "success", message: "Application submitted successfully. We'll be in touch soon." });
-      resetForm();
-    } catch {
-      setSubmitStatus({ type: "error", message: "Could not submit your application. Please try again." });
-    } finally {
-      setIsSubmitting(false);
-    }
   };
 
   return (
@@ -235,7 +195,7 @@ export default function JobDetailsClient({ job }: { job: Job }) {
             )}
 
             {/* Divider */}
-            <motion.div variants={itemVariants} className="h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
+            <motion.div variants={itemVariants} className="h-px bg-linear-to-r from-transparent via-zinc-700 to-transparent" />
 
             {/* Requirements */}
             {job.requirements && job.requirements.length > 0 && (
@@ -260,7 +220,7 @@ export default function JobDetailsClient({ job }: { job: Job }) {
             )}
 
             {/* Divider */}
-            <motion.div variants={itemVariants} className="h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
+            <motion.div variants={itemVariants} className="h-px bg-linear-to-r from-transparent via-zinc-700 to-transparent" />
 
             {/* Benefits */}
             {job.benefits && job.benefits.length > 0 && (
@@ -274,7 +234,7 @@ export default function JobDetailsClient({ job }: { job: Job }) {
                     <motion.div
                       key={i}
                       variants={itemVariants}
-                      className="flex items-start gap-3 p-4 rounded-lg bg-gradient-to-br from-white/5 to-white/0 border border-white/10 hover:border-white/20 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/5 transition-all group"
+                      className="flex items-start gap-3 p-4 rounded-lg bg-linear-to-br from-white/5 to-white/0 border border-white/10 hover:border-white/20 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/5 transition-all group"
                     >
                       <CheckCircle2 className={`w-5 h-5 mt-1 shrink-0 ${job.accent} group-hover:scale-110 transition-transform`} />
                       <span className="text-sm text-zinc-300 group-hover:text-zinc-100 transition-colors">{benefit}</span>
@@ -293,7 +253,7 @@ export default function JobDetailsClient({ job }: { job: Job }) {
             {/* Apply Card */}
             <motion.div
               variants={itemVariants}
-              className="relative rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 p-8 overflow-hidden group sticky top-24"
+              className="relative rounded-2xl bg-linear-to-br from-blue-600 to-blue-700 p-8 overflow-hidden group top-24"
             >
               <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all" />
 
@@ -305,8 +265,7 @@ export default function JobDetailsClient({ job }: { job: Job }) {
                   containerClassName="rounded-xl w-full"
                   className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center space-x-2 px-6 py-3 w-full"
                   onClick={() => {
-                    setSubmitStatus(null);
-                    setIsApplyDialogOpen(true);
+                    redirect("https://forms.gle/3tG7K6VcD7z5Q8VD7");
                   }}
                 >
                   <span
@@ -375,134 +334,6 @@ export default function JobDetailsClient({ job }: { job: Job }) {
           </motion.aside>
         </div>
       </motion.div>
-
-      <Dialog open={isApplyDialogOpen} onOpenChange={setIsApplyDialogOpen}>
-        <DialogContent className="max-w-2xl border-white/10 bg-zinc-950 p-6 text-zinc-100 sm:p-8" showCloseButton>
-          <DialogHeader className="mb-2">
-            <p className="text-xs uppercase tracking-widest text-zinc-500">Application Form</p>
-            <DialogTitle className="mt-1 text-2xl font-bold text-white">Apply for {job.title}</DialogTitle>
-            <DialogDescription className="mt-2 text-sm text-zinc-400">
-              Share your details and we will email the hiring team directly.
-            </DialogDescription>
-          </DialogHeader>
-
-          <form onSubmit={handleApplicationSubmit} className="space-y-4">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div>
-                <label htmlFor="applicant-name" className="mb-1 block text-xs font-medium uppercase tracking-wide text-zinc-400">
-                  Full Name
-                </label>
-                <input
-                  id="applicant-name"
-                  type="text"
-                  required
-                  value={applicationForm.name}
-                  onChange={(event) => setApplicationForm(prev => ({ ...prev, name: event.target.value }))}
-                  className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-500 focus:border-white/30"
-                  placeholder="Your full name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="applicant-email" className="mb-1 block text-xs font-medium uppercase tracking-wide text-zinc-400">
-                  Email
-                </label>
-                <input
-                  id="applicant-email"
-                  type="email"
-                  required
-                  value={applicationForm.email}
-                  onChange={(event) => setApplicationForm(prev => ({ ...prev, email: event.target.value }))}
-                  className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-500 focus:border-white/30"
-                  placeholder="you@example.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="applicant-phone" className="mb-1 block text-xs font-medium uppercase tracking-wide text-zinc-400">
-                  Phone
-                </label>
-                <input
-                  id="applicant-phone"
-                  type="tel"
-                  required
-                  value={applicationForm.phone}
-                  onChange={(event) => setApplicationForm(prev => ({ ...prev, phone: event.target.value }))}
-                  className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-500 focus:border-white/30"
-                  placeholder="+91 98XXXXXXXX"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="applicant-experience" className="mb-1 block text-xs font-medium uppercase tracking-wide text-zinc-400">
-                  Experience
-                </label>
-                <input
-                  id="applicant-experience"
-                  type="text"
-                  required
-                  value={applicationForm.experience}
-                  onChange={(event) => setApplicationForm(prev => ({ ...prev, experience: event.target.value }))}
-                  className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-500 focus:border-white/30"
-                  placeholder="e.g. 4 years"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="applicant-portfolio" className="mb-1 block text-xs font-medium uppercase tracking-wide text-zinc-400">
-                Portfolio / LinkedIn URL
-              </label>
-              <input
-                id="applicant-portfolio"
-                type="url"
-                value={applicationForm.portfolio}
-                onChange={(event) => setApplicationForm(prev => ({ ...prev, portfolio: event.target.value }))}
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-500 focus:border-white/30"
-                placeholder="https://"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="applicant-message" className="mb-1 block text-xs font-medium uppercase tracking-wide text-zinc-400">
-                Why are you a great fit?
-              </label>
-              <textarea
-                id="applicant-message"
-                required
-                rows={5}
-                value={applicationForm.message}
-                onChange={(event) => setApplicationForm(prev => ({ ...prev, message: event.target.value }))}
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-500 focus:border-white/30"
-                placeholder="Tell us about your background and why this role fits you"
-              />
-            </div>
-
-            {submitStatus && (
-              <p className={`rounded-lg border px-3 py-2 text-sm ${submitStatus.type === "success" ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-300" : "border-red-500/30 bg-red-500/10 text-red-300"}`}>
-                {submitStatus.message}
-              </p>
-            )}
-
-            <div className="flex flex-col-reverse gap-3 pt-2 sm:flex-row sm:justify-end">
-              <button
-                type="button"
-                onClick={() => setIsApplyDialogOpen(false)}
-                className="rounded-lg border border-white/10 px-4 py-2.5 text-sm font-medium text-zinc-200 transition-colors hover:bg-white/10"
-              >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-60"
-              >
-                {isSubmitting ? "Sending..." : "Submit Application"}
-              </button>
-            </div>
-          </form>
-        </DialogContent>
-      </Dialog>
     </motion.main>
   );
 }
