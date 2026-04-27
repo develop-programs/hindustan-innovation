@@ -132,7 +132,7 @@ export async function getCategoriesExample() {
     if (data.success) {
       console.log('Hero section:', data.hero);
       console.log('Categories:', data.categories);
-      data.categories.forEach((cat) => {
+      data.categories.forEach((cat: { label: string; count: number }) => {
         console.log(`${cat.label}: ${cat.count} posts`);
       });
       return data.categories;
@@ -394,7 +394,14 @@ export function BlogListComponent() {
       </div>
 
       <div className="posts">
-        {posts.map((post) => (
+        {posts.map((post: {
+          id: string;
+          title: string;
+          excerpt: string;
+          categoryLabel: string;
+          readTime: string;
+          author: { name: string };
+        }) => (
           <article key={post.id} className="blog-card">
             <h3>{post.title}</h3>
             <p>{post.excerpt}</p>
@@ -447,7 +454,7 @@ export function BlogDetailComponent({ slug }: { slug: string }) {
       <div className="blog-content">
         <p className="intro">{blog.content.intro}</p>
 
-        {blog.content.sections.map((section, idx) => (
+        {blog.content.sections.map((section: { heading: string; body: string }, idx: number) => (
           <section key={idx}>
             <h2>{section.heading}</h2>
             <p>{section.body}</p>
@@ -459,7 +466,7 @@ export function BlogDetailComponent({ slug }: { slug: string }) {
 
       <footer className="blog-footer">
         <div className="tags">
-          {blog.tags.map((tag) => (
+          {blog.tags.map((tag: string) => (
             <span key={tag} className="tag">
               {tag}
             </span>
@@ -469,7 +476,7 @@ export function BlogDetailComponent({ slug }: { slug: string }) {
         {related.length > 0 && (
           <div className="related-posts">
             <h3>Related Posts</h3>
-            {related.map((post) => (
+            {related.map((post: { id: string; slug: string; title: string }) => (
               <a key={post.id} href={`/blog/${post.slug}`}>
                 {post.title}
               </a>
@@ -521,7 +528,7 @@ export function BlogSearchComponent() {
 
           {loading && <div>Searching...</div>}
 
-          {results.map((post) => (
+          {results.map((post: { id: string; title: string; excerpt: string; date: string }) => (
             <div key={post.id} className="search-result">
               <h4>{post.title}</h4>
               <p>{post.excerpt}</p>

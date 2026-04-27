@@ -73,6 +73,7 @@ interface RelatedPost {
   readTime: string;
   icon: string;
   accentColor: string;
+  accentBg: string;
 }
 
 interface NavigationPost {
