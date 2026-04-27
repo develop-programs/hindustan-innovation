@@ -6,6 +6,7 @@ import { ArrowLeft, CheckCircle2, ArrowUpRight, MapPin, Briefcase, Clock, Users 
 import { motion } from "motion/react";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { redirect } from "next/navigation";
 
 interface Job {
   id: string;
@@ -264,8 +265,7 @@ export default function JobDetailsClient({ job }: { job: Job }) {
                   containerClassName="rounded-xl w-full"
                   className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center space-x-2 px-6 py-3 w-full"
                   onClick={() => {
-                    setSubmitStatus(null);
-                    setIsApplyDialogOpen(true);
+                    redirect("https://forms.gle/3tG7K6VcD7z5Q8VD7");
                   }}
                 >
                   <span

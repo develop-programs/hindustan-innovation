@@ -4,6 +4,7 @@ import { Briefcase, ArrowUpRight } from "lucide-react";
 import { motion, type Variants } from "motion/react";
 import { BackgroundEffects } from "../landing/BackgroundEffects";
 import { Navbar } from "../landing/Navbar";
+import { redirect } from "next/navigation";
 
 interface HeroData {
   pill: string;
@@ -91,13 +92,15 @@ export function CareerHero() {
             {hero.subheading}
           </motion.p>
 
-          <motion.a
+          <motion.button
             variants={itemVariants}
-            href={hero.ctaLink}
+            onClick={() => {
+              redirect("https://forms.gle/3tG7K6VcD7z5Q8VD7")
+            }}
             className="inline-flex items-center gap-2 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-white px-7 py-3 rounded-xl text-sm font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
           >
             {hero.ctaText} <ArrowUpRight className="w-4 h-4" />
-          </motion.a>
+          </motion.button>
         </div>
       </motion.section>
     </div>

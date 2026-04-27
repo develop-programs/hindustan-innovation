@@ -123,8 +123,11 @@ export default function SupportPage() {
       <section className="relative z-10 px-4 pb-20 w-full max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {CHANNELS.map((ch) => (
-            <div
+            <Link
               key={ch.title}
+              href={ch.href}
+              target={ch.href.startsWith("http") ? "_blank" : undefined}
+              rel={ch.href.startsWith("http") ? "noopener noreferrer" : undefined}
               className="group flex flex-col gap-5 bg-zinc-950 rounded-3xl border-t-2 border-white/20 outline outline-white/8 p-7 hover:bg-zinc-900/60 transition-all duration-300 relative overflow-hidden"
             >
               <div className="absolute -top-16 -right-16 w-40 h-40 bg-white/2 rounded-full blur-3xl group-hover:bg-white/4 transition-all duration-700 pointer-events-none" />
@@ -143,16 +146,11 @@ export default function SupportPage() {
                 <p className="text-zinc-400 text-sm leading-relaxed">{ch.desc}</p>
               </div>
 
-              <Link
-                href={ch.href}
-                target={ch.href.startsWith("http") ? "_blank" : undefined}
-                rel={ch.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-zinc-200 hover:text-white transition-colors group/link"
-              >
+              <div className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-zinc-200 group/link">
                 {ch.action}
                 <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-              </Link>
-            </div>
+              </div>
+            </Link>
           ))}
         </div>
       </section>
