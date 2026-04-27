@@ -32,12 +32,37 @@ function BarChartGraphic() {
 function NetworkGraphic() {
   return (
     <div className="relative w-40 h-40 flex items-center justify-center">
-      <svg className="absolute inset-0 w-full h-full text-zinc-300 dark:text-zinc-800 stroke-current z-0">
-        <line x1="50%" y1="50%" x2="20%" y2="20%" strokeWidth="2" />
-        <line x1="50%" y1="50%" x2="80%" y2="15%" strokeWidth="2" />
-        <line x1="50%" y1="50%" x2="90%" y2="60%" strokeWidth="2" />
-        <line x1="50%" y1="50%" x2="70%" y2="90%" strokeWidth="2" />
-        <line x1="50%" y1="50%" x2="15%" y2="60%" strokeWidth="2" />
+      <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full text-zinc-300 dark:text-zinc-800 stroke-current z-0 overflow-visible">
+        <line x1="50" y1="50" x2="20" y2="20" strokeWidth="2" />
+        <line x1="50" y1="50" x2="80" y2="15" strokeWidth="2" />
+        <line x1="50" y1="50" x2="90" y2="60" strokeWidth="2" />
+        <line x1="50" y1="50" x2="70" y2="90" strokeWidth="2" />
+        <line x1="50" y1="50" x2="15" y2="60" strokeWidth="2" />
+
+        <g className="fill-blue-500 dark:fill-blue-300" stroke="none">
+          <circle r="1.6" opacity="0.95">
+            <animateMotion dur="2.2s" repeatCount="indefinite" path="M50 50 L20 20" />
+          </circle>
+          <circle r="1.6" opacity="0.9">
+            <animateMotion dur="2.5s" begin="0.35s" repeatCount="indefinite" path="M50 50 L80 15" />
+          </circle>
+          <circle r="1.6" opacity="0.9">
+            <animateMotion dur="2.1s" begin="0.7s" repeatCount="indefinite" path="M50 50 L90 60" />
+          </circle>
+          <circle r="1.6" opacity="0.95">
+            <animateMotion dur="2.7s" begin="0.15s" repeatCount="indefinite" path="M50 50 L70 90" />
+          </circle>
+          <circle r="1.6" opacity="0.9">
+            <animateMotion dur="2.4s" begin="0.5s" repeatCount="indefinite" path="M50 50 L15 60" />
+          </circle>
+
+          <circle r="1.3" opacity="0.75">
+            <animateMotion dur="2.9s" begin="0.8s" repeatCount="indefinite" path="M20 20 L50 50" />
+          </circle>
+          <circle r="1.3" opacity="0.7">
+            <animateMotion dur="3.1s" begin="0.4s" repeatCount="indefinite" path="M90 60 L50 50" />
+          </circle>
+        </g>
       </svg>
       <div className="w-10 h-10 bg-zinc-100 dark:bg-zinc-900 rounded-full border border-black/20 dark:border-white/10 flex items-center justify-center z-10 shadow-[0_0_15px_rgba(0,0,0,0.05)] dark:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
         <Eclipse className="w-5 h-5 text-zinc-600 dark:text-zinc-400" />

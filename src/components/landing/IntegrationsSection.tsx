@@ -48,7 +48,7 @@ export function IntegrationsSection() {
     <>
       {/* ── Integrations ── */}
       <section
-        className="relative z-10 flex flex-col items-center justify-center px-4 py-24 w-full max-w-7xl mx-auto mt-10 overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent"
+        className="relative z-10 flex flex-col items-center justify-center px-4 py-24 w-full max-w-7xl mx-auto mt-10 overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent"
         id="integrations"
       >
         <motion.div

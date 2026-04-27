@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "motion/react";
+import { useEffect, useState } from "react";
 import { Layers, Scissors, Check, RotateCcw, User, Mail, Cpu, FileText, Box, Blocks, Smartphone, Target, Search, Code2, BarChart2, Sparkles, ArrowUpRight } from "lucide-react";
 import data from "@/data.json";
 import { AnimatedList } from "../ui/animated-list";
@@ -81,18 +82,100 @@ function TaskListGraphic() {
 }
 
 function WorkflowNodesGraphic() {
+  const nodes = [
+    {
+      id: "mail",
+      top: 20,
+      left: 20,
+      size: "w-10 h-10",
+      icon: <Mail className="w-5 h-5 text-zinc-700 dark:text-zinc-500" />,
+      hoverClass: "group-hover:scale-110 group-hover:-translate-y-1",
+    },
+    {
+      id: "cpu",
+      top: 10,
+      left: 45,
+      size: "w-10 h-10",
+      icon: <Cpu className="w-5 h-5 text-zinc-700 dark:text-zinc-500" />,
+      hoverClass: "group-hover:scale-105 group-hover:translate-x-1",
+    },
+    {
+      id: "user",
+      top: 60,
+      left: 25,
+      size: "w-12 h-12",
+      icon: <User className="w-6 h-6 text-zinc-700 dark:text-zinc-500" />,
+      hoverClass: "group-hover:scale-110 group-hover:-translate-x-1",
+    },
+    {
+      id: "file",
+      top: 15,
+      left: 70,
+      size: "w-8 h-8",
+      icon: <FileText className="w-4 h-4 text-zinc-700 dark:text-zinc-500" />,
+      hoverClass: "group-hover:scale-105 group-hover:translate-y-1",
+    },
+    {
+      id: "x",
+      top: 30,
+      left: 82,
+      size: "w-12 h-12",
+      icon: <span className="text-zinc-700 dark:text-zinc-500 font-bold font-serif text-lg">X</span>,
+      hoverClass: "group-hover:scale-110 group-hover:-translate-x-1",
+    },
+    {
+      id: "n",
+      top: 75,
+      left: 62,
+      size: "w-12 h-12",
+      icon: <span className="text-zinc-700 dark:text-zinc-500 font-bold font-serif text-xl">N</span>,
+      hoverClass: "group-hover:scale-105 group-hover:-translate-y-1",
+    },
+    {
+      id: "box",
+      top: 72,
+      left: 55,
+      size: "w-8 h-8",
+      icon: <Box className="w-4 h-4 text-zinc-700 dark:text-zinc-500" />,
+      hoverClass: "group-hover:scale-110 group-hover:translate-x-1",
+    },
+  ];
+
+  const [randomizedPositions, setRandomizedPositions] = useState(
+    nodes.map(({ top, left }) => ({ top, left }))
+  );
+
+  useEffect(() => {
+    const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
+
+    setRandomizedPositions(
+      nodes.map(({ top, left }) => ({
+        top: clamp(top + (Math.random() * 16 - 8), 8, 82),
+        left: clamp(left + (Math.random() * 18 - 9), 8, 86),
+      }))
+    );
+  }, []);
+
   return (
     <div className="w-full h-48 flex items-center justify-center mb-6 relative group">
-      <div className="relative z-10 w-20 h-20 bg-zinc-100 dark:bg-zinc-950 rounded-full border border-black/10 dark:border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.05)] dark:shadow-[0_0_40px_rgba(255,255,255,0.05)] flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+      <div className="relative z-10 w-20 h-20 bg-zinc-100 dark:bg-zinc-950 rounded-full border border-black/10 dark:border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.05)] dark:shadow-[0_0_40px_rgba(255,255,255,0.05)] flex items-center justify-center">
         <Sparkles className="w-8 h-8 text-zinc-700 dark:text-zinc-200" />
       </div>
-      <div className="absolute top-[20%] left-[20%] w-10 h-10 bg-zinc-200 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1"><Mail className="w-5 h-5 text-zinc-700 dark:text-zinc-500" /></div>
-      <div className="absolute top-[10%] left-[45%] w-10 h-10 bg-zinc-200 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-105 group-hover:translate-x-1"><Cpu className="w-5 h-5 text-zinc-700 dark:text-zinc-500" /></div>
-      <div className="absolute top-[60%] left-[25%] w-12 h-12 bg-zinc-200 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-x-1"><User className="w-6 h-6 text-zinc-700 dark:text-zinc-500" /></div>
-      <div className="absolute top-[15%] right-[25%] w-8 h-8 bg-zinc-200 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-105 group-hover:translate-y-1"><FileText className="w-4 h-4 text-zinc-700 dark:text-zinc-500" /></div>
-      <div className="absolute top-[30%] right-[10%] w-12 h-12 bg-zinc-200 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-x-1"><span className="text-zinc-700 dark:text-zinc-500 font-bold font-serif text-lg">X</span></div>
-      <div className="absolute bottom-[20%] right-[30%] w-12 h-12 bg-zinc-200 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-105 group-hover:-translate-y-1"><span className="text-zinc-700 dark:text-zinc-500 font-bold font-serif text-xl">N</span></div>
-      <div className="absolute bottom-[25%] left-[55%] w-8 h-8 bg-zinc-200 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:translate-x-1"><Box className="w-4 h-4 text-zinc-700 dark:text-zinc-500" /></div>
+
+      {nodes.map((node, index) => (
+        <motion.div
+          key={node.id}
+          animate={{ y: [0, -3, 0] }}
+          transition={{ duration: 2.8 + index * 0.2, repeat: Infinity, ease: "easeInOut" }}
+          style={{
+            top: `${randomizedPositions[index]?.top ?? node.top}%`,
+            left: `${randomizedPositions[index]?.left ?? node.left}%`,
+          }}
+          className={`absolute ${node.size} bg-zinc-200 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg transition-transform duration-300 ease-out ${node.hoverClass}`}
+        >
+          {node.icon}
+        </motion.div>
+      ))}
     </div>
   );
 }
@@ -101,7 +184,7 @@ function SearchUIGraphic() {
   return (
     <div className="w-full h-52 flex flex-col items-center justify-center mb-8 mt-2 relative">
       {/* Main Card (Top) */}
-      <motion.div 
+      <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         className="relative w-full h-full bg-zinc-100/50 dark:bg-zinc-900/50 rounded-2xl border-t-2 border-slate-400/30 dark:border-slate-300/50 p-4 shadow-2xl z-20 flex flex-col justify-center"
@@ -127,17 +210,17 @@ function SearchUIGraphic() {
       </motion.div>
 
       {/* Background Card 2 (Lowest) */}
-      <motion.div 
+      <motion.div
         animate={{ y: [-24, -40, -24], scale: [0.9, 0.85, 0.9] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute w-full h-full bg-zinc-200 dark:bg-[#0d0d0d] rounded-2xl border-t-2 border-slate-400/30 dark:border-slate-300/50 z-0 opacity-40 shadow-2xl" 
+        className="absolute w-full h-full bg-zinc-200 dark:bg-[#0d0d0d] rounded-2xl border-t-2 border-slate-400/30 dark:border-slate-300/50 z-0 opacity-40 shadow-2xl"
       />
 
       {/* Background Card 1 (Middle) */}
-      <motion.div 
+      <motion.div
         animate={{ y: [-12, -24, -12], scale: [0.95, 0.92, 0.95] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute w-full h-full bg-zinc-200 dark:bg-[#0d0d0d] rounded-2xl border-t-2 border-slate-400/30 dark:border-slate-300/50 z-10 opacity-70 shadow-2xl" 
+        className="absolute w-full h-full bg-zinc-200 dark:bg-[#0d0d0d] rounded-2xl border-t-2 border-slate-400/30 dark:border-slate-300/50 z-10 opacity-70 shadow-2xl"
       />
     </div>
   );
