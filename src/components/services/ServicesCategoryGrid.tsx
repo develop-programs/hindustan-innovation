@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import {
   Globe, Smartphone, Palette, ShoppingCart, Code2, Megaphone, Wrench,
   Bot, Brain, TrendingUp, Eye, Cpu, Cloud, Server, GitBranch, Shield,
@@ -8,7 +9,8 @@ import {
   Sparkles, Layers,
 } from "lucide-react";
 import Link from "next/link";
-import { AnimatedList } from "../ui/animated-list";
+import { AnimatedList } from "@/components/ui/animated-list";
+import { AnimatedBeam } from "@/components/ui/animated-beam";
 import { motion, type Variants } from "motion/react";
 import servicesData from "@/services.json";
 
@@ -32,70 +34,216 @@ const IconMap: Record<string, React.FC<any>> = {
   FlaskConical, HardDrive, Mail, MapPin, Sparkles, Layers
 };
 
-// ─── Mini graphic components (matches home page style) ────────────────────────
+// ─── Mini graphic components ──────────────────────────────────────────────────
 
+// Beam-powered cluster: center icon hub linked to peripheral icons via AnimatedBeam
 function IconClusterGraphic({ icons, accent }: { icons: React.ReactNode[]; accent: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const centerRef = useRef<HTMLDivElement>(null);
+  const topLeftRef = useRef<HTMLDivElement>(null);
+  const bottomRightRef = useRef<HTMLDivElement>(null);
+  const topRightRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="w-full h-40 flex items-center justify-center mb-6 relative">
-      <div className={`relative z-10 w-16 h-16 bg-white dark:bg-zinc-900 rounded-2xl border border-black/10 dark:border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.05)] dark:shadow-[0_0_30px_rgba(255,255,255,0.04)] flex items-center justify-center ${accent}`}>
+    <div ref={containerRef} className="w-full h-40 flex items-center justify-center mb-6 relative">
+      {/* Center hub icon */}
+      <div
+        ref={centerRef}
+        className={`relative z-10 w-16 h-16 bg-white dark:bg-zinc-900 rounded-2xl border border-black/10 dark:border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.05)] dark:shadow-[0_0_30px_rgba(255,255,255,0.04)] flex items-center justify-center ${accent}`}
+      >
         {icons[0]}
       </div>
+
+      {/* Peripheral icons */}
       {icons[1] && (
-        <div className="absolute top-[15%] left-[18%] w-10 h-10 bg-zinc-100 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg text-zinc-600 dark:text-zinc-500">
+        <div
+          ref={topLeftRef}
+          className="absolute top-[15%] left-[18%] w-10 h-10 bg-zinc-100 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg text-zinc-600 dark:text-zinc-500 z-10"
+        >
           {icons[1]}
         </div>
       )}
       {icons[2] && (
-        <div className="absolute bottom-[15%] right-[18%] w-10 h-10 bg-zinc-100 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg text-zinc-600 dark:text-zinc-500">
+        <div
+          ref={bottomRightRef}
+          className="absolute bottom-[15%] right-[18%] w-10 h-10 bg-zinc-100 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg text-zinc-600 dark:text-zinc-500 z-10"
+        >
           {icons[2]}
         </div>
       )}
       {icons[3] && (
-        <div className="absolute top-[12%] right-[22%] w-8 h-8 bg-zinc-100 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg text-zinc-700 dark:text-zinc-600">
+        <div
+          ref={topRightRef}
+          className="absolute top-[12%] right-[22%] w-8 h-8 bg-zinc-100 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg text-zinc-700 dark:text-zinc-600 z-10"
+        >
           {icons[3]}
         </div>
+      )}
+
+      {/* AnimatedBeam: peripheral icons → center hub (continuous, visible lines) */}
+      {icons[1] && (
+        <AnimatedBeam
+          containerRef={containerRef}
+          fromRef={topLeftRef}
+          toRef={centerRef}
+          curvature={20}
+          duration={2.5}
+          delay={0}
+          repeatDelay={0}
+          pathWidth={2}
+          pathColor="#71717a"
+          pathOpacity={0.4}
+          gradientStartColor="#60a5fa"
+          gradientStopColor="#a78bfa"
+        />
+      )}
+      {icons[2] && (
+        <AnimatedBeam
+          containerRef={containerRef}
+          fromRef={bottomRightRef}
+          toRef={centerRef}
+          curvature={-20}
+          duration={2.5}
+          delay={0.8}
+          repeatDelay={0}
+          pathWidth={2}
+          pathColor="#71717a"
+          pathOpacity={0.4}
+          gradientStartColor="#a78bfa"
+          gradientStopColor="#60a5fa"
+        />
+      )}
+      {icons[3] && (
+        <AnimatedBeam
+          containerRef={containerRef}
+          fromRef={topRightRef}
+          toRef={centerRef}
+          curvature={30}
+          duration={2.5}
+          delay={0.4}
+          repeatDelay={0}
+          pathWidth={2}
+          pathColor="#71717a"
+          pathOpacity={0.4}
+          gradientStartColor="#34d399"
+          gradientStopColor="#60a5fa"
+        />
       )}
     </div>
   );
 }
 
 function TagListGraphic({ tags }: { tags: string[] }) {
-  // Triple the tags so AnimatedList has enough items to loop continuously
+  // Icon pool — cycles through for variety
+  const tagIcons = [Check, Zap, Shield, TrendingUp, Globe, Sparkles, Bot, Code2, Cloud, Cpu];
+  // Triple the tags so AnimatedList loops continuously
   const loopedTags = [...tags, ...tags, ...tags];
   return (
-    <div className="w-full h-40 flex flex-col mb-6 relative overflow-hidden mask-[linear-gradient(to_bottom,white_40%,transparent_100%)]">
-      <AnimatedList delay={1200} className="w-full gap-2">
-        {loopedTags.map((t, i) => (
-          <div
-            key={`${t}-${i}`}
-            className={`flex items-center justify-between bg-zinc-100 dark:bg-zinc-900/80 border border-black/10 dark:border-white/5 rounded-xl px-3 py-2 shadow ${i % tags.length === 1 ? "w-full" : "w-[90%]"}`}
-          >
-            <div className="flex items-center gap-2">
-              <Check className="w-3 h-3 text-zinc-600 dark:text-zinc-500" />
-              <span className="text-[11px] text-zinc-700 dark:text-zinc-400 font-medium">{t}</span>
+    <div className="w-full h-40 flex flex-col mb-6 relative overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0%,white_20%,white_75%,transparent_100%)]">
+      <AnimatedList delay={1000} className="w-full gap-2">
+        {loopedTags.map((t, i) => {
+          const Icon = tagIcons[i % tagIcons.length];
+          return (
+            <div
+              key={`${t}-${i}`}
+              className="flex items-center justify-between w-full bg-zinc-100 dark:bg-zinc-900/80 border border-black/10 dark:border-white/8 rounded-xl px-3 py-2 shadow"
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-md bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center shrink-0">
+                  <Icon className="w-3 h-3 text-zinc-600 dark:text-zinc-400" />
+                </div>
+                <span className="text-[11px] text-zinc-700 dark:text-zinc-400 font-medium">{t}</span>
+              </div>
+              <ArrowUpRight className="w-3 h-3 text-zinc-500 dark:text-zinc-600 shrink-0" />
             </div>
-            <ArrowUpRight className="w-3 h-3 text-zinc-700 dark:text-zinc-600" />
-          </div>
-        ))}
+          );
+        })}
       </AnimatedList>
     </div>
   );
 }
 
+// Beam-powered nodes: center Sparkles hub linked to 3 satellite nodes via AnimatedBeam
 function NodesGraphic({ accent }: { accent: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const centerRef = useRef<HTMLDivElement>(null);
+  const topLeftRef = useRef<HTMLDivElement>(null);
+  const topRightRef = useRef<HTMLDivElement>(null);
+  const bottomLeftRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="w-full h-40 flex items-center justify-center mb-6 relative">
-      <svg className="absolute inset-0 w-full h-full text-zinc-300 dark:text-zinc-800 stroke-current z-0">
-        <line x1="30%" y1="30%" x2="70%" y2="70%" strokeWidth="1" />
-        <line x1="70%" y1="25%" x2="50%" y2="50%" strokeWidth="1" />
-        <line x1="25%" y1="65%" x2="50%" y2="50%" strokeWidth="1" />
-      </svg>
-      <div className={`relative z-10 w-14 h-14 bg-zinc-100 dark:bg-zinc-950 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center shadow-[0_0_20px_rgba(0,0,0,0.05)] dark:shadow-[0_0_20px_rgba(255,255,255,0.05)] ${accent}`}>
+    <div ref={containerRef} className="w-full h-40 flex items-center justify-center mb-6 relative">
+      {/* Center hub */}
+      <div
+        ref={centerRef}
+        className={`relative z-10 w-14 h-14 bg-zinc-100 dark:bg-zinc-950 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center shadow-[0_0_20px_rgba(0,0,0,0.05)] dark:shadow-[0_0_20px_rgba(255,255,255,0.05)] ${accent}`}
+      >
         <Sparkles className="w-6 h-6" />
       </div>
-      <div className="absolute top-[18%] left-[22%] w-9 h-9 bg-zinc-200 dark:bg-zinc-900 rounded-full border border-black/10 dark:border-white/5 flex items-center justify-center text-zinc-700 dark:text-zinc-500"><Cpu className="w-4 h-4" /></div>
-      <div className="absolute top-[15%] right-[22%] w-9 h-9 bg-zinc-200 dark:bg-zinc-900 rounded-full border border-black/10 dark:border-white/5 flex items-center justify-center text-zinc-700 dark:text-zinc-500"><Globe className="w-4 h-4" /></div>
-      <div className="absolute bottom-[18%] left-[20%] w-9 h-9 bg-zinc-200 dark:bg-zinc-900 rounded-full border border-black/10 dark:border-white/5 flex items-center justify-center text-zinc-700 dark:text-zinc-500"><Database className="w-4 h-4" /></div>
+
+      {/* Satellite nodes */}
+      <div
+        ref={topLeftRef}
+        className="absolute top-[18%] left-[22%] w-9 h-9 bg-zinc-200 dark:bg-zinc-900 rounded-full border border-black/10 dark:border-white/5 flex items-center justify-center text-zinc-700 dark:text-zinc-500 z-10"
+      >
+        <Cpu className="w-4 h-4" />
+      </div>
+      <div
+        ref={topRightRef}
+        className="absolute top-[15%] right-[22%] w-9 h-9 bg-zinc-200 dark:bg-zinc-900 rounded-full border border-black/10 dark:border-white/5 flex items-center justify-center text-zinc-700 dark:text-zinc-500 z-10"
+      >
+        <Globe className="w-4 h-4" />
+      </div>
+      <div
+        ref={bottomLeftRef}
+        className="absolute bottom-[18%] left-[20%] w-9 h-9 bg-zinc-200 dark:bg-zinc-900 rounded-full border border-black/10 dark:border-white/5 flex items-center justify-center text-zinc-700 dark:text-zinc-500 z-10"
+      >
+        <Database className="w-4 h-4" />
+      </div>
+
+      {/* AnimatedBeam: satellite nodes → center hub (continuous, visible lines) */}
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={topLeftRef}
+        toRef={centerRef}
+        curvature={15}
+        duration={2.5}
+        delay={0}
+        repeatDelay={0}
+        pathWidth={2}
+        pathColor="#71717a"
+        pathOpacity={0.4}
+        gradientStartColor="#60a5fa"
+        gradientStopColor="#a78bfa"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={topRightRef}
+        toRef={centerRef}
+        curvature={-15}
+        duration={2.5}
+        delay={0.8}
+        repeatDelay={0}
+        pathWidth={2}
+        pathColor="#71717a"
+        pathOpacity={0.4}
+        gradientStartColor="#a78bfa"
+        gradientStopColor="#34d399"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={bottomLeftRef}
+        toRef={centerRef}
+        curvature={25}
+        duration={2.5}
+        delay={0.4}
+        repeatDelay={0}
+        pathWidth={2}
+        pathColor="#71717a"
+        pathOpacity={0.4}
+        gradientStartColor="#34d399"
+        gradientStopColor="#60a5fa"
+      />
     </div>
   );
 }
