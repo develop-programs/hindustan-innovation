@@ -5,6 +5,7 @@ import { motion, type Variants } from "motion/react";
 import data from "@/data.json";
 import { BackgroundEffects } from "../landing/BackgroundEffects";
 import { Navbar } from "../landing/Navbar";
+import Link from "next/link";
 
 const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -71,7 +72,11 @@ export function ContactSection() {
                         </motion.div>
 
                         {/* Contact Sales Card */}
-                        <motion.div variants={itemVariants} className="flex flex-col p-8 bg-zinc-100/40 dark:bg-zinc-950/40 backdrop-blur-sm rounded-2xl border-t-2 border-black/10 dark:border-white/25 outline outline-1 outline-black/5 dark:outline-white/5 hover:border-black/20 dark:hover:border-white/10 transition-colors shadow-2xl">
+                        <motion.a
+                            href="tel:+917712994005"
+                            variants={itemVariants}
+                            className="flex flex-col p-8 bg-zinc-100/40 dark:bg-zinc-950/40 backdrop-blur-sm rounded-2xl border-t-2 border-black/10 dark:border-white/25 outline outline-1 outline-black/5 dark:outline-white/5 hover:border-black/20 dark:hover:border-white/10 transition-colors shadow-2xl cursor-pointer"
+                        >
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-zinc-200 dark:bg-zinc-900 border border-black/10 dark:border-white/10 shadow-inner shrink-0">
                                     <Headphones className="w-5 h-5 text-zinc-600 dark:text-zinc-300" />
@@ -81,10 +86,10 @@ export function ContactSection() {
                             <p className="text-zinc-400 text-sm mb-6 leading-relaxed">
                                 {contactPage.contactSales.description}
                             </p>
-                            <a href="tel:+917712994005" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-zinc-300 hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white/50 w-fit">
+                            <span className="text-sm font-medium text-zinc-300 hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white/50 w-fit">
                                 {contactPage.contactSales.linkText}
-                            </a>
-                        </motion.div>
+                            </span>
+                        </motion.a>
                     </div>
 
                     {/* Right Column (Form) */}
