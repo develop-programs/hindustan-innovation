@@ -7,6 +7,7 @@ import {
   FlaskConical, HardDrive, Mail, MapPin, Check, ArrowUpRight,
   Sparkles, Layers,
 } from "lucide-react";
+import Link from "next/link";
 import { AnimatedList } from "../ui/animated-list";
 import { motion, type Variants } from "motion/react";
 import servicesData from "@/services.json";
@@ -172,33 +173,44 @@ function Card({ card }: { card: ServiceCard }) {
   return (
     <motion.div
       variants={itemVariants}
-      className={`${spanClass} flex flex-col p-8 bg-zinc-950 rounded-3xl border-t-2 border-slate-300/50 outline  outline-slate-800 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden relative group  transition-all duration-300`}
+      className={`${spanClass} flex flex-col`}
     >
-      {/* subtle glow on hover */}
-      <div className="absolute inset-0 bg-linear-to-br from-white/2 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl" />
+      <Link
+        href={`/services/${card.id}`}
+        className="flex flex-col flex-1 p-8 bg-zinc-950 rounded-3xl border-t-2 border-slate-300/50 outline outline-slate-800 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden relative group transition-all duration-300 hover:outline-slate-600 hover:-translate-y-1 hover:shadow-[0_8px_50px_rgba(0,0,0,0.6)]"
+      >
+        {/* subtle glow on hover */}
+        <div className="absolute inset-0 bg-linear-to-br from-white/2 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl" />
 
-      {renderGraphic()}
+        {renderGraphic()}
 
-      {/* Icon + Title */}
-      <div className="flex items-center gap-3 mb-3">
-        <div className={`shrink-0 ${card.accent}`}>{card.icon}</div>
-        <h3 className="text-xl font-semibold text-zinc-100">{card.title}</h3>
-      </div>
+        {/* Icon + Title */}
+        <div className="flex items-center gap-3 mb-3">
+          <div className={`shrink-0 ${card.accent}`}>{card.icon}</div>
+          <h3 className="text-xl font-semibold text-zinc-100 group-hover:text-white transition-colors">{card.title}</h3>
+        </div>
 
-      <p className="text-zinc-400 text-sm leading-relaxed mb-5">{card.description}</p>
+        <p className="text-zinc-400 text-sm leading-relaxed mb-5">{card.description}</p>
 
-      {/* Sub-items */}
-      <div className="mt-auto grid grid-cols-2 gap-x-4 gap-y-1.5">
-        {card.items.map((item) => (
-          <div key={item} className="flex items-center gap-1.5 text-xs text-zinc-500">
-            <Check className={`w-3 h-3 shrink-0 ${card.accent}`} />
-            {item}
-          </div>
-        ))}
-      </div>
+        {/* Sub-items */}
+        <div className="mt-auto grid grid-cols-2 gap-x-4 gap-y-1.5 mb-5">
+          {card.items.map((item) => (
+            <div key={item} className="flex items-center gap-1.5 text-xs text-zinc-500">
+              <Check className={`w-3 h-3 shrink-0 ${card.accent}`} />
+              {item}
+            </div>
+          ))}
+        </div>
+
+        {/* View Details */}
+        <div className={`inline-flex items-center gap-1.5 text-xs font-semibold ${card.accent} opacity-0 group-hover:opacity-100 transition-all duration-200`}>
+          View Details <ArrowUpRight className="w-3.5 h-3.5" />
+        </div>
+      </Link>
     </motion.div>
   );
 }
+
 
 // ─── Group section ────────────────────────────────────────────────────────────
 
