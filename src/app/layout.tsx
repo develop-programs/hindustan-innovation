@@ -40,7 +40,7 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable, playfair.variable)}
     >
       <body className="min-h-full flex flex-col bg-zinc-950 text-zinc-50">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
           <WhatsAppButton />
         </ThemeProvider>
