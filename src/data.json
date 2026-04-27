@@ -144,31 +144,67 @@
     ]
   },
   "process": {
-    "pill": "PROCESS",
-    "heading": "Our Simple &",
-    "headingItalic": "Smart Process",
-    "subheading": "Everything you need to collaborate, create, and scale, all in one place.",
-    "steps": [
-      {
-        "step": 1,
-        "number": "01",
-        "title": "Consult & Strategy",
-        "description": "We understand your business goals and define a technology roadmap"
-      },
-      {
-        "step": 2,
-        "number": "02",
-        "title": "Design & Development",
-        "description": "We build scalable systems using modern technologies and AI"
-      },
-      {
-        "step": 3,
-        "number": "03",
-        "title": "Launch & Growth",
-        "description": "We deploy, optimize, and help you scale continuously"
-      }
-    ]
-  },
+  "pill": "PROCESS",
+  "heading": "Our Simple &",
+  "headingItalic": "Smart Process",
+  "subheading": "A clear, step-by-step approach to design, build, and scale your digital systems efficiently.",
+  "steps": [
+    {
+      "step": 1,
+      "number": "01",
+      "title": "Consult & Strategy",
+      "description": "We deeply understand your business, goals, and challenges to craft a tailored technology roadmap.",
+      "points": [
+        "Requirement Gathering & Business Analysis",
+        "Competitor & Market Research",
+        "Workflow & Process Audit",
+        "AI & Automation Opportunity Identification",
+        "Technology Stack Planning"
+      ],
+      "deliverables": [
+        "Project Roadmap",
+        "Feature List & Scope Document",
+        "Tech Stack Recommendation"
+      ]
+    },
+    {
+      "step": 2,
+      "number": "02",
+      "title": "Design & Development",
+      "description": "We design intuitive user experiences and build powerful, scalable systems using modern technologies.",
+      "points": [
+        "UI/UX Design (Figma / Prototyping)",
+        "Frontend & Backend Development",
+        "API Development & Integration",
+        "AI Model / Automation Integration",
+        "Database & System Architecture Setup"
+      ],
+      "deliverables": [
+        "UI Design Files",
+        "Working Product (MVP / Full Build)",
+        "Integrated APIs & Features"
+      ]
+    },
+    {
+      "step": 3,
+      "number": "03",
+      "title": "Testing, Launch & Growth",
+      "description": "We ensure quality, deploy your solution, and continuously optimize it for growth and performance.",
+      "points": [
+        "Quality Assurance & Testing",
+        "Performance Optimization",
+        "Cloud Deployment (AWS / Azure / GCP)",
+        "Monitoring & Bug Fixing",
+        "Continuous Improvements & Scaling"
+      ],
+      "deliverables": [
+        "Live Deployed Product",
+        "Performance Reports",
+        "Ongoing Support & Optimization Plan"
+      ]
+    }
+  ]
+},
   "integrations": {
     "pill": "INTEGRATIONS",
     "heading": "Seamless",
