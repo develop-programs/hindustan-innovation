@@ -10,7 +10,7 @@
     "navLinks": [
       "Home",
       "Services",
-      "Porfolio",
+      "Portfolio",
       "About",
       "Blog",
       "Career",
@@ -28,7 +28,7 @@
   },
   "quote": {
     "pill": "We Analyze Your Data",
-    "text": "We find what to {automate}, who your users are & how AI can optimize your {workflow}. Best part is we also build and launch {real solutions.}",
+    "text": "We help businesses reduce manual work, improve efficiency, and grow faster by combining AI, automation, and custom-built software.",
     "authorRole": "Hindustaan Innovation Team",
     "authorAvatar": "/logo.png"
   },
@@ -184,13 +184,13 @@
       {
         "name": "Rahul Sharma",
         "role": "Operations Manager at FlowEdge Solutions",
-        "avatar": "https://randomuser.me/api/portraits/men/75.jpg",
+        "avatar": "https://randomuser.me/api/portraits/men/7.jpg",
         "quote": "AI automation has made our daily operations incredibly smooth. The improvement in team productivity is clearly visible."
       },
       {
         "name": "Priya Verma",
         "role": "CTO at BrightTech Labs",
-        "avatar": "https://randomuser.me/api/portraits/women/68.jpg",
+        "avatar": "https://randomuser.me/api/portraits/women/19.jpg",
         "quote": "Their automation workflows have completely transformed our processes. The execution is clean and highly efficient."
       },
       {
@@ -208,7 +208,7 @@
       {
         "name": "Rohit Agarwal",
         "role": "Analytics Lead at DataCore India",
-        "avatar": "https://randomuser.me/api/portraits/men/80.jpg",
+        "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
         "quote": "Real-time insights and dashboards have made our decision-making much faster and more accurate than before."
       },
       {
@@ -241,7 +241,7 @@
       {
         "name": "Kavita Joshi",
         "role": "Founder at SprintUp Ventures",
-        "avatar": "https://i.pravatar.cc/150?img=53",
+        "avatar": "https://i.pravatar.cc/150?img=5",
         "quote": "The automation workflows helped our team save over 100 hours every week. Efficiency has improved tremendously."
       },
       {
@@ -337,7 +337,7 @@
       "fields": {
         "name": {
           "label": "Full Name",
-          "placeholder": "Ikta Sollork"
+          "placeholder": "Name"
         },
         "email": {
           "label": "Email Address",
@@ -358,11 +358,11 @@
   "footer": {
     "navLinks": [
       "Services",
-      "Pricing",
-      "Contact",
+      "Portfolio",
+      "About",
       "Blog",
-      "Privacy",
-      "Terms"
+      "Career",
+      "Contact"
     ],
     "socials": [
       {
