@@ -19,7 +19,7 @@ export function Navbar() {
           <span className="text-xl font-medium tracking-tight text-zinc-900 dark:text-zinc-100 w-40 leading-4">{brand.name}</span>
         </Link>
 
-        <nav className="hidden md:flex items-center space-x-1 bg-zinc-100/50 dark:bg-zinc-900/50 backdrop-blur-md border border-black/10 dark:border-white/5 rounded-full px-1 py-1">
+        <nav className="hidden lg:flex items-center space-x-1 bg-zinc-100/50 dark:bg-zinc-900/50 backdrop-blur-md border border-black/10 dark:border-white/5 rounded-full px-1 py-1">
           {navLinks.map((item) =>
             <Link
               key={item}
@@ -31,7 +31,7 @@ export function Navbar() {
           )}
         </nav>
 
-        <div className="hidden md:flex items-center">
+        <div className="hidden lg:flex items-center">
           <Link href="/contact">
             <button type="button" className="flex items-center gap-2 bg-zinc-100/50 dark:bg-zinc-900/50 backdrop-blur-md border border-black/10 dark:border-white/10 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/80 text-zinc-900 dark:text-zinc-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
               <Sparkles className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
@@ -41,7 +41,7 @@ export function Navbar() {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="flex md:hidden items-center">
+        <div className="flex lg:hidden items-center">
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -55,7 +55,7 @@ export function Navbar() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-zinc-950/95 backdrop-blur-xl border-b border-black/10 dark:border-white/10 px-6 py-6 flex flex-col gap-6 shadow-2xl z-40">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-zinc-950/95 backdrop-blur-xl border-b border-black/10 dark:border-white/10 px-6 py-6 flex flex-col gap-6 shadow-2xl z-40">
           <nav className="flex flex-col gap-2">
             {navLinks.map((item) =>
               <Link
