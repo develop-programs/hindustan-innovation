@@ -1,10 +1,10 @@
 {
   "brand": {
-    "name": "Hindustaan Innovation",
+    "name": "Hindustaan Innovations",
     "tagline": "New Gen AI Automation Partner",
     "email": "info@hindustaan.in",
-    "copyright": "© 2026 Hindustaan Innovation",
-    "madeBy": "Hindustaan Innovation",
+    "copyright": "© 2026 Hindustaan Innovations",
+    "madeBy": "Hindustaan Innovations",
     "whatsapp": "https://wa.me/919999999999"
   },
   "navbar": {
@@ -30,7 +30,7 @@
   "quote": {
     "pill": "We Analyze Your Data",
     "text": "We help businesses reduce manual work, improve efficiency, and grow faster by combining AI, automation, and custom-built software.",
-    "authorRole": "Hindustaan Innovation Team",
+    "authorRole": "Team Hindustaan Innovations ",
     "authorAvatar": "/logo.png"
   },
   "benefits": {
@@ -423,9 +423,9 @@
         "icon": "dribbble"
       }
     ],
-    "copyright": "© 2026 Hindustaan Innovation",
+    "copyright": "© 2026 Hindustaan Innovations",
     "madeByLabel": "Made with ❤️ by",
-    "madeByName": "Hindustaan Innovation",
+    "madeByName": "Hindustaan Innovations",
     "email": "info@hindustaan.in"
   }
 }
