@@ -1,10 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence, type Variants } from "motion/react";
-import { Clock, ArrowUpRight, Bot, Globe, Cloud, Zap, TrendingUp, Brain } from "lucide-react";
+import { Clock, ArrowUpRight, Bot, Globe, Cloud, Zap, TrendingUp, Brain, Loader2 } from "lucide-react";
 import Link from "next/link";
-import blogData from "@/blog.json";
 
 /* ── Icon map ── */
 const IconMap: Record<string, React.FC<{ className?: string }>> = {
@@ -27,7 +26,32 @@ const cardVariants: Variants = {
   exit: { opacity: 0, y: -12, transition: { duration: 0.25 } },
 };
 
-type Post = (typeof blogData.posts)[number];
+interface Post {
+  id: string;
+  slug: string;
+  category: string;
+  categoryLabel: string;
+  title: string;
+  excerpt: string;
+  coverGradient: string;
+  accentColor: string;
+  accentBg: string;
+  icon: string;
+  readTime: string;
+  date: string;
+  author: {
+    name: string;
+    role: string;
+    avatar: string;
+  };
+  tags: string[];
+}
+
+interface Category {
+  id: string;
+  label: string;
+  count?: number;
+}
 
 function BlogCard({ post }: { post: Post }) {
   const Icon = IconMap[post.icon] ?? Bot;
@@ -108,11 +132,61 @@ function BlogCard({ post }: { post: Post }) {
 
 export function BlogGrid() {
   const [activeCategory, setActiveCategory] = useState("all");
-  const { categories, posts } = blogData;
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const filtered = activeCategory === "all"
-    ? posts
-    : posts.filter((p) => p.category === activeCategory);
+  // Fetch categories on mount
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch("/api/blogs/categories");
+        const data = await response.json();
+        if (data.success) {
+          setCategories(data.categories || []);
+        } else {
+          setError(data.error || "Failed to fetch categories");
+        }
+      } catch (err) {
+        console.error("Error fetching categories:", err);
+        setError("Failed to load categories");
+      }
+    };
+
+    fetchCategories();
+  }, []);
+
+  // Fetch posts when category changes
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const params = new URLSearchParams();
+        if (activeCategory !== "all") {
+          params.append("category", activeCategory);
+        }
+        params.append("limit", "50"); // Get all posts for now
+
+        const response = await fetch(`/api/blogs?${params}`);
+        const data = await response.json();
+
+        if (data.success) {
+          setPosts(data.data || []);
+        } else {
+          setError(data.error || "Failed to fetch posts");
+        }
+      } catch (err) {
+        console.error("Error fetching posts:", err);
+        setError("Failed to load blog posts");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, [activeCategory]);
 
   return (
     <section className="relative z-10 w-full max-w-6xl mx-auto px-4 py-20">
@@ -123,33 +197,62 @@ export function BlogGrid() {
             key={cat.id}
             type="button"
             onClick={() => setActiveCategory(cat.id)}
+            disabled={loading}
             className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer ${
               activeCategory === cat.id
                 ? "bg-zinc-100 text-zinc-900 shadow-[0_0_20px_rgba(255,255,255,0.15)]"
-                : "bg-zinc-900/60 border border-white/8 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/60"
+                : "bg-zinc-900/60 border border-white/8 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/60 disabled:opacity-50 disabled:cursor-not-allowed"
             }`}
           >
             {cat.label}
+            {cat.count !== undefined && (
+              <span className="ml-2 text-xs opacity-70">({cat.count})</span>
+            )}
           </button>
         ))}
       </div>
 
-      {/* Posts Grid */}
-      <motion.div
-        key={activeCategory}
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-      >
-        <AnimatePresence mode="popLayout">
-          {filtered.map((post) => (
-            <BlogCard key={post.id} post={post} />
-          ))}
-        </AnimatePresence>
-      </motion.div>
+      {/* Loading State */}
+      {loading && (
+        <div className="flex flex-col items-center justify-center py-24 gap-4">
+          <Loader2 className="w-8 h-8 text-zinc-400 animate-spin" />
+          <p className="text-zinc-500">Loading blog posts...</p>
+        </div>
+      )}
 
-      {filtered.length === 0 && (
+      {/* Error State */}
+      {error && !loading && (
+        <div className="flex flex-col items-center justify-center py-24 gap-4 text-center">
+          <div className="text-red-500 font-semibold">Error Loading Posts</div>
+          <p className="text-zinc-500 text-sm">{error}</p>
+          <button
+            onClick={() => setActiveCategory("all")}
+            className="mt-4 px-4 py-2 bg-zinc-900 border border-white/8 rounded-lg text-sm hover:bg-zinc-800 transition-colors"
+          >
+            Try Again
+          </button>
+        </div>
+      )}
+
+      {/* Posts Grid */}
+      {!loading && !error && (
+        <motion.div
+          key={activeCategory}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          <AnimatePresence mode="popLayout">
+            {posts.map((post) => (
+              <BlogCard key={post.id} post={post} />
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      )}
+
+      {/* Empty State */}
+      {!loading && !error && posts.length === 0 && (
         <div className="text-center py-24 text-zinc-600">
           <p className="text-lg">No posts in this category yet.</p>
         </div>

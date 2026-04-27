@@ -1,10 +1,17 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion, type Variants } from "motion/react";
 import { BookOpen } from "lucide-react";
 import { BackgroundEffects } from "@/components/landing/BackgroundEffects";
 import { Navbar } from "@/components/landing/Navbar";
-import blogData from "@/blog.json";
+
+interface HeroData {
+  pill: string;
+  heading: string;
+  headingItalic: string;
+  subheading: string;
+}
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -17,44 +24,71 @@ const itemVariants: Variants = {
 };
 
 export function BlogHero() {
-  const { hero } = blogData;
+  const [hero, setHero] = useState<HeroData | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchHero = async () => {
+      try {
+        const response = await fetch("/api/blogs/categories");
+        const data = await response.json();
+        if (data.success && data.hero) {
+          setHero(data.hero);
+        }
+      } catch (err) {
+        console.error("Error fetching hero data:", err);
+        // Fallback hero data
+        setHero({
+          pill: "OUR BLOG",
+          heading: "Insights &",
+          headingItalic: "Ideas",
+          subheading: "Stay ahead with the latest trends in technology and innovation.",
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchHero();
+  }, []);
 
   return (
     <div className="relative h-screen flex flex-col overflow-hidden">
       <BackgroundEffects />
       <Navbar />
-      <motion.section
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="relative z-10 flex flex-col items-center justify-center flex-1 px-4 pt-10 pb-16 w-full max-w-5xl mx-auto text-center"
-      >
-        {/* Pill */}
-        <motion.div
-          variants={itemVariants}
-          className="flex items-center gap-2 mb-6 bg-zinc-900/50 backdrop-blur-md border border-white/8 rounded-full px-4 py-1.5 shadow-lg"
+      {hero ? (
+        <motion.section
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="relative z-10 flex flex-col items-center justify-center flex-1 px-4 pt-10 pb-16 w-full max-w-5xl mx-auto text-center"
         >
-          <BookOpen className="w-4 h-4 text-zinc-300" />
-          <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">
-            {hero.pill}
-          </span>
-        </motion.div>
+          {/* Pill */}
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center gap-2 mb-6 bg-zinc-900/50 backdrop-blur-md border border-white/8 rounded-full px-4 py-1.5 shadow-lg"
+          >
+            <BookOpen className="w-4 h-4 text-zinc-300" />
+            <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">
+              {hero.pill}
+            </span>
+          </motion.div>
 
-        {/* Heading */}
-        <motion.h1
-          variants={itemVariants}
-          className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-100 mb-5 text-center leading-[1.1]"
-        >
-          {hero.heading}{" "}
-          <span className="font-serif italic font-light text-zinc-300">
-            {hero.headingItalic}
-          </span>
-        </motion.h1>
+          {/* Heading */}
+          <motion.h1
+            variants={itemVariants}
+            className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-100 mb-5 text-center leading-[1.1]"
+          >
+            {hero.heading}{" "}
+            <span className="font-serif italic font-light text-zinc-300">
+              {hero.headingItalic}
+            </span>
+          </motion.h1>
 
-        {/* Subheading */}
-        <motion.p
-          variants={itemVariants}
-          className="text-zinc-400 text-lg md:text-xl text-center max-w-2xl leading-relaxed"
+          {/* Subheading */}
+          <motion.p
+            variants={itemVariants}
+            className="text-zinc-400 text-lg md:text-xl text-center max-w-2xl leading-relaxed"
         >
           {hero.subheading}
         </motion.p>
@@ -71,7 +105,12 @@ export function BlogHero() {
             className="w-px h-8 bg-gradient-to-b from-zinc-500 to-transparent"
           />
         </motion.div>
-      </motion.section>
+        </motion.section>
+      ) : (
+        <div className="flex flex-col items-center justify-center flex-1 px-4">
+          <div className="animate-pulse text-zinc-600">Loading blog content...</div>
+        </div>
+      )}
     </div>
   );
 }

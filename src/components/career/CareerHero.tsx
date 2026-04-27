@@ -1,12 +1,49 @@
 "use client";
+import { useState, useEffect } from "react";
 import { Briefcase, ArrowUpRight } from "lucide-react";
 import { motion, type Variants } from "motion/react";
 import { BackgroundEffects } from "../landing/BackgroundEffects";
 import { Navbar } from "../landing/Navbar";
-import careersData from "@/careers.json";
+
+interface HeroData {
+  pill: string;
+  heading: string;
+  headingItalic: string;
+  subheading: string;
+  ctaText: string;
+  ctaLink: string;
+}
 
 export function CareerHero() {
-  const { hero } = careersData;
+  const [hero, setHero] = useState<HeroData | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchHero = async () => {
+      try {
+        const response = await fetch("/api/careers/departments");
+        const data = await response.json();
+        if (data.success && data.hero) {
+          setHero(data.hero);
+        }
+      } catch (err) {
+        console.error("Error fetching hero data:", err);
+        // Fallback data
+        setHero({
+          pill: "Join Our Team",
+          heading: "Build the Future",
+          headingItalic: "With Us",
+          subheading: "We're always looking for passionate people to join our mission.",
+          ctaText: "View Openings",
+          ctaLink: "#openings",
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchHero();
+  }, []);
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -20,6 +57,8 @@ export function CareerHero() {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
+
+  if (!hero) return null;
 
   return (
     <div className="relative h-screen">

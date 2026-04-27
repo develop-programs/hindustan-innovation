@@ -1,12 +1,13 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import {
   Globe, Smartphone, Palette, ShoppingCart, Code2, Megaphone, Wrench,
   Bot, Brain, TrendingUp, Eye, Cpu, Cloud, Server, GitBranch, Shield,
   Database, Monitor, Plug, Lock, Package, BarChart2, Zap, Settings,
   FlaskConical, HardDrive, Mail, MapPin, Check, ArrowUpRight,
   Sparkles, Layers,
-  Briefcase
+  Briefcase, Loader2
 } from "lucide-react";
 import { AnimatedList } from "../ui/animated-list";
 import { motion, type Variants } from "motion/react";
@@ -278,9 +279,55 @@ function DepartmentSection({ dept }: { dept: Department }) {
 }
 
 export function CareerGrid() {
+  const [departments, setDepartments] = useState<Department[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchDepartments = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const response = await fetch("/api/careers");
+        const data = await response.json();
+
+        if (data.success) {
+          setDepartments(data.data || []);
+        } else {
+          setError(data.error || "Failed to fetch careers");
+        }
+      } catch (err) {
+        console.error("Error fetching careers:", err);
+        setError("Failed to load career positions");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDepartments();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="w-full py-24 flex flex-col items-center justify-center gap-4">
+        <Loader2 className="w-8 h-8 text-zinc-400 animate-spin" />
+        <p className="text-zinc-500">Loading career opportunities...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="w-full py-24 flex flex-col items-center justify-center gap-4 text-center">
+        <div className="text-red-500 font-semibold">Error Loading Positions</div>
+        <p className="text-zinc-500 text-sm">{error}</p>
+      </div>
+    );
+  }
+
   return (
     <div id="openings" className="w-full">
-      {DEPARTMENTS.map((dept) => (
+      {departments.map((dept) => (
         <DepartmentSection key={dept.id} dept={dept} />
       ))}
     </div>

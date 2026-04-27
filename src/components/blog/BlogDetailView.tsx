@@ -10,7 +10,6 @@ import Link from "next/link";
 import { BackgroundEffects } from "@/components/landing/BackgroundEffects";
 import { Navbar } from "@/components/landing/Navbar";
 import { FooterBar } from "@/components/landing/FooterBar";
-import blogData from "@/blog.json";
 
 /* ── Icon map ── */
 const IconMap: Record<string, React.FC<{ className?: string }>> = {
@@ -27,7 +26,66 @@ const containerVariants: Variants = {
   visible: { opacity: 1, transition: { staggerChildren: 0.12 } },
 };
 
-type Post = (typeof blogData.posts)[number];
+// Type definitions
+interface BlogSection {
+  heading: string;
+  body: string;
+}
+
+interface BlogContent {
+  intro: string;
+  sections: BlogSection[];
+  conclusion: string;
+}
+
+interface Author {
+  name: string;
+  role: string;
+  avatar: string;
+}
+
+interface Post {
+  id: string;
+  slug: string;
+  category: string;
+  categoryLabel: string;
+  title: string;
+  excerpt: string;
+  coverGradient: string;
+  accentColor: string;
+  accentBg: string;
+  icon: string;
+  readTime: string;
+  date: string;
+  author: Author;
+  tags: string[];
+  content: BlogContent;
+}
+
+interface RelatedPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  categoryLabel: string;
+  date: string;
+  readTime: string;
+  icon: string;
+  accentColor: string;
+}
+
+interface NavigationPost {
+  id: string;
+  slug: string;
+  title: string;
+  date: string;
+}
+
+interface Navigation {
+  previous: NavigationPost | null;
+  next: NavigationPost | null;
+}
 
 /* ══════════════════════════════════════════════
    LEFT SIDEBAR — Table of Contents
@@ -224,7 +282,15 @@ function EnquiryForm({ post }: { post: Post }) {
 /* ══════════════════════════════════════════════
    MAIN EXPORT — Blog Detail View
 ══════════════════════════════════════════════ */
-export function BlogDetailView({ post }: { post: Post }) {
+export function BlogDetailView({
+  post,
+  related = [],
+  navigation,
+}: {
+  post: Post;
+  related?: RelatedPost[];
+  navigation?: Navigation;
+}) {
   const Icon = IconMap[post.icon] ?? Bot;
   const [activeSection, setActiveSection] = useState(-1);
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
@@ -250,11 +316,6 @@ export function BlogDetailView({ post }: { post: Post }) {
 
     return () => observers.forEach((obs) => obs.disconnect());
   }, [post]);
-
-  // Related posts
-  const related = blogData.posts
-    .filter((p) => p.id !== post.id && p.category === post.category)
-    .slice(0, 2);
 
   return (
     <div className="relative min-h-screen flex flex-col bg-zinc-950 text-zinc-50">

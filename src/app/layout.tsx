@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { WhatsAppButton } from "@/components/landing/WhatsAppButton";
+import { ThemeProvider } from "@/providers/theme-provider";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -39,8 +40,10 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable, playfair.variable)}
     >
       <body className="min-h-full flex flex-col bg-zinc-950 text-zinc-50">
-        {children}
-        <WhatsAppButton />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+          <WhatsAppButton />
+        </ThemeProvider>
       </body>
     </html>
   );

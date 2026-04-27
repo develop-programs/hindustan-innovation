@@ -1,17 +1,56 @@
 "use client";
+import { useState, useEffect } from "react";
 import { motion, type Variants } from "motion/react";
 import { ArrowUpRight, Send } from "lucide-react";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
-import careersData from "@/careers.json";
 import Link from "next/link";
 
+interface CTABannerData {
+  pill: string;
+  heading: string;
+  headingItalic: string;
+  subheading: string;
+  ctaText: string;
+  ctaLink: string;
+}
+
 export function CareerCtaBanner() {
-  const { ctaBanner } = careersData;
+  const [ctaBanner, setCtaBanner] = useState<CTABannerData | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBanner = async () => {
+      try {
+        const response = await fetch("/api/careers/departments");
+        const data = await response.json();
+        if (data.success && data.ctaBanner) {
+          setCtaBanner(data.ctaBanner);
+        }
+      } catch (err) {
+        console.error("Error fetching CTA banner:", err);
+        // Fallback data
+        setCtaBanner({
+          pill: "Don't see a fit?",
+          heading: "Send an open",
+          headingItalic: "application",
+          subheading: "We're always on the lookout for great talent.",
+          ctaText: "Apply Now",
+          ctaLink: "mailto:info@hindustaan.in",
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBanner();
+  }, []);
 
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
+
+  if (!ctaBanner) return null;
 
   return (
     <section className="relative z-10 flex flex-col items-center justify-center px-4 py-24 w-full max-w-4xl mx-auto text-center">
