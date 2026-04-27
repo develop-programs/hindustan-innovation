@@ -200,7 +200,7 @@ export function ServiceDetailView({ serviceId }: Props) {
                 <h2 className="text-2xl font-bold text-zinc-100">What's Included</h2>
               </div>
               <p className="text-zinc-500 mb-8 text-sm leading-relaxed">
-                Everything you get when you choose <span className={card.accent}>{card.title}</span> from Hindustaan Innovation.
+                Everything you get when you choose <span className={card.accent}>{card.title}</span> from Hindustaan Innovations.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

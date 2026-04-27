@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (data.success && data.data) {
       const post = data.data;
       return {
-        title: `${post.title} | Hindustaan Innovation Blog`,
+        title: `${post.title} | Hindustaan Innovations Blog`,
         description: post.excerpt,
         icons: { icon: "/logo.png" },
       };

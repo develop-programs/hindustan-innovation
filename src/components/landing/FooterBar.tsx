@@ -69,11 +69,11 @@ const COLUMNS = [
   {
     heading: "Resources",
     links: [
-      { label: "Case Studies", href: "#" },
-      { label: "Documentation", href: "#" },
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
-      { label: "Support", href: "#" },
+      { label: "Case Studies", href: "/case-studies" },
+      { label: "Documentation", href: "/docs" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms of Service", href: "/terms" },
+      { label: "Support", href: "/support" },
     ],
   },
 ];
@@ -222,7 +222,7 @@ export function FooterBar() {
           <div className="flex items-center gap-1.5 text-xs text-zinc-700">
             <span>Made with</span>
             <span className="text-rose-500">♥</span>
-            <span>by Hindustaan Innovation</span>
+            <span>by Hindustaan Innovations</span>
           </div>
         </div>
       </div>

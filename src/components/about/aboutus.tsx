@@ -101,7 +101,7 @@ function AboutHero() {
         {/* Pill */}
         <motion.div variants={fadeUp} className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)]" />
-          <span className="text-xs font-bold tracking-wider text-zinc-300 uppercase">About Hindustaan Innovation</span>
+          <span className="text-xs font-bold tracking-wider text-zinc-300 uppercase">About Hindustaan Innovations</span>
         </motion.div>
 
         {/* Heading */}
@@ -168,7 +168,7 @@ function OurStory() {
         {/* Story text */}
         <motion.div variants={fadeUp} className="space-y-6 text-zinc-400 text-base leading-relaxed">
           <p>
-            Hindustaan Innovation was founded in 2026 with one simple belief — every Indian business,
+            Hindustaan Innovations was founded in 2026 with one simple belief — every Indian business,
             no matter its size, deserves access to world-class digital solutions without the complexity
             or the hefty price tag.
           </p>
@@ -393,7 +393,7 @@ const FOUNDERS = [
     name: "Prashant kumar Singh",
     role: "Founder & CEO",
     image: "/Prashant.jpeg",
-    bio: "Visionary entrepreneur behind Hindustaan Innovation. Prashant drives the mission to make intelligent digital systems accessible to every Indian business, from early-stage startups to established enterprises.",
+    bio: "Visionary entrepreneur behind Hindustaan Innovations. Prashant drives the mission to make intelligent digital systems accessible to every Indian business, from early-stage startups to established enterprises.",
     linkedin: "https://www.linkedin.com/",
     badge: "Founder",
     badgeColor: "from-amber-500/20 to-orange-500/10 border-amber-500/30 text-amber-400",
@@ -403,7 +403,7 @@ const FOUNDERS = [
     name: "Aryan Patel",
     role: "Co-founder & CTO",
     image: "/Aryan.jpeg",
-    bio: "Full-stack engineer and tech architect. Aryan builds the digital backbone of Hindustaan Innovation, leading all technical development from web apps to AI systems and cloud infrastructure.",
+    bio: "Full-stack engineer and tech architect. Aryan builds the digital backbone of Hindustaan Innovations, leading all technical development from web apps to AI systems and cloud infrastructure.",
     linkedin: "https://www.linkedin.com/in/ghostxaryan/",
     badge: "Co-founder",
     badgeColor: "from-blue-500/20 to-indigo-500/10 border-blue-500/30 text-blue-400",

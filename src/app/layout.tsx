@@ -24,7 +24,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Hindustaan Innovation",
+  title: "Hindustaan Innovations",
   description: "AI Automation for Modern Businesses Made Simple",
 };
 
