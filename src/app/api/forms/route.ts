@@ -60,7 +60,7 @@ export async function POST(req: NextRequest) {
 
     try {
         await transporter.sendMail({
-            from: `"Hindustan Innovation Careers" <${emailSender}>`,
+            from: `"Hindustan Innovations Careers" <${emailSender}>`,
             replyTo: data.email,
             to: emailReceiver,
             subject: `${subjectPrefix} - ${data.name}`,

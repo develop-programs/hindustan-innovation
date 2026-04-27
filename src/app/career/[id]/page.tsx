@@ -44,7 +44,7 @@ export async function generateMetadata({
 
     if (data.success && data.data) {
       return {
-        title: `${data.data.title} | Hindustan Innovation Careers`,
+        title: `${data.data.title} | Hindustan Innovations Careers`,
         description: data.data.description,
       };
     }
@@ -52,7 +52,7 @@ export async function generateMetadata({
     console.error("Error fetching metadata:", error);
   }
 
-  return { title: "Job Details | Hindustan Innovation Careers" };
+  return { title: "Job Details | Hindustan Innovations Careers" };
 }
 
 export const revalidate = 3600; // Revalidate every hour

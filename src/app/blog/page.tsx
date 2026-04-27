@@ -4,7 +4,7 @@ import { BlogGrid } from "@/components/blog/BlogGrid";
 import { FooterBar } from "@/components/landing/FooterBar";
 
 export const metadata: Metadata = {
-  title: "Blog | Hindustaan Innovation",
+  title: "Blog | Hindustaan Innovations",
   description:
     "Insights and ideas on AI automation, web development, cloud computing, and digital business strategy from the Hindustaan Innovation team.",
   icons: { icon: "/logo.png" },

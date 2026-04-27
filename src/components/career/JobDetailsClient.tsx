@@ -355,7 +355,7 @@ export default function JobDetailsClient({ job }: { job: Job }) {
               <h3 className="text-sm font-bold text-zinc-400 uppercase tracking-widest mb-4">Share this job</h3>
               <div className="flex gap-2">
                 <a
-                  href={`https://twitter.com/intent/tweet?text=Check%20out%20this%20${job.title}%20role%20at%20Hindustan%20Innovation`}
+                  href={`https://twitter.com/intent/tweet?text=Check%20out%20this%20${job.title}%20role%20at%20Hindustan%20Innovations`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 px-3 py-2 text-sm font-medium bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 hover:text-white transition-all text-zinc-300"
