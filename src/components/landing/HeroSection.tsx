@@ -28,7 +28,7 @@ export function HeroSection() {
   const { pill, headingLine1, headingLine2, headingItalic, subheading, ctaLabel } = data.hero;
 
   return (
-    <div className="relative min-h-dvh flex flex-col overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent">
+    <div className="relative min-h-dvh flex flex-col overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-linear-to-r after:from-transparent after:via-black/20 dark:after:via-white/20 after:to-transparent">
       <Navbar />
       <BackgroundEffects />
       <motion.main
@@ -42,28 +42,28 @@ export function HeroSection() {
           <motion.div variants={itemVariants} className="relative flex flex-col md:flex-row items-center md:items-end gap-3 md:gap-0 text-center md:text-left">
             <div className="absolute inset-0 rounded-full" />
             <Image src="/logo.png" alt="Logo" width={100} height={100} decoding="async" loading="eager" fetchPriority="high" className="size-16 md:size-20" />
-            <div className="text-3xl md:text-4xl md:w-50 font-medium tracking-tight leading-8 text-zinc-100 uppercase">{data.brand.name}</div>
+            <div className="text-3xl md:text-4xl md:w-50 font-medium tracking-tight leading-8 text-zinc-900 dark:text-zinc-100 uppercase">{data.brand.name}</div>
           </motion.div>
 
           {/* Pill */}
           <motion.div variants={itemVariants} className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)]" />
-            <span className="text-[10px] sm:text-xs font-bold tracking-wider text-zinc-300 uppercase">
+            <span className="text-[10px] sm:text-xs font-bold tracking-wider text-zinc-600 dark:text-zinc-300 uppercase">
               {pill}
             </span>
           </motion.div>
 
           {/* Hero Heading */}
-          <motion.h1 variants={itemVariants} className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold leading-[1.1] md:leading-[1.1] tracking-tight mb-2 md:mb-6 bg-radial from-white/50 to-black/60 text-transparent bg-clip-text px-2 md:px-0">
-            <span className="text-zinc-200">{headingLine1} </span>
-            <span className="text-zinc-400">{headingLine2.split(" ")[0]}</span>
+          <motion.h1 variants={itemVariants} className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold leading-[1.1] md:leading-[1.1] tracking-tight mb-2 md:mb-6 bg-radial from-white/50 dark:from-white/50 to-black/60 dark:to-black/60 text-transparent bg-clip-text px-2 md:px-0">
+            <span className="text-zinc-900 dark:text-zinc-200">{headingLine1} </span>
+            <span className="text-zinc-600 dark:text-zinc-400">{headingLine2.split(" ")[0]}</span>
             <br className="hidden sm:block" />
-            <span className="text-zinc-400"> {headingLine2.split(" ").slice(1).join(" ")} </span>
-            <span className="font-serif italic text-zinc-300 font-light pr-2">{headingItalic}</span>
+            <span className="text-zinc-600 dark:text-zinc-400"> {headingLine2.split(" ").slice(1).join(" ")} </span>
+            <span className="font-serif italic text-zinc-700 dark:text-zinc-300 font-light pr-2">{headingItalic}</span>
           </motion.h1>
 
           {/* Subheading */}
-          <motion.p variants={itemVariants} className="text-sm sm:text-base md:text-xl text-zinc-400 max-w-2xl text-center px-4 md:px-0 leading-relaxed">
+          <motion.p variants={itemVariants} className="text-sm sm:text-base md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl text-center px-4 md:px-0 leading-relaxed">
             {subheading}
           </motion.p>
 

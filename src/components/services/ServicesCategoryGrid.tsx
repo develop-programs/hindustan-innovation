@@ -36,21 +36,21 @@ const IconMap: Record<string, React.FC<any>> = {
 function IconClusterGraphic({ icons, accent }: { icons: React.ReactNode[]; accent: string }) {
   return (
     <div className="w-full h-40 flex items-center justify-center mb-6 relative">
-      <div className={`relative z-10 w-16 h-16 bg-zinc-900 rounded-2xl border border-white/10 shadow-[0_0_30px_rgba(255,255,255,0.04)] flex items-center justify-center ${accent}`}>
+      <div className={`relative z-10 w-16 h-16 bg-white dark:bg-zinc-900 rounded-2xl border border-black/10 dark:border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.05)] dark:shadow-[0_0_30px_rgba(255,255,255,0.04)] flex items-center justify-center ${accent}`}>
         {icons[0]}
       </div>
       {icons[1] && (
-        <div className="absolute top-[15%] left-[18%] w-10 h-10 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg text-zinc-500">
+        <div className="absolute top-[15%] left-[18%] w-10 h-10 bg-zinc-100 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg text-zinc-600 dark:text-zinc-500">
           {icons[1]}
         </div>
       )}
       {icons[2] && (
-        <div className="absolute bottom-[15%] right-[18%] w-10 h-10 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg text-zinc-500">
+        <div className="absolute bottom-[15%] right-[18%] w-10 h-10 bg-zinc-100 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg text-zinc-600 dark:text-zinc-500">
           {icons[2]}
         </div>
       )}
       {icons[3] && (
-        <div className="absolute top-[12%] right-[22%] w-8 h-8 bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center shadow-lg text-zinc-600">
+        <div className="absolute top-[12%] right-[22%] w-8 h-8 bg-zinc-100 dark:bg-zinc-900 rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-lg text-zinc-700 dark:text-zinc-600">
           {icons[3]}
         </div>
       )}
@@ -67,13 +67,13 @@ function TagListGraphic({ tags }: { tags: string[] }) {
         {loopedTags.map((t, i) => (
           <div
             key={`${t}-${i}`}
-            className={`flex items-center justify-between bg-zinc-900/80 border border-white/5 rounded-xl px-3 py-2 shadow ${i % tags.length === 1 ? "w-full" : "w-[90%]"}`}
+            className={`flex items-center justify-between bg-zinc-100 dark:bg-zinc-900/80 border border-black/10 dark:border-white/5 rounded-xl px-3 py-2 shadow ${i % tags.length === 1 ? "w-full" : "w-[90%]"}`}
           >
             <div className="flex items-center gap-2">
-              <Check className="w-3 h-3 text-zinc-500" />
-              <span className="text-[11px] text-zinc-400 font-medium">{t}</span>
+              <Check className="w-3 h-3 text-zinc-600 dark:text-zinc-500" />
+              <span className="text-[11px] text-zinc-700 dark:text-zinc-400 font-medium">{t}</span>
             </div>
-            <ArrowUpRight className="w-3 h-3 text-zinc-600" />
+            <ArrowUpRight className="w-3 h-3 text-zinc-700 dark:text-zinc-600" />
           </div>
         ))}
       </AnimatedList>
@@ -84,17 +84,17 @@ function TagListGraphic({ tags }: { tags: string[] }) {
 function NodesGraphic({ accent }: { accent: string }) {
   return (
     <div className="w-full h-40 flex items-center justify-center mb-6 relative">
-      <svg className="absolute inset-0 w-full h-full text-zinc-800 stroke-current z-0">
+      <svg className="absolute inset-0 w-full h-full text-zinc-300 dark:text-zinc-800 stroke-current z-0">
         <line x1="30%" y1="30%" x2="70%" y2="70%" strokeWidth="1" />
         <line x1="70%" y1="25%" x2="50%" y2="50%" strokeWidth="1" />
         <line x1="25%" y1="65%" x2="50%" y2="50%" strokeWidth="1" />
       </svg>
-      <div className={`relative z-10 w-14 h-14 bg-zinc-950 rounded-full border border-white/10 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.05)] ${accent}`}>
+      <div className={`relative z-10 w-14 h-14 bg-zinc-100 dark:bg-zinc-950 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center shadow-[0_0_20px_rgba(0,0,0,0.05)] dark:shadow-[0_0_20px_rgba(255,255,255,0.05)] ${accent}`}>
         <Sparkles className="w-6 h-6" />
       </div>
-      <div className="absolute top-[18%] left-[22%] w-9 h-9 bg-zinc-900 rounded-full border border-white/5 flex items-center justify-center text-zinc-500"><Cpu className="w-4 h-4" /></div>
-      <div className="absolute top-[15%] right-[22%] w-9 h-9 bg-zinc-900 rounded-full border border-white/5 flex items-center justify-center text-zinc-500"><Globe className="w-4 h-4" /></div>
-      <div className="absolute bottom-[18%] left-[20%] w-9 h-9 bg-zinc-900 rounded-full border border-white/5 flex items-center justify-center text-zinc-500"><Database className="w-4 h-4" /></div>
+      <div className="absolute top-[18%] left-[22%] w-9 h-9 bg-zinc-200 dark:bg-zinc-900 rounded-full border border-black/10 dark:border-white/5 flex items-center justify-center text-zinc-700 dark:text-zinc-500"><Cpu className="w-4 h-4" /></div>
+      <div className="absolute top-[15%] right-[22%] w-9 h-9 bg-zinc-200 dark:bg-zinc-900 rounded-full border border-black/10 dark:border-white/5 flex items-center justify-center text-zinc-700 dark:text-zinc-500"><Globe className="w-4 h-4" /></div>
+      <div className="absolute bottom-[18%] left-[20%] w-9 h-9 bg-zinc-200 dark:bg-zinc-900 rounded-full border border-black/10 dark:border-white/5 flex items-center justify-center text-zinc-700 dark:text-zinc-500"><Database className="w-4 h-4" /></div>
     </div>
   );
 }

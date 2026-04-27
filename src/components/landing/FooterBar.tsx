@@ -34,19 +34,19 @@ export function FooterBar() {
   const { name } = data.brand;
 
   return (
-    <footer className="relative z-10 w-full border-t border-white/5 bg-[#050505] px-6 md:px-10 lg:px-16 pt-6 pb-8">
+    <footer className="relative z-10 w-full border-t border-black/10 dark:border-white/5 bg-white dark:bg-[#050505] px-6 md:px-10 lg:px-16 pt-6 pb-8">
       {/* Top row */}
       <div className="flex items-center justify-between max-w-7xl mx-auto mb-6">
         <div className="flex items-center gap-2">
-          <div className="bg-zinc-800/80 p-1.5 rounded-full ring-1 ring-white/10">
+          <div className="bg-zinc-200 dark:bg-zinc-800/80 p-1.5 rounded-full ring-1 ring-black/10 dark:ring-white/10">
             <Image src="/logo.png" alt="logo" width={20} height={20} />
           </div>
-          <span className="text-base font-medium tracking-tight text-zinc-100">{name}</span>
+          <span className="text-base font-medium tracking-tight text-zinc-900 dark:text-zinc-100">{name}</span>
         </div>
 
-        <div className="flex items-center gap-5 text-zinc-500">
+        <div className="flex items-center gap-5 text-zinc-600 dark:text-zinc-500">
           {socials.map((s) => (
-            <a key={s.label} href={s.href} aria-label={s.label} className="hover:text-zinc-200 transition-colors">
+            <a key={s.label} href={s.href} aria-label={s.label} className="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors">
               <FooterSocialIcon icon={s.icon} />
             </a>
           ))}
@@ -56,25 +56,25 @@ export function FooterBar() {
       {/* Nav links */}
       <div className="flex flex-wrap items-center gap-x-6 gap-y-2 max-w-7xl mx-auto mb-6">
         {navLinks.map((link) => (
-          <a key={link} href={`#${link.toLowerCase()}`} className="text-sm text-zinc-500 hover:text-zinc-200 transition-colors">
+          <a key={link} href={`#${link.toLowerCase()}`} className="text-sm text-zinc-600 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors">
             {link}
           </a>
         ))}
       </div>
 
-      <div className="border-t border-white/5 max-w-7xl mx-auto mb-5" />
+      <div className="border-t border-black/10 dark:border-white/5 max-w-7xl mx-auto mb-5" />
 
       {/* Bottom row */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 max-w-7xl mx-auto">
-        <span className="text-xs text-zinc-600">{copyright}</span>
+        <span className="text-xs text-zinc-600 dark:text-zinc-600">{copyright}</span>
         <div className="flex items-center gap-6">
-          <span className="text-xs text-zinc-600">
+          <span className="text-xs text-zinc-600 dark:text-zinc-600">
             {madeByLabel}{" "}
-            <a href="#" className="text-zinc-400 hover:text-zinc-200 transition-colors underline underline-offset-2">
+            <a href="#" className="text-zinc-700 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors underline underline-offset-2">
               {madeByName}
             </a>
           </span>
-          <a href={`mailto:${email}`} className="text-xs text-zinc-600 hover:text-zinc-300 transition-colors">
+          <a href={`mailto:${email}`} className="text-xs text-zinc-600 dark:text-zinc-600 hover:text-zinc-900 dark:hover:text-zinc-300 transition-colors">
             {email}
           </a>
         </div>

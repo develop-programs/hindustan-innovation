@@ -44,9 +44,9 @@ const stagger: Variants = {
 
 function Pill({ icon: Icon, label }: { icon: React.ElementType; label: string }) {
   return (
-    <div className="flex items-center gap-2 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg w-fit mx-auto">
-      <Icon className="w-4 h-4 text-zinc-300" />
-      <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">{label}</span>
+    <div className="flex items-center gap-2 bg-zinc-100/40 dark:bg-zinc-900/40 backdrop-blur-md border border-black/10 dark:border-white/5 rounded-full px-4 py-1.5 shadow-lg w-fit mx-auto">
+      <Icon className="w-4 h-4 text-zinc-600 dark:text-zinc-300" />
+      <span className="text-xs font-semibold tracking-wider text-zinc-600 dark:text-zinc-300 uppercase">{label}</span>
     </div>
   );
 }
@@ -75,11 +75,11 @@ function SectionHeader({
       className="flex flex-col items-center text-center gap-4 mb-14"
     >
       <Pill icon={icon} label={pill} />
-      <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100">
+      <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
         {heading}{" "}
-        <span className="font-serif italic font-light text-zinc-300">{italic}</span>
+        <span className="font-serif italic font-light text-zinc-700 dark:text-zinc-300">{italic}</span>
       </h2>
-      <p className="text-zinc-400 text-lg max-w-2xl leading-relaxed">{sub}</p>
+      <p className="text-zinc-600 dark:text-zinc-400 text-lg max-w-2xl leading-relaxed">{sub}</p>
     </motion.div>
   );
 }
@@ -88,7 +88,7 @@ function SectionHeader({
 
 function AboutHero() {
   return (
-    <div className="relative min-h-[70vh] flex flex-col overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent">
+    <div className="relative min-h-[70vh] flex flex-col overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-linear-to-r after:from-transparent after:via-black/20 dark:after:via-white/20 after:to-transparent">
       <Navbar />
       <BackgroundEffects />
 

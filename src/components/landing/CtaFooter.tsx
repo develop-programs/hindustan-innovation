@@ -30,35 +30,35 @@ export function CtaFooter() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-zinc-800/20 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="flex items-center gap-3 mb-8">
-        <div className="h-px w-16 bg-gradient-to-r from-transparent to-zinc-700" />
-        <span className="text-zinc-500 text-xs italic font-medium tracking-wide">{dividerLabel}</span>
-        <div className="h-px w-16 bg-gradient-to-l from-transparent to-zinc-700" />
+        <div className="h-px w-16 bg-gradient-to-r from-transparent to-zinc-400 dark:to-zinc-700" />
+        <span className="text-zinc-600 dark:text-zinc-500 text-xs italic font-medium tracking-wide">{dividerLabel}</span>
+        <div className="h-px w-16 bg-gradient-to-l from-transparent to-zinc-400 dark:to-zinc-700" />
       </div>
 
-      <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-zinc-100 mb-4 leading-tight">
+      <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4 leading-tight">
         {heading}<br />
-        {headingLine2} <span className="font-serif italic font-light text-zinc-300">{headingItalic}</span>
+        {headingLine2} <span className="font-serif italic font-light text-zinc-700 dark:text-zinc-300">{headingItalic}</span>
       </h2>
 
-      <p className="text-zinc-400 text-base mb-10">{subheading}</p>
+      <p className="text-zinc-600 dark:text-zinc-400 text-base mb-10">{subheading}</p>
 
-      <button className="group flex items-center gap-3 bg-zinc-100 text-black px-8 py-4 rounded-xl font-semibold text-base hover:bg-white transition-all shadow-[0_8px_30px_rgba(255,255,255,0.1)] hover:shadow-[0_8px_40px_rgba(255,255,255,0.2)] mb-12">
+      <button className="group flex items-center gap-3 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-black px-8 py-4 rounded-xl font-semibold text-base hover:bg-zinc-800 dark:hover:bg-white transition-all shadow-[0_8px_30px_rgba(0,0,0,0.2)] dark:shadow-[0_8px_30px_rgba(255,255,255,0.1)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_8px_40px_rgba(255,255,255,0.2)] mb-12">
         {ctaLabel}
         <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
       </button>
 
-      <div className="flex items-center gap-6 mb-8 text-zinc-500">
+      <div className="flex items-center gap-6 mb-8 text-zinc-600 dark:text-zinc-500">
         {socials.map((s, i) => (
           <span key={s.label} className="flex items-center gap-6">
-            <a href={s.href} aria-label={s.label} className="hover:text-zinc-200 transition-colors">
+            <a href={s.href} aria-label={s.label} className="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors">
               <SocialIcon icon={s.icon} />
             </a>
-            {i < socials.length - 1 && <div className="h-4 w-px bg-zinc-700" />}
+            {i < socials.length - 1 && <div className="h-4 w-px bg-zinc-400 dark:bg-zinc-700" />}
           </span>
         ))}
       </div>
 
-      <a href={`mailto:${email}`} className="text-zinc-500 text-sm hover:text-zinc-300 transition-colors">
+      <a href={`mailto:${email}`} className="text-zinc-600 dark:text-zinc-500 text-sm hover:text-zinc-900 dark:hover:text-zinc-300 transition-colors">
         {email}
       </a>
     </footer>

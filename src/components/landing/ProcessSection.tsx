@@ -29,15 +29,15 @@ export function ProcessSection() {
         variants={itemVariants}
         className="flex flex-col items-center text-center w-full"
       >
-        <div className="flex items-center gap-2 mb-6 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
-          <Activity className="w-4 h-4 text-zinc-300" />
-          <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">{pill}</span>
+        <div className="flex items-center gap-2 mb-6 bg-zinc-100/40 dark:bg-zinc-900/40 backdrop-blur-md border border-black/10 dark:border-white/5 rounded-full px-4 py-1.5 shadow-lg">
+          <Activity className="w-4 h-4 text-zinc-600 dark:text-zinc-300" />
+          <span className="text-xs font-semibold tracking-wider text-zinc-600 dark:text-zinc-300 uppercase">{pill}</span>
         </div>
 
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100 mb-4 text-center">
-          {heading} <span className="font-serif italic font-light text-zinc-300">{headingItalic}</span>
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4 text-center">
+          {heading} <span className="font-serif italic font-light text-zinc-700 dark:text-zinc-300">{headingItalic}</span>
         </h2>
-        <p className="text-zinc-400 mb-16 text-lg text-center max-w-2xl">{subheading}</p>
+        <p className="text-zinc-600 dark:text-zinc-400 mb-16 text-lg text-center max-w-2xl">{subheading}</p>
       </motion.div>
 
       <motion.div
@@ -45,7 +45,7 @@ export function ProcessSection() {
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
         variants={itemVariants}
-        className="w-full bg-black border-t-2 border-white/25 outline outline-white/10 rounded-[2rem] p-6 md:p-10"
+        className="w-full bg-white dark:bg-black border-t-2 border-black/25 dark:border-white/25 outline outline-black/15 dark:outline-white/10 rounded-[2rem] p-6 md:p-10"
       >
         <Tabs defaultValue={steps[0].number} className="w-full">
           <TabsList className="flex items-center gap-4 mb-16 bg-transparent p-0 w-full h-auto">
@@ -53,7 +53,7 @@ export function ProcessSection() {
               <TabsTrigger
                 key={s.number}
                 value={s.number}
-                className="flex-1 py-4 rounded-lg text-sm font-semibold transition-all duration-300 bg-transparent text-zinc-600 hover:bg-white/5 hover:text-zinc-400 data-active:border-t-2 data-active:border-white/25"
+                className="flex-1 py-4 rounded-lg text-sm font-semibold transition-all duration-300 bg-transparent text-zinc-600 dark:text-zinc-600 hover:bg-black/5 dark:hover:bg-white/5 hover:text-zinc-900 dark:hover:text-zinc-400 data-active:border-t-2 data-active:border-black/20 dark:data-active:border-white/25"
               >
                 STEP {s.step}
               </TabsTrigger>
@@ -91,9 +91,9 @@ export function ProcessSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                      <div className="text-zinc-600 font-serif italic text-xl mb-2 border-b border-zinc-800 pb-4 inline-block">{s.number}</div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-zinc-100 mb-4 mt-4">{s.title}</h3>
-                      <p className="text-zinc-400 leading-relaxed text-sm md:text-base">{s.description}</p>
+                      <div className="text-zinc-500 dark:text-zinc-600 font-serif italic text-xl mb-2 border-b border-zinc-400 dark:border-zinc-800 pb-4 inline-block">{s.number}</div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-4 mt-4">{s.title}</h3>
+                      <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm md:text-base">{s.description}</p>
                     </motion.div>
                   </div>
                 </div>

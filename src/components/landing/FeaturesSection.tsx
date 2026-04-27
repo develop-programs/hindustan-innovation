@@ -41,15 +41,15 @@ export function FeaturesSection() {
         variants={itemVariants}
         className="flex flex-col items-center text-center w-full"
       >
-        <div className="flex items-center gap-2 mb-6 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
-          <Package className="w-4 h-4 text-zinc-300" />
-          <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">{pill}</span>
+        <div className="flex items-center gap-2 mb-6 bg-zinc-100/40 dark:bg-zinc-900/40 backdrop-blur-md border border-black/10 dark:border-white/5 rounded-full px-4 py-1.5 shadow-lg">
+          <Package className="w-4 h-4 text-zinc-600 dark:text-zinc-300" />
+          <span className="text-xs font-semibold tracking-wider text-zinc-600 dark:text-zinc-300 uppercase">{pill}</span>
         </div>
 
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100 mb-4 text-center">
-          {heading} <span className="font-serif italic font-light text-zinc-300">{headingItalic}</span>
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4 text-center">
+          {heading} <span className="font-serif italic font-light text-zinc-700 dark:text-zinc-300">{headingItalic}</span>
         </h2>
-        <p className="text-zinc-400 mb-16 text-lg text-center max-w-2xl">{subheading}</p>
+        <p className="text-zinc-600 dark:text-zinc-400 mb-16 text-lg text-center max-w-2xl">{subheading}</p>
       </motion.div>
 
       <motion.div
@@ -65,19 +65,19 @@ export function FeaturesSection() {
             <motion.div
               variants={itemVariants}
               key={card.title}
-              className="flex flex-col items-center px-6 py-12 bg-black rounded-3xl border-t-2 border-white/25 outline outline-white/10 shadow-[0_0_30px_rgba(0,0,0,0.5)] group transition-colors space-y-12"
+              className="flex flex-col items-center px-6 py-12 bg-white dark:bg-black rounded-3xl border-t-2 border-black/10 dark:border-white/25 outline outline-black/5 dark:outline-white/10 shadow-[0_0_30px_rgba(0,0,0,0.05)] dark:shadow-[0_0_30px_rgba(0,0,0,0.5)] group transition-colors space-y-12"
             >
-              <div className="p-4 bg-[#151515] rounded-xl border border-white/5 flex items-center justify-center shadow-inner relative group-hover:scale-110 transition-all duration-500 gap-6">
+              <div className="p-4 bg-zinc-100 dark:bg-[#151515] rounded-xl border border-black/10 dark:border-white/5 flex items-center justify-center shadow-inner relative group-hover:scale-110 transition-all duration-500 gap-6">
                 <div className="flex items-center justify-center w-1/2 h-full">
-                  {Icon1 && <Icon1 className="w-5 h-5 text-zinc-400 group-hover:text-zinc-200 transition-colors" />}
+                  {Icon1 && <Icon1 className="w-5 h-5 text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-200 transition-colors" />}
                 </div>
-                <div className="w-[1px] h-6 bg-white/5" />
+                <div className="w-[1px] h-6 bg-black/10 dark:bg-white/5" />
                 <div className="flex items-center justify-center w-1/2 h-full">
-                  {Icon2 && <Icon2 className="w-5 h-5 text-zinc-400 group-hover:text-zinc-200 transition-colors" />}
+                  {Icon2 && <Icon2 className="w-5 h-5 text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-200 transition-colors" />}
                 </div>
               </div>
-              <h3 className="text-lg font-semibold text-zinc-100 text-center">{card.title}</h3>
-              <p className="text-zinc-400 text-center text-sm leading-relaxed">{card.description}</p>
+              <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 text-center">{card.title}</h3>
+              <p className="text-zinc-600 dark:text-zinc-400 text-center text-sm leading-relaxed">{card.description}</p>
             </motion.div>
           );
         })}
