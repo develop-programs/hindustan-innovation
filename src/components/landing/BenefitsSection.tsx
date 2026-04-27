@@ -8,10 +8,10 @@ function SpeedometerGraphic() {
   return (
     <div className="w-48 h-48 relative flex items-center justify-center">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl" />
-      <svg viewBox="0 0 100 50" className="absolute top-[20px] w-40 h-20 overflow-visible">
+      <svg viewBox="0 0 100 50" className="absolute top-5 w-40 h-20 overflow-visible">
         <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-zinc-400 dark:text-zinc-700" />
       </svg>
-      <div className="absolute top-[calc(50%+10px)] left-1/2 w-16 h-2.5 bg-zinc-300 dark:bg-zinc-800 rounded-full origin-left rotate-[15deg] flex items-center justify-end pr-0.5 shadow-lg border border-black/20 dark:border-white/5">
+      <div className="absolute top-[calc(50%+10px)] left-1/2 w-16 h-2.5 bg-zinc-300 dark:bg-zinc-800 rounded-full origin-left rotate-15 flex items-center justify-end pr-0.5 shadow-lg border border-black/20 dark:border-white/5">
         <div className="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-300 shadow-[0_0_8px_rgba(59,130,246,0.8)] dark:shadow-[0_0_8px_rgba(147,197,253,0.8)]" />
       </div>
     </div>
