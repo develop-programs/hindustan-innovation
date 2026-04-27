@@ -390,7 +390,7 @@ function OurValues() {
 
 const FOUNDERS = [
   {
-    name: "Prashant",
+    name: "Prashant kumar Singh",
     role: "Founder & CEO",
     image: "/Prashant.jpeg",
     bio: "Visionary entrepreneur behind Hindustaan Innovation. Prashant drives the mission to make intelligent digital systems accessible to every Indian business, from early-stage startups to established enterprises.",
@@ -451,12 +451,12 @@ function OurFounders() {
 
             {/* Avatar */}
             <div className="relative shrink-0">
-              <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-white/15 shadow-xl group-hover:scale-105 transition-transform duration-500 ring-2 ring-white/5">
+              <div className="w-45 h-45 rounded-full overflow-hidden border-2 border-white/15 shadow-xl group-hover:scale-105 transition-transform duration-500 ring-2 ring-white/5">
                 <Image
                   src={founder.image}
                   alt={founder.name}
-                  width={112}
-                  height={112}
+                  width={180}
+                  height={180}
                   className="w-full h-full object-cover object-top"
                 />
               </div>
