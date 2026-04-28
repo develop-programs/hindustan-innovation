@@ -5,7 +5,8 @@ import {
   ShoppingCart, Megaphone, Wrench, Bot, Brain, TrendingUp, Eye, Cpu, Cloud, Server, GitBranch, Shield,
   Database, Monitor, Plug, Lock, Package, BarChart2, Zap, Settings,
   FlaskConical, HardDrive, Mail, MapPin, Check, ArrowUpRight,
-  Briefcase, Loader2, LayoutGrid
+  Briefcase, Loader2, LayoutGrid,
+  Waypoints
 } from "lucide-react";
 import { AnimatedList } from "../ui/animated-list";
 import { motion, type Variants } from "motion/react";
@@ -113,6 +114,7 @@ function NodesGraphic({ accent }: { accent: string }) {
       <div className="absolute top-[18%] left-[22%] w-9 h-9 bg-zinc-900 rounded-full border border-white/5 flex items-center justify-center text-zinc-500"><Cpu className="w-4 h-4" /></div>
       <div className="absolute top-[15%] right-[22%] w-9 h-9 bg-zinc-900 rounded-full border border-white/5 flex items-center justify-center text-zinc-500"><Shield className="w-4 h-4" /></div>
       <div className="absolute bottom-[18%] left-[20%] w-9 h-9 bg-zinc-900 rounded-full border border-white/5 flex items-center justify-center text-zinc-500"><Database className="w-4 h-4" /></div>
+      <div className="absolute bottom-[18%] right-[20%] w-9 h-9 bg-zinc-900 rounded-full border border-white/5 flex items-center justify-center text-zinc-500"><Waypoints className="w-4 h-4" /></div>
     </div>
   );
 }

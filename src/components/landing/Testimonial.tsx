@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useCallback } from "react";
 import { motion, type Variants } from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import data from "@/data.json";
@@ -23,34 +23,50 @@ const itemVariants: Variants = {
 
 export default function Testimonial() {
     const testimonials = data.testimonials;
+    const reviews = testimonials.reviews;
+    const loopedReviews = [...reviews, ...reviews];
     const scrollRef = useRef<HTMLDivElement>(null);
+    const isPaused = useRef(false);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            if (scrollRef.current) {
-                const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-                if (scrollLeft + clientWidth >= scrollWidth - 10) {
-                    scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
-                } else {
-                    scrollRef.current.scrollBy({ left: 374, behavior: "smooth" });
-                }
-            }
-        }, 3000);
-
-        return () => clearInterval(interval);
+    // Compute actual card width dynamically to avoid drift
+    const getCardWidth = useCallback(() => {
+        const el = scrollRef.current;
+        if (!el) return 374;
+        const firstCard = el.firstElementChild as HTMLElement | null;
+        if (!firstCard) return 374;
+        const gap = 24; // gap-6
+        return firstCard.offsetWidth + gap;
     }, []);
 
-    const scrollLeft = () => {
-        if (scrollRef.current) {
-            scrollRef.current.scrollBy({ left: -374, behavior: "smooth" });
+    // After smooth animation finishes, silently reset position
+    const silentReset = useCallback(() => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const half = el.scrollWidth / 2;
+        if (el.scrollLeft >= half) {
+            el.scrollLeft = el.scrollLeft - half;
+        } else if (el.scrollLeft <= 0) {
+            el.scrollLeft = half - getCardWidth();
         }
-    };
+    }, [getCardWidth]);
 
-    const scrollRight = () => {
-        if (scrollRef.current) {
-            scrollRef.current.scrollBy({ left: 374, behavior: "smooth" });
-        }
-    };
+    const doScroll = useCallback((direction: number) => {
+        const el = scrollRef.current;
+        if (!el) return;
+        el.scrollBy({ left: direction * getCardWidth(), behavior: "smooth" });
+        setTimeout(silentReset, 520);
+    }, [silentReset, getCardWidth]);
+
+    // Auto-scroll — pauses when hovering the carousel area
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (!isPaused.current) doScroll(1);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [doScroll]);
+
+    const scrollLeft = () => doScroll(-1);
+    const scrollRight = () => doScroll(1);
 
     return (
         <section className="relative z-10 flex flex-col items-center justify-center px-4 py-20 w-full max-w-6xl
@@ -73,7 +89,11 @@ export default function Testimonial() {
                 <p className="text-zinc-600 dark:text-zinc-400 mb-14 text-base text-center max-w-xl">{testimonials.subheading}</p>
             </motion.div>
 
-            <div className="relative w-full max-w-full group mb-16">
+            <div
+                className="relative w-full max-w-full group mb-16"
+                onMouseEnter={() => { isPaused.current = true; }}
+                onMouseLeave={() => { isPaused.current = false; }}
+            >
                 <button 
                     onClick={scrollLeft}
                     className="absolute -left-2 md:-left-8 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-black/10 dark:border-white/10 shadow-xl text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all hover:scale-105 active:scale-95 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 flex items-center justify-center"
@@ -81,16 +101,12 @@ export default function Testimonial() {
                     <ChevronLeft className="w-5 h-5" />
                 </button>
 
-                <motion.div
+                <div
                     ref={scrollRef}
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: false, amount: 0.2 }}
-                    className="flex gap-6 w-full overflow-x-auto snap-x snap-mandatory py-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+                    className="flex gap-6 w-full overflow-x-auto py-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
                 >
-                    {testimonials.reviews.map((t) => (
-                        <motion.div variants={itemVariants} key={t.name} className="flex flex-col p-6 bg-white dark:bg-black rounded-2xl border-t-2 border-black/10 dark:border-white/25 outline outline-black/5 dark:outline-white/10 hover:border-black/20 dark:hover:border-white/10 transition-colors w-[85vw] sm:w-[350px] shrink-0 snap-center md:snap-start">
+                    {loopedReviews.map((t, idx) => (
+                        <div key={`${t.name}-${idx}`} className="flex flex-col p-6 bg-white dark:bg-black rounded-2xl border-t-2 border-black/10 dark:border-white/25 outline outline-black/5 dark:outline-white/10 hover:border-black/20 dark:hover:border-white/10 transition-colors w-[85vw] sm:w-[350px] shrink-0">
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="w-9 h-9 rounded-full bg-zinc-300 dark:bg-zinc-700 border border-black/10 dark:border-white/10 overflow-hidden shrink-0">
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -102,9 +118,9 @@ export default function Testimonial() {
                                 </div>
                             </div>
                             <p className="text-zinc-600 dark:text-zinc-400 text-xs leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
-                        </motion.div>
+                        </div>
                     ))}
-                </motion.div>
+                </div>
 
                 <button 
                     onClick={scrollRight}
@@ -131,3 +147,4 @@ export default function Testimonial() {
         </section>
     )
 }
+
