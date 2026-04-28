@@ -38,19 +38,19 @@
     "headingItalic": "Us?",
     "subheading": "Everything you need to build, scale, and maintain world-class software",
     "cards": [
-  {
-    "title": "End-to-End Development",
-    "description": "From concept to deployment, we handle the full software development lifecycle"
-  },
-  {
-    "title": "Scalable Architecture",
-    "description": "Build systems engineered from day one to grow with your business"
-  },
-  {
-    "title": "Modern Tech Stack",
-    "description": "We use proven technologies that deliver performance, security, and maintainability"
-  }
-]
+      {
+        "title": "End-to-End Development",
+        "description": "From concept to deployment, we handle the full software development lifecycle"
+      },
+      {
+        "title": "Scalable Architecture",
+        "description": "Build systems engineered from day one to grow with your business"
+      },
+      {
+        "title": "Modern Tech Stack",
+        "description": "We use proven technologies that deliver performance, security, and maintainability"
+      }
+    ]
   },
   "services": {
     "pill": "SERVICES",
@@ -143,67 +143,67 @@
     ]
   },
   "process": {
-  "pill": "PROCESS",
-  "heading": "Our Proven",
-  "headingItalic": "Development Process",
-  "subheading": "A clear, structured approach to design, build, and deliver world-class software.",
-  "steps": [
-    {
-      "step": 1,
-      "number": "01",
-      "title": "Understand & Plan",
-      "description": "We deeply understand your business needs, goals, and technical requirements to craft a solid development roadmap.",
-      "points": [
-        "Requirement Gathering & Analysis",
-        "Market & Competitive Research",
-        "Workflow & Process Mapping",
-        "Technology Stack Planning",
-        "Project Timeline & Budget Estimation"
-      ],
-      "deliverables": [
-        "Project Roadmap & Specifications",
-        "Architecture Design",
-        "Technology Recommendations"
-      ]
-    },
-    {
-      "step": 2,
-      "number": "02",
-      "title": "Design & Development",
-      "description": "We design intuitive user experiences and build scalable, maintainable software using modern technologies and best practices.",
-      "points": [
-        "UI/UX Design & Prototyping",
-        "Frontend & Backend Development",
-        "API Development & Integration",
-        "Database Design & Optimization",
-        "Security Implementation"
-      ],
-      "deliverables": [
-        "Design Specifications",
-        "Working Software Build",
-        "Comprehensive Documentation"
-      ]
-    },
-    {
-      "step": 3,
-      "number": "03",
-      "title": "Testing, Deployment & Support",
-      "description": "We ensure quality through rigorous testing, deploy to production, and provide ongoing support and optimization.",
-      "points": [
-        "Quality Assurance & Testing",
-        "Performance & Security Testing",
-        "Cloud Deployment & Configuration",
-        "Monitoring & Alerting Setup",
-        "Ongoing Support & Optimization"
-      ],
-      "deliverables": [
-        "Live Production Application",
-        "Performance & Health Reports",
-        "Support & Maintenance Plan"
-      ]
-    }
-  ]
-},
+    "pill": "PROCESS",
+    "heading": "Our Proven",
+    "headingItalic": "Development Process",
+    "subheading": "A clear, structured approach to design, build, and deliver world-class software.",
+    "steps": [
+      {
+        "step": 1,
+        "number": "01",
+        "title": "Understand & Plan",
+        "description": "We deeply understand your business needs, goals, and technical requirements to craft a solid development roadmap.",
+        "points": [
+          "Requirement Gathering & Analysis",
+          "Market & Competitive Research",
+          "Workflow & Process Mapping",
+          "Technology Stack Planning",
+          "Project Timeline & Budget Estimation"
+        ],
+        "deliverables": [
+          "Project Roadmap & Specifications",
+          "Architecture Design",
+          "Technology Recommendations"
+        ]
+      },
+      {
+        "step": 2,
+        "number": "02",
+        "title": "Design & Development",
+        "description": "We design intuitive user experiences and build scalable, maintainable software using modern technologies and best practices.",
+        "points": [
+          "UI/UX Design & Prototyping",
+          "Frontend & Backend Development",
+          "API Development & Integration",
+          "Database Design & Optimization",
+          "Security Implementation"
+        ],
+        "deliverables": [
+          "Design Specifications",
+          "Working Software Build",
+          "Comprehensive Documentation"
+        ]
+      },
+      {
+        "step": 3,
+        "number": "03",
+        "title": "Testing, Deployment & Support",
+        "description": "We ensure quality through rigorous testing, deploy to production, and provide ongoing support and optimization.",
+        "points": [
+          "Quality Assurance & Testing",
+          "Performance & Security Testing",
+          "Cloud Deployment & Configuration",
+          "Monitoring & Alerting Setup",
+          "Ongoing Support & Optimization"
+        ],
+        "deliverables": [
+          "Live Production Application",
+          "Performance & Health Reports",
+          "Support & Maintenance Plan"
+        ]
+      }
+    ]
+  },
   "integrations": {
     "pill": "INTEGRATIONS",
     "heading": "Seamless",
@@ -381,7 +381,7 @@
         },
         "phone": {
           "label": "Phone Number",
-          "placeholder": "+91 98765 43210"
+          "placeholder": "+917712994005"
         },
         "subject": {
           "label": "Subject",
