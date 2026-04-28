@@ -525,7 +525,7 @@ const HOW_WE_HELP = [
 
 function HowWeHelp() {
   return (
-    <section className="relative z-10 px-4 py-24 w-full max-w-6xl mx-auto after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent">
+    <section className="relative z-10 px-4 py-24 w-full max-w-6xl mx-auto after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent">
       <SectionHeader
         icon={Handshake}
         pill="How We Help"
@@ -553,7 +553,7 @@ function HowWeHelp() {
                 {item.step}
               </div>
               {idx < HOW_WE_HELP.length - 1 && (
-                <div className="w-[1px] flex-1 mt-3 bg-white/5 min-h-[2rem]" />
+                <div className="w-px flex-1 mt-3 bg-white/5 min-h-8" />
               )}
             </div>
 
