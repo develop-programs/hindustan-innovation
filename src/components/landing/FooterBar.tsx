@@ -29,9 +29,9 @@ function SocialIcon({ icon }: { icon: string }) {
   if (icon === "linkedin")
     return (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" strokeLinecap="round" strokeLinejoin="round"/>
-        <rect x="2" y="9" width="4" height="12" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="4" cy="4" r="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="2" y="9" width="4" height="12" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="4" cy="4" r="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     );
   if (icon === "dribbble")
@@ -49,11 +49,11 @@ const COLUMNS = [
   {
     heading: "Services",
     links: [
-      { label: "Web Development", href: "/services" },
-      { label: "AI Automation", href: "/services" },
-      { label: "Cloud & DevOps", href: "/services" },
-      { label: "UI/UX Design", href: "/services" },
-      { label: "Digital Marketing", href: "/services" },
+      { label: "Web Development", href: "/services/web-dev" },
+      { label: "AI Automation", href: "/services/custom-ai" },
+      { label: "Cloud & DevOps", href: "/services/devops" },
+      { label: "UI/UX Design", href: "/services/ui-ux" },
+      { label: "Digital Marketing", href: "/services/marketing" },
     ],
   },
   {
@@ -176,7 +176,7 @@ export function FooterBar() {
         </div>
       </div>
 
-      {/* ── Newsletter strip ── */}
+      {/* ── Newsletter strip ──
       <div className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
@@ -200,7 +200,7 @@ export function FooterBar() {
             </button>
           </form>
         </div>
-      </div>
+      </div> */}
 
       {/* ── Bottom bar ── */}
       <div className="border-t border-white/5">
@@ -211,7 +211,14 @@ export function FooterBar() {
             {["Privacy Policy", "Terms of Service", "Sitemap"].map((item) => (
               <a
                 key={item}
-                href="#"
+                href={
+                  item.toLowerCase() === "terms of service"
+                    ? "/terms"
+                    : `/${decodeURIComponent(item)
+                      .toLowerCase()
+                      .replace(/\s+/g, "-")
+                      .replace(/[^\w\-]/g, "")}`
+                }
                 className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
               >
                 {item}
