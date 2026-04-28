@@ -52,7 +52,7 @@ function getInterestMeta(interest: InterestType) {
       userBody: "We've received the details of your project and our team will review it carefully. We love working on exciting ideas and will get back to you with our thoughts soon.",
       step1: "Project details received - our team is on it.",
       step2: "We'll evaluate scope, feasibility, and the best way we can help.",
-      step3: "Expect a reply within <em>2 - 3 business days</em>.",
+      step3: "We will contact you soon.",
       senderName: "Hindustan Innovations",
       subjectAdmin: "New Project Inquiry",
       subjectUser: "We've Received Your Project Inquiry - Hindustan Innovations",
@@ -65,7 +65,7 @@ function getInterestMeta(interest: InterestType) {
       userBody: "Thank you for considering Hindustan Innovations as a potential partner. We've received your message and our team will review the opportunity and follow up with you shortly.",
       step1: "Request received - our team will review the opportunity.",
       step2: "We'll assess alignment and potential collaboration areas.",
-      step3: "Expect a reply within <em>2 - 4 business days</em>.",
+      step3: "We will contact you soon.",
       senderName: "Hindustan Innovations",
       subjectAdmin: "New Partnership Request",
       subjectUser: "Partnership Inquiry Received - Hindustan Innovations",
@@ -78,7 +78,7 @@ function getInterestMeta(interest: InterestType) {
       userBody: "Thank you for reaching out to Hindustan Innovations. We've received your enquiry and one of our team members will get back to you as soon as possible.",
       step1: "Message received - our team has been notified.",
       step2: "We'll review your enquiry and prepare a response.",
-      step3: "Expect a reply within <em>1 - 2 business days</em>.",
+      step3: "We will contact you soon.",
       senderName: "Hindustan Innovations",
       subjectAdmin: "New General Enquiry",
       subjectUser: "We've Received Your Enquiry - Hindustan Innovations",
@@ -261,15 +261,6 @@ function userEmailHtml({ name, interest }: Pick<Props, "name" | "interest">): st
               <p style="margin:0;color:#333;font-size:14px;">Warm regards,</p>
               <p style="margin:4px 0 0;color:#1a1a2e;font-size:15px;font-weight:700;">Hindustan Innovations Team</p>
               <p style="margin:2px 0 0;color:#888;font-size:12px;font-style:italic;">Building Tomorrow's Solutions Today</p>
-            </td>
-          </tr>
-
-          <!-- Footer -->
-          <tr>
-            <td style="background:#f8f9ff;padding:16px 36px;border-top:1px solid #e8eaf6;">
-              <p style="margin:0;color:#aaa;font-size:12px;">
-                This is an automated confirmation. Please do not reply directly to this message.
-              </p>
             </td>
           </tr>
 
