@@ -2,9 +2,8 @@
 
 import { motion, type Variants } from "motion/react";
 import {
-  GitMerge, BrainCircuit, SlidersHorizontal, Settings,
-  Bot, Sparkles, Maximize2, PieChart, TrendingUp,
-  BarChart3, Plug, Database, Package, type LucideIcon,
+  Code2, Layers, Settings, Database, Cloud, Server,
+  Plug, GitBranch, TrendingUp, BarChart3, Package, type LucideIcon,
 } from "lucide-react";
 import data from "@/data.json";
 
@@ -24,9 +23,8 @@ const itemVariants: Variants = {
 };
 
 const ICON_MAP: Record<string, LucideIcon> = {
-  GitMerge, BrainCircuit, SlidersHorizontal, Settings,
-  Bot, Sparkles, Maximize2, PieChart, TrendingUp,
-  BarChart3, Plug, Database,
+  Code2, Layers, Settings, Database, Cloud, Server,
+  Plug, GitBranch, TrendingUp, BarChart3,
 };
 
 export function FeaturesSection() {

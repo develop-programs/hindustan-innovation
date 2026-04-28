@@ -3,7 +3,7 @@
     "pill": "Join Our Team",
     "heading": "Build the Future",
     "headingItalic": "With Us",
-    "subheading": "We're always looking for passionate people to join our mission of building next-gen AI and web automation tools.",
+    "subheading": "We're always looking for passionate people to join our mission of building robust software solutions that power businesses forward.",
     "ctaText": "View Openings",
     "ctaLink": "#openings"
   },
@@ -19,9 +19,9 @@
     {
       "id": "engineering",
       "pill": "ENGINEERING",
-      "heading": "Software & AI",
+      "heading": "Software & Systems",
       "headingItalic": "Development",
-      "subheading": "Build the core technologies that power our intelligent solutions.",
+      "subheading": "Build scalable, reliable software that powers modern businesses.",
       "jobs": [
         {
           "id": "full-stack-dev",
@@ -53,25 +53,25 @@
           ]
         },
         {
-          "id": "ai-engineer",
-          "title": "AI / ML Engineer",
-          "icon": "Brain",
+          "id": "backend-engineer",
+          "title": "Backend Engineer",
+          "icon": "Server",
           "accent": "text-purple-400",
-          "description": "Design and implement custom AI agents, NLP models, and automation workflows.",
+          "description": "Design and implement scalable backend systems, APIs, and database architectures.",
           "items": ["Full-time", "Remote", "Senior"],
           "graphic": "nodes",
           "colSpan": 3,
           "responsibilities": [
-            "Design, train, and deploy machine learning models and NLP systems.",
-            "Integrate LLMs and custom AI agents into our core product offerings.",
-            "Research and evaluate the latest advancements in AI/ML to keep our tech stack modern.",
-            "Optimize model performance for high-throughput, low-latency applications."
+            "Design and build robust backend systems using Node.js, Python, or Go.",
+            "Architect scalable database solutions and optimize query performance.",
+            "Develop RESTful and GraphQL APIs for seamless system integration.",
+            "Implement caching strategies and system optimization for high-throughput applications."
           ],
           "requirements": [
-            "5+ years of experience in software engineering, with at least 2 years focused on ML/AI.",
-            "Strong proficiency in Python, PyTorch, or TensorFlow.",
-            "Experience integrating and fine-tuning Large Language Models (LLMs).",
-            "Solid understanding of data structures, algorithms, and system design."
+            "4+ years of experience in backend software development.",
+            "Strong proficiency in Node.js, Python, Go, or similar languages.",
+            "Experience with SQL/NoSQL databases and system architecture.",
+            "Solid understanding of data structures, algorithms, and design patterns."
           ],
           "benefits": [
             "Competitive salary and equity options.",
@@ -82,10 +82,10 @@
         },
         {
           "id": "devops-engineer",
-          "title": "DevOps Engineer",
+          "title": "DevOps & Infrastructure Engineer",
           "icon": "Server",
           "accent": "text-green-400",
-          "description": "Manage our cloud infrastructure on AWS, build CI/CD pipelines, and ensure security.",
+          "description": "Build and maintain cloud infrastructure on AWS/GCP, design CI/CD pipelines, and ensure system reliability.",
           "items": ["Full-time", "Remote", "Mid-Level"],
           "graphic": "tags",
           "graphicTags": ["AWS", "CI/CD", "Kubernetes"],

@@ -22,22 +22,22 @@ const containerVariants: Variants = {
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 40, scale: 0.95 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
+  visible: {
+    opacity: 1,
+    y: 0,
     scale: 1,
-    transition: { duration: 0.5, ease: "easeOut" } 
+    transition: { duration: 0.5, ease: "easeOut" }
   },
 };
 
 const cardHoverVariants: Variants = {
-  rest: { 
-    y: 0, 
+  rest: {
+    y: 0,
     scale: 1,
     boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)"
   },
-  hover: { 
-    y: -8, 
+  hover: {
+    y: -8,
     scale: 1.02,
     boxShadow: "0 20px 50px rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 255, 255, 0.05)"
   },
@@ -85,7 +85,7 @@ function TagListGraphic({ tags }: { tags: string[] }) {
         {loopedTags.map((t, i) => (
           <div
             key={`${t}-${i}`}
-            className={`flex items-center justify-between bg-zinc-900/80 border border-white/5 rounded-xl px-3 py-2 shadow ${i % tags.length === 1 ? "w-full" : "w-[90%]"}`}
+            className={`w-full flex items-center justify-between bg-zinc-900/80 border border-white/5 rounded-md px-3 py-4 shadow ${i % tags.length === 1 ? "w-full" : "w-[90%]"}`}
           >
             <div className="flex items-center gap-2">
               <Check className="w-3 h-3 text-zinc-500" />
@@ -189,6 +189,11 @@ function JobCardComponent({ card }: { card: JobCard }) {
     );
   };
 
+  function Truncate(text: string, maxLength: number) {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength) + "...";
+  }
+
   return (
     <motion.div
       variants={itemVariants}
@@ -205,7 +210,7 @@ function JobCardComponent({ card }: { card: JobCard }) {
         initial={{ opacity: 0 }}
         whileHover={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
-        className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/5 to-transparent pointer-events-none"
+        className="absolute inset-0 rounded-2xl bg-linear-to-br from-white/5 to-transparent pointer-events-none"
       />
 
       {/* Inner glow effect */}
@@ -213,10 +218,10 @@ function JobCardComponent({ card }: { card: JobCard }) {
         initial={{ opacity: 0 }}
         whileHover={{ opacity: 0.5 }}
         transition={{ duration: 0.3 }}
-        className="absolute -inset-px rounded-2xl bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10 pointer-events-none blur-sm"
+        className="absolute -inset-px rounded-2xl bg-linear-to-br from-blue-500/10 via-transparent to-purple-500/10 pointer-events-none blur-sm"
       />
 
-      <div className="relative z-10">
+      <div className="flex flex-col justify-evenly relative z-10">
         {renderGraphic()}
 
         <div className="flex items-center gap-3 mb-3">
@@ -224,7 +229,7 @@ function JobCardComponent({ card }: { card: JobCard }) {
           <h3 className="text-lg font-semibold text-zinc-100">{card.title}</h3>
         </div>
 
-        <p className="text-zinc-400 text-sm leading-relaxed mb-5">{card.description}</p>
+        <p className="text-zinc-400 text-sm leading-relaxed mb-5">{Truncate(card.description, 80)}</p>
 
         <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 mb-6">
           {card.items.map((item) => (

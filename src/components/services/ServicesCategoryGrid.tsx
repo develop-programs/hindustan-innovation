@@ -139,14 +139,14 @@ function TagListGraphic({ tags }: { tags: string[] }) {
   // Triple the tags so AnimatedList loops continuously
   const loopedTags = [...tags, ...tags, ...tags];
   return (
-    <div className="w-full h-40 flex flex-col mb-6 relative overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0%,white_20%,white_75%,transparent_100%)]">
+    <div className="w-full h-40 flex flex-col mb-6 relative overflow-hidden mask-[linear-gradient(to_bottom,transparent_0%,white_20%,white_75%,transparent_100%)]">
       <AnimatedList delay={1000} className="w-full gap-2">
         {loopedTags.map((t, i) => {
           const Icon = tagIcons[i % tagIcons.length];
           return (
             <div
               key={`${t}-${i}`}
-              className="flex items-center justify-between w-full bg-zinc-100 dark:bg-zinc-900/80 border border-black/10 dark:border-white/8 rounded-xl px-3 py-2 shadow"
+              className="flex items-center justify-between w-full bg-zinc-100 dark:bg-zinc-900/80 border border-black/10 dark:border-white/8 rounded-xl px-3 py-4 shadow"
             >
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 rounded-md bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center shrink-0">

@@ -3,15 +3,14 @@
     "pill": "OUR BLOG",
     "heading": "Insights &",
     "headingItalic": "Ideas",
-    "subheading": "Stay updated with the latest in AI, automation, web development, cloud computing, and digital growth."
+    "subheading": "Stay ahead with the latest trends in software development, cloud infrastructure, and digital strategy."
   },
   "categories": [
     { "id": "all", "label": "All Posts" },
-    { "id": "ai", "label": "Artificial Intelligence" },
-    { "id": "automation", "label": "Automation" },
     { "id": "web-dev", "label": "Web Development" },
+    { "id": "backend", "label": "Backend & Systems" },
     { "id": "cloud", "label": "Cloud & DevOps" },
-    { "id": "business", "label": "Business & Growth" }
+    { "id": "business", "label": "Business & Strategy" }
   ],
   "posts": [
     {
@@ -24,15 +23,15 @@
       "coverGradient": "from-violet-900/60 via-purple-900/40 to-zinc-950",
       "accentColor": "text-violet-400",
       "accentBg": "bg-violet-500/10 border-violet-500/20",
-      "icon": "Bot",
+      "icon": "Code2",
       "readTime": "6 min read",
       "date": "April 20, 2026",
       "author": {
         "name": "Aryan Mehta",
-        "role": "AI Lead",
+        "role": "Senior Developer",
         "avatar": "https://i.pravatar.cc/150?img=12"
       },
-      "tags": ["AI", "Automation", "India", "Future Tech"],
+      "tags": ["Development", "Best Practices", "Engineering", "Code Quality"],
       "content": {
         "intro": "Artificial Intelligence is no longer just for big tech companies in the US. Today, businesses all across India — from small startups in Bengaluru to large companies in Mumbai — are using AI automation to work faster, smarter, and more efficiently.",
         "sections": [
@@ -187,8 +186,8 @@
       }
     },
     {
-      "id": "startup-digital-strategy-2026",
-      "slug": "startup-digital-strategy-2026",
+      "id": "business-digital-strategy-2026",
+      "slug": "business-digital-strategy-2026",
       "category": "business",
       "categoryLabel": "Business & Growth",
       "title": "Digital Strategy for Indian Startups in 2026",
@@ -204,7 +203,7 @@
         "role": "Strategy Consultant",
         "avatar": "https://i.pravatar.cc/150?img=68"
       },
-      "tags": ["Strategy", "Startups", "India", "Growth"],
+      "tags": ["Strategy", "Businesses", "India", "Growth"],
       "content": {
         "intro": "India has the third largest startup ecosystem in the world with over 100,000 registered startups as of 2026. Yet 90 percent still fail within five years. The businesses that survive and thrive almost always have one thing in common — a clear digital strategy.",
         "sections": [
@@ -238,15 +237,15 @@
       "coverGradient": "from-indigo-900/60 via-purple-900/40 to-zinc-950",
       "accentColor": "text-indigo-400",
       "accentBg": "bg-indigo-500/10 border-indigo-500/20",
-      "icon": "Brain",
+      "icon": "Database",
       "readTime": "5 min read",
       "date": "March 20, 2026",
       "author": {
         "name": "Ananya Rao",
-        "role": "AI Researcher",
+        "role": "Database Engineer",
         "avatar": "https://i.pravatar.cc/150?img=9"
       },
-      "tags": ["LLM", "AI", "GPT", "Machine Learning"],
+      "tags": ["Database", "Backend", "Architecture", "Data"],
       "content": {
         "intro": "Large Language Models like GPT-4, Claude, and Gemini have gone from research projects to everyday business tools. But many business leaders still struggle to understand what they actually are and where they genuinely help. This guide cuts through all the jargon.",
         "sections": [
