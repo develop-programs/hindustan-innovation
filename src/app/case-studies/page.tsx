@@ -30,8 +30,8 @@ const CASES = [
     id: "lead-gen-crm",
     tag: "Digital Marketing",
     tagColor: "text-yellow-400 bg-yellow-500/10 border-yellow-500/20",
-    title: "10x Lead Volume for a B2B SaaS Startup",
-    desc: "Built a full-funnel lead generation system with AI chatbot qualification, automated CRM workflows, and targeted paid campaign optimization — helping a Pune startup scale from 50 to 500+ leads/month.",
+    title: "10x Lead Volume for a B2B SaaS Company",
+    desc: "Built a full-funnel lead generation system with AI chatbot qualification, automated CRM workflows, and targeted paid campaign optimization — helping a Pune SaaS company scale from 50 to 500+ leads/month.",
     metrics: [
       { icon: Users, label: "Monthly Leads", value: "500+" },
       { icon: BarChart2, label: "Conversion Rate", value: "+65%" },

@@ -1,7 +1,7 @@
 {
   "brand": {
     "name": "Hindustaan Innovations",
-    "tagline": "New Gen AI Automation Partner",
+    "tagline": "Professional Software Development Partner",
     "email": "connect@hindustaan.in",
     "copyright": "© 2026 Hindustaan Innovations",
     "madeBy": "Hindustaan Innovations",
@@ -19,16 +19,16 @@
     "ctaLabel": "Get in Touch"
   },
   "hero": {
-    "pill": "New Gen AI Automation Partner",
-    "headingLine1": "Build Smarter",
-    "headingLine2": "Scale Faster.",
-    "headingItalic": "With AI & Technology.",
-    "subheading": "From Websites to AI Automation & Cloud — We Build Complete Digital Solutions for Modern Businesses",
+    "pill": "Professional Software Development",
+    "headingLine1": "Build Robust",
+    "headingLine2": "Scale Efficiently.",
+    "headingItalic": "With Expert Engineering.",
+    "subheading": "From Web & Mobile Apps to Cloud Infrastructure & Custom Systems — We Build Complete Software Solutions for Modern Businesses",
     "ctaLabel": "Book A Free Call"
   },
   "quote": {
-    "pill": "We Analyze Your Data",
-    "text": "We help businesses reduce manual work, improve efficiency, and grow faster by combining AI, automation, and custom-built software.",
+    "pill": "Our Approach",
+    "text": "We help businesses reduce development time, improve software quality, and scale efficiently by combining clean engineering practices, modern technology, and strategic consulting.",
     "authorRole": "Team Hindustaan Innovations ",
     "authorAvatar": "/logo.png"
   },
@@ -36,52 +36,52 @@
     "pill": "BENEFITS",
     "heading": "Why Choose",
     "headingItalic": "Us?",
-    "subheading": "Everything you need to automate, optimize, and scale",
+    "subheading": "Everything you need to build, scale, and maintain world-class software",
     "cards": [
   {
-    "title": "All-in-One Tech Partner",
-    "description": "From development to AI and cloud, everything under one roof"
+    "title": "End-to-End Development",
+    "description": "From concept to deployment, we handle the full software development lifecycle"
   },
   {
     "title": "Scalable Architecture",
-    "description": "Build systems that grow with your business"
+    "description": "Build systems engineered from day one to grow with your business"
   },
   {
-    "title": "Automation First Approach",
-    "description": "Reduce manual work and increase efficiency using AI"
+    "title": "Modern Tech Stack",
+    "description": "We use proven technologies that deliver performance, security, and maintainability"
   }
 ]
   },
   "services": {
     "pill": "SERVICES",
-    "heading": "Smarter Services,",
-    "headingItalic": "Built with AI",
-    "subheading": "Everything you need to automate operations, boost productivity",
+    "heading": "Complete Software",
+    "headingItalic": "Solutions",
+    "subheading": "Everything you need to build, deploy, and scale modern applications",
     "cards": [
       {
-        "title": "Automate repetitive tasks",
-        "description": "We help you streamline internal operations by automating manual workflows",
+        "title": "Web & Mobile Development",
+        "description": "We craft responsive web apps and native mobile applications that users love",
         "graphic": "task-list"
       },
       {
-        "title": "Automated Workflows",
-        "description": "Boost efficiency across teams with smart automation. Build intelligent workflows that automate multi-step processes across tools and platforms.",
+        "title": "Scalable Backends",
+        "description": "Build reliable server infrastructure and APIs that handle growth. Custom systems engineered for performance and reliability.",
         "graphic": "workflow-nodes",
         "colSpan": 2
       },
       {
-        "title": "Real-Time Intelligence",
-        "description": "Make smarter decisions with live data insights. Tap into real-time data.",
+        "title": "Cloud & DevOps",
+        "description": "Deploy and manage your applications with confidence. AWS, GCP, and Azure infrastructure built for your needs.",
         "graphic": "search-ui"
       },
       {
-        "title": "Custom AI Agent Development",
-        "description": "We develop custom AI agents that integrate seamlessly with your tools",
+        "title": "System Integration",
+        "description": "Seamlessly connect your tools and services with custom APIs and integrations",
         "graphic": "code-editor"
       },
       {
-        "title": "AI Strategy Consulting",
-        "description": "Get expert guidance to implement AI solutions that drive business growth",
+        "title": "Technical Strategy",
+        "description": "Get expert guidance on architecture, technology choices, and long-term technical planning",
         "graphic": "strategy-nodes"
       }
     ]
@@ -90,116 +90,116 @@
     "pill": "FEATURES",
     "heading": "All features in",
     "headingItalic": "one place",
-    "subheading": "Everything you need to automate operations, boost productivity",
+    "subheading": "Comprehensive software solutions built for performance, scale, and reliability",
     "cards": [
       {
-        "title": "Workflow Automation",
-        "description": "Automate complex business processes to boost speed, clarity, and efficiency.",
+        "title": "Full-Stack Development",
+        "description": "Complete web and mobile app development with modern frameworks and best practices.",
         "icons": [
-          "GitMerge",
-          "BrainCircuit"
+          "Code2",
+          "Layers"
         ]
       },
       {
-        "title": "Custom AI Solutions",
-        "description": "Build tailored AI systems that align with your business goals and challenges.",
+        "title": "Custom Business Software",
+        "description": "Tailor-made solutions for your unique business processes and workflows.",
         "icons": [
-          "SlidersHorizontal",
-          "Settings"
+          "Settings",
+          "Database"
         ]
       },
       {
-        "title": "AI Assistant",
-        "description": "Deploy intelligent virtual agents to streamline tasks.",
+        "title": "Cloud Infrastructure",
+        "description": "Deploy with confidence on AWS, GCP, or Azure with automatic scaling and monitoring.",
         "icons": [
-          "Bot",
-          "Sparkles"
+          "Cloud",
+          "Server"
         ]
       },
       {
-        "title": "Sales & Marketing",
-        "description": "Leverage AI to optimize campaigns, track leads, and personalize outreach.",
+        "title": "API Development",
+        "description": "Robust APIs and integrations that connect your systems seamlessly.",
         "icons": [
-          "Maximize2",
-          "PieChart"
+          "Plug",
+          "GitBranch"
         ]
       },
       {
-        "title": "Performance Tracking",
-        "description": "Track automation results in real time to improve and scale your workflows.",
+        "title": "Performance Monitoring",
+        "description": "Real-time insights into application performance, uptime, and user behavior.",
         "icons": [
           "TrendingUp",
           "BarChart3"
         ]
       },
       {
-        "title": "Seamless Integrations",
-        "description": "Connect your tools and apps for smooth, unified AI-powered workflows.",
+        "title": "Continuous Integration",
+        "description": "Automated testing, deployment, and DevOps practices for smooth releases.",
         "icons": [
-          "Plug",
-          "Database"
+          "GitBranch",
+          "Settings"
         ]
       }
     ]
   },
   "process": {
   "pill": "PROCESS",
-  "heading": "Our Simple &",
-  "headingItalic": "Smart Process",
-  "subheading": "A clear, step-by-step approach to design, build, and scale your digital systems efficiently.",
+  "heading": "Our Proven",
+  "headingItalic": "Development Process",
+  "subheading": "A clear, structured approach to design, build, and deliver world-class software.",
   "steps": [
     {
       "step": 1,
       "number": "01",
-      "title": "Consult & Strategy",
-      "description": "We deeply understand your business, goals, and challenges to craft a tailored technology roadmap.",
+      "title": "Understand & Plan",
+      "description": "We deeply understand your business needs, goals, and technical requirements to craft a solid development roadmap.",
       "points": [
-        "Requirement Gathering & Business Analysis",
-        "Competitor & Market Research",
-        "Workflow & Process Audit",
-        "AI & Automation Opportunity Identification",
-        "Technology Stack Planning"
+        "Requirement Gathering & Analysis",
+        "Market & Competitive Research",
+        "Workflow & Process Mapping",
+        "Technology Stack Planning",
+        "Project Timeline & Budget Estimation"
       ],
       "deliverables": [
-        "Project Roadmap",
-        "Feature List & Scope Document",
-        "Tech Stack Recommendation"
+        "Project Roadmap & Specifications",
+        "Architecture Design",
+        "Technology Recommendations"
       ]
     },
     {
       "step": 2,
       "number": "02",
       "title": "Design & Development",
-      "description": "We design intuitive user experiences and build powerful, scalable systems using modern technologies.",
+      "description": "We design intuitive user experiences and build scalable, maintainable software using modern technologies and best practices.",
       "points": [
-        "UI/UX Design (Figma / Prototyping)",
+        "UI/UX Design & Prototyping",
         "Frontend & Backend Development",
         "API Development & Integration",
-        "AI Model / Automation Integration",
-        "Database & System Architecture Setup"
+        "Database Design & Optimization",
+        "Security Implementation"
       ],
       "deliverables": [
-        "UI Design Files",
-        "Working Product (MVP / Full Build)",
-        "Integrated APIs & Features"
+        "Design Specifications",
+        "Working Software Build",
+        "Comprehensive Documentation"
       ]
     },
     {
       "step": 3,
       "number": "03",
-      "title": "Testing, Launch & Growth",
-      "description": "We ensure quality, deploy your solution, and continuously optimize it for growth and performance.",
+      "title": "Testing, Deployment & Support",
+      "description": "We ensure quality through rigorous testing, deploy to production, and provide ongoing support and optimization.",
       "points": [
         "Quality Assurance & Testing",
-        "Performance Optimization",
-        "Cloud Deployment (AWS / Azure / GCP)",
-        "Monitoring & Bug Fixing",
-        "Continuous Improvements & Scaling"
+        "Performance & Security Testing",
+        "Cloud Deployment & Configuration",
+        "Monitoring & Alerting Setup",
+        "Ongoing Support & Optimization"
       ],
       "deliverables": [
-        "Live Deployed Product",
-        "Performance Reports",
-        "Ongoing Support & Optimization Plan"
+        "Live Production Application",
+        "Performance & Health Reports",
+        "Support & Maintenance Plan"
       ]
     }
   ]
@@ -208,14 +208,14 @@
     "pill": "INTEGRATIONS",
     "heading": "Seamless",
     "headingItalic": "Integrations",
-    "subheading": "Interact with all your favorite software without unnecessary fuss",
-    "quote": "Our AI automation plugs into your stack to create a unified, intelligent workflow"
+    "subheading": "Connect with all the tools your team uses every day",
+    "quote": "Our software integrates with your entire tech stack to create a unified, efficient workflow"
   },
   "testimonials": {
     "pill": "REVIEWS",
     "heading": "Trusted by",
-    "headingItalic": "Visionaries",
-    "subheading": "Hear from real users who achieved success with our automation",
+    "headingItalic": "Professionals",
+    "subheading": "Hear from clients who transformed their businesses with our software solutions",
     "reviews": [
       {
         "name": "Rahul Sharma",
@@ -233,7 +233,7 @@
         "name": "Amit Patel",
         "role": "Founder at Nexora Digital",
         "avatar": "https://randomuser.me/api/portraits/men/77.jpg",
-        "quote": "Quick setup with results visible within the first month itself. Highly recommended for any growing startup."
+        "quote": "Quick setup with results visible within the first month itself. Highly recommended for any growing business."
       },
       {
         "name": "Sneha Gupta",
@@ -255,7 +255,7 @@
       }
     ],
     "brands": [
-      "Startup Clients",
+      "Business Clients",
       "E-commerce Businesses",
       "Local Enterprises",
       "Digital Agencies",
@@ -264,33 +264,33 @@
   },
   "successStories": {
     "pill": "SUCCESS STORIES",
-    "heading": "Proven",
+    "heading": "Real",
     "headingItalic": "Results",
-    "subheading": "See how our AI automation has transformed businesses across industries",
+    "subheading": "See how our software solutions have transformed businesses across industries",
     "stories": [
       {
         "name": "Vikram Malhotra",
         "role": "CEO at TechNova India",
         "avatar": "https://i.pravatar.cc/150?img=52",
-        "quote": "Our revenue grew by 30% within the very first quarter. The AI agents have truly been a game changer for us."
+        "quote": "The custom software solution reduced our operational costs by 40% and improved team efficiency significantly."
       },
       {
         "name": "Kavita Joshi",
         "role": "Founder at SprintUp Ventures",
         "avatar": "https://i.pravatar.cc/150?img=5",
-        "quote": "The automation workflows helped our team save over 100 hours every week. Efficiency has improved tremendously."
+        "quote": "From concept to deployment, the team delivered a robust product ahead of schedule. Professional and reliable."
       },
       {
         "name": "Arjun Nair",
         "role": "Director of Operations at IndoLogix",
         "avatar": "https://i.pravatar.cc/150?img=54",
-        "quote": "Custom AI solutions brought our data processing accuracy to 99.9%. The results have impressed everyone on the team."
+        "quote": "The application we built together has become central to our operations. Excellent ongoing support."
       }
     ],
     "metrics": [
-      "3x Productivity Boost",
-      "60% Manual Work Reduced",
-      "24/7 Automated Operations"
+      "40% Cost Reduction",
+      "60% Faster Deployment",
+      "99.9% Uptime"
     ]
   },
   "faq": {
@@ -327,11 +327,11 @@
     ]
   },
   "cta": {
-    "dividerLabel": "Reach out anytime",
-    "heading": "Ready to Automate Smarter?",
-    "headingLine2": "Let's",
-    "headingItalic": "Build Together",
-    "subheading": "Schedule a Call and Begin Automating",
+    "dividerLabel": "Ready to build?",
+    "heading": "Let's Build Your",
+    "headingLine2": "Next",
+    "headingItalic": "Great Product",
+    "subheading": "Schedule a consultation and let's discuss your software needs",
     "ctaLabel": "Book A Free Call",
     "socials": [
       {
@@ -354,22 +354,22 @@
   },
   "contactPage": {
     "pill": "CONTACT",
-    "heading": "Reach Us",
-    "headingItalic": "Anytime",
-    "subheading": "Have questions or need help? We're here for you",
+    "heading": "Let's Connect",
+    "headingItalic": "& Build",
+    "subheading": "Have questions about your project? We're here to help",
     "emailUs": {
       "title": "Email Us",
-      "description": "Facing technical challenges or product concerns? We're here to assist",
+      "description": "Have technical questions or need support? Get in touch",
       "email": "connect@hindustaan.in"
     },
     "contactSales": {
       "title": "Contact Sales",
-      "description": "Let's collaborate on custom solutions or discuss product insights",
+      "description": "Discuss your project requirements and get a personalized solution approach",
       "linkText": "Book a call",
       "linkHref": "#"
     },
     "form": {
-      "heading": "We'd love to help! Let us know how",
+      "heading": "Tell us about your project",
       "fields": {
         "name": {
           "label": "Full Name",
@@ -384,15 +384,15 @@
           "placeholder": "+91 98765 43210"
         },
         "subject": {
-          "label": "Subject Of Interest",
-          "placeholder": "Regarding Product"
+          "label": "Project Type",
+          "placeholder": "Web App, Mobile App, Custom Software, etc."
         },
         "message": {
-          "label": "How may we assist you?",
-          "placeholder": "Give us more info.."
+          "label": "Tell us about your needs",
+          "placeholder": "Describe your project and goals..."
         }
       },
-      "submitLabel": "Send Your Message"
+      "submitLabel": "Send Message"
     }
   },
   "footer": {

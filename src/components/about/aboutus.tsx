@@ -118,7 +118,7 @@ function AboutHero() {
 
         {/* Subheading */}
         <motion.p variants={fadeUp} className="text-zinc-400 text-base md:text-xl max-w-2xl leading-relaxed">
-          We are a software services provider offering comprehensive software support — from development and integration to maintenance and ongoing technical assistance for startups and enterprises across India.
+          We are a software development company helping businesses design, build, and scale reliable digital products with practical engineering support.
         </motion.p>
 
         {/* Stats row */}
@@ -128,8 +128,8 @@ function AboutHero() {
         >
           {[
             { value: "50+", label: "Clients Served" },
-            { value: "3x", label: "Avg Productivity Boost" },
-            { value: "24/7", label: "Automated Operations" },
+            { value: "35+", label: "Products Delivered" },
+            { value: "24/7", label: "Engineering Support" },
           ].map((stat) => (
             <motion.div
               variants={fadeUp}
@@ -156,7 +156,7 @@ function OurStory() {
         pill="Our Story"
         heading="Where It"
         italic="All Began."
-        sub="Born in 2026 with a clear purpose — to help Indian businesses build, grow, and scale through technology."
+        sub="Founded in 2026 with a clear goal: build dependable software for ambitious teams moving fast."
       />
 
       <motion.div
@@ -170,16 +170,16 @@ function OurStory() {
         <motion.div variants={fadeUp} className="space-y-6 text-zinc-400 text-base leading-relaxed">
           <p>
             Hindustaan Innovations was founded in 2026 with one simple belief — every Indian business,
-            no matter its size, deserves access to world-class digital solutions without the complexity
+            no matter its size, deserves access to world-class software without the complexity
             or the hefty price tag.
           </p>
           <p>
             We are a full-service digital company offering everything from web &amp; app development,
-            UI/UX design, and e-commerce solutions to digital marketing, cloud infrastructure, AI
+            UI/UX design, and e-commerce solutions to digital marketing, cloud infrastructure,
             systems, and custom software — all under one roof.
           </p>
           <p>
-            From a startup&apos;s first website to a growing agency&apos;s CRM system, or a business
+            From a company&apos;s first website to a growing agency&apos;s CRM system, or a business
             migrating to the cloud — we build, launch, and support it all. Our goal is to be the
             single technology partner you never have to replace.
           </p>
@@ -202,7 +202,7 @@ function OurStory() {
           <div className="relative grid grid-cols-3 gap-3">
             {[
               { value: "5", label: "Service Categories" },
-              { value: "20+", label: "Solutions Offered" },
+              { value: "18+", label: "Solutions Offered" },
               { value: "1", label: "Trusted Partner" },
             ].map((s) => (
               <div key={s.label} className="flex flex-col items-center bg-white/3 rounded-2xl py-3 border border-white/5">
@@ -221,7 +221,7 @@ function OurStory() {
               { icon: Globe, label: "Web & App Dev", bg: "from-blue-500/10", border: "border-blue-500/20", color: "text-blue-400" },
               { icon: Smartphone, label: "Mobile Apps", bg: "from-purple-500/10", border: "border-purple-500/20", color: "text-purple-400" },
               { icon: Megaphone, label: "Digital Marketing", bg: "from-yellow-500/10", border: "border-yellow-500/20", color: "text-yellow-400" },
-              { icon: Bot, label: "AI & Chatbots", bg: "from-indigo-500/10", border: "border-indigo-500/20", color: "text-indigo-400" },
+              { icon: Bot, label: "Product Strategy", bg: "from-indigo-500/10", border: "border-indigo-500/20", color: "text-indigo-400" },
               { icon: Cloud, label: "Cloud & DevOps", bg: "from-teal-500/10", border: "border-teal-500/20", color: "text-teal-400" },
               { icon: ShoppingCart, label: "E-commerce", bg: "from-green-500/10", border: "border-green-500/20", color: "text-green-400" },
               { icon: Code2, label: "Custom Software", bg: "from-orange-500/10", border: "border-orange-500/20", color: "text-orange-400" },
@@ -252,7 +252,7 @@ function MissionVision() {
         pill="Mission & Vision"
         heading="Why We"
         italic="Exist."
-        sub="Two guiding principles shape every decision we make and every product we ship."
+        sub="Two principles shape every build, every sprint, and every client partnership."
       />
 
       <motion.div
@@ -274,12 +274,10 @@ function MissionVision() {
           <div>
             <p className="text-xs font-semibold tracking-widest text-zinc-500 uppercase mb-2">Mission</p>
             <h3 className="text-2xl font-bold text-zinc-100 mb-4">
-              Democratize AI Automation
+              Build Software That Solves Real Problems
             </h3>
             <p className="text-zinc-400 leading-relaxed">
-              To make powerful AI automation tools accessible and affordable for every Indian
-              business — from day-1 startups to established enterprises — so they can compete on a
-              global stage without the overhead of large tech teams.
+              To deliver practical, scalable software that helps growing businesses launch faster, streamline operations, and serve customers better through clean engineering and thoughtful product design.
             </p>
           </div>
         </motion.div>
@@ -296,12 +294,10 @@ function MissionVision() {
           <div>
             <p className="text-xs font-semibold tracking-widest text-zinc-500 uppercase mb-2">Vision</p>
             <h3 className="text-2xl font-bold text-zinc-100 mb-4">
-              India's #1 AI Partner by 2030
+              Become India's Most Trusted Technology Partner
             </h3>
             <p className="text-zinc-400 leading-relaxed">
-              To become the most trusted AI automation partner in South Asia, powering the next
-              generation of intelligent businesses — where every workflow is smart, every decision
-              is data-driven, and every team runs at peak efficiency.
+              To become the go-to software partner for early-stage and growth-stage companies by delivering dependable products, transparent collaboration, and long-term technical ownership.
             </p>
           </div>
         </motion.div>
@@ -335,7 +331,7 @@ const VALUES = [
     icon: Lightbulb,
     title: "Continuous Innovation",
     description:
-      "AI evolves daily. We stay at the frontier so your automations are always built with the best-available technology.",
+      "Technology keeps evolving, and so do we. We continuously improve our stack, process, and product thinking to keep your software future-ready.",
   },
   {
     icon: Users,
@@ -394,7 +390,7 @@ const FOUNDERS = [
     name: "Prashant kumar Singh",
     role: "Founder & CEO",
     image: "/Prashant.jpeg",
-    bio: "Visionary entrepreneur behind Hindustaan Innovations. Prashant drives the mission to make intelligent digital systems accessible to every Indian business, from early-stage startups to established enterprises.",
+    bio: "Visionary entrepreneur behind Hindustaan Innovations. Prashant drives the mission to make intelligent digital systems accessible to every Indian business, from early-stage companies to established enterprises.",
     linkedin: "https://www.linkedin.com/",
     badge: "Founder",
     badgeColor: "from-amber-500/20 to-orange-500/10 border-amber-500/30 text-amber-400",
@@ -505,25 +501,25 @@ const HOW_WE_HELP = [
     step: "01",
     title: "Discovery Call",
     description:
-      "We start with a free 30-minute strategy call to understand your business, your pain points, and where AI can unlock the biggest wins.",
+      "We begin with a focused discovery call to understand your goals, current setup, and the highest-impact software priorities.",
   },
   {
     step: "02",
-    title: "Custom Automation Blueprint",
+    title: "Product & Delivery Blueprint",
     description:
-      "Our team maps your entire workflow, identifies automation opportunities, and delivers a detailed implementation blueprint — no vague slides.",
+      "We define architecture, scope, milestones, and timelines so you get a clear execution plan before development starts.",
   },
   {
     step: "03",
     title: "Build & Integrate",
     description:
-      "We build your AI systems, agents, and workflow automations and integrate them directly into your existing tools and tech stack.",
+      "We develop your product with modern engineering practices and integrate it with your existing tools, data, and workflows.",
   },
   {
     step: "04",
     title: "Launch, Train & Scale",
     description:
-      "We go live together, train your team, monitor performance, and iterate until your automations are running at peak efficiency.",
+      "We launch together, support your team, track product performance, and iterate quickly as your business grows.",
   },
 ];
 
@@ -534,8 +530,8 @@ function HowWeHelp() {
         icon={Handshake}
         pill="How We Help"
         heading="From Idea to"
-        italic="Automation."
-        sub="A clear, structured process so you always know exactly what's happening next."
+        italic="Execution."
+        sub="A clear process built for fast execution, with no confusion about what happens next."
       />
 
       <motion.div
