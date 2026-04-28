@@ -174,7 +174,7 @@ export function ServiceDetailView({ serviceId }: Props) {
           {/* CTA */}
           <motion.div variants={itemVariants}>
             <Link
-              href="/contact"
+              href={`/contact?subject=${encodeURIComponent(card.title)}`}
               className="inline-flex items-center gap-2 bg-zinc-100 text-zinc-900 hover:bg-white px-7 py-3 rounded-xl text-sm font-semibold transition-all duration-200 shadow-lg hover:scale-105"
             >
               Get Started <ArrowUpRight className="w-4 h-4" />

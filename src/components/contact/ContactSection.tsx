@@ -8,7 +8,8 @@ import {
   Phone,
 } from "lucide-react";
 import { motion, type Variants } from "motion/react";
-import { useCallback, useState } from "react";
+import { useCallback, useState, Suspense, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import data from "@/data.json";
 import { Navbar } from "../landing/Navbar";
 import { Input, Label, Textarea } from "../ui/form";
@@ -48,9 +49,28 @@ const initialFormState: FormState = {
 };
 
 export function ContactSection() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-black" />}>
+      <ContactSectionContent />
+    </Suspense>
+  );
+}
+
+function ContactSectionContent() {
   const { contactPage } = data;
+  const searchParams = useSearchParams();
 
   const [form, setForm] = useState<FormState>(initialFormState);
+
+  useEffect(() => {
+    const subjectParam = searchParams.get("subject");
+    if (subjectParam) {
+      setForm((prev) => ({
+        ...prev,
+        subject: { ...prev.subject, value: subjectParam, touched: false },
+      }));
+    }
+  }, [searchParams]);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState("");
