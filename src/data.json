@@ -384,8 +384,8 @@
           "placeholder": "+91 98765 43210"
         },
         "subject": {
-          "label": "Project Type",
-          "placeholder": "Web App, Mobile App, Custom Software, etc."
+          "label": "Subject",
+          "placeholder": "Project Enquiry, Partnership, Careers... etc."
         },
         "message": {
           "label": "Tell us about your needs",

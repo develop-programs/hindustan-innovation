@@ -226,7 +226,7 @@ function JobCardComponent({ card }: { card: JobCard }) {
               <Check className={`w-3 h-3 shrink-0 ${card.accent}`} />
               {item}
             </div>
-          ))}
+          ))}  
         </div>
 
         <motion.div
