@@ -169,18 +169,18 @@ function OurStory() {
         {/* Story text */}
         <motion.div variants={fadeUp} className="space-y-6 text-zinc-400 text-base leading-relaxed">
           <p>
-            Hindustaan Innovations was founded in 2026 with one simple belief — every Indian business,
+            Hindustaan Innovations was founded in 2026 with one simple belief every Indian business,
             no matter its size, deserves access to world-class software without the complexity
             or the hefty price tag.
           </p>
           <p>
             We are a full-service digital company offering everything from web &amp; app development,
             UI/UX design, and e-commerce solutions to digital marketing, cloud infrastructure,
-            systems, and custom software — all under one roof.
+            systems, and custom software all under one roof.
           </p>
           <p>
             From a company&apos;s first website to a growing agency&apos;s CRM system, or a business
-            migrating to the cloud — we build, launch, and support it all. Our goal is to be the
+            migrating to the cloud we build, launch, and support it all. Our goal is to be the
             single technology partner you never have to replace.
           </p>
           <p>
@@ -313,13 +313,13 @@ const VALUES = [
     icon: Zap,
     title: "Speed & Execution",
     description:
-      "We move fast and ship real solutions. No endless planning cycles — just clear goals, smart builds, and rapid deployment.",
+      "We move fast and ship real solutions. No endless planning cycles just clear goals, smart builds, and rapid deployment.",
   },
   {
     icon: Shield,
     title: "Trust & Transparency",
     description:
-      "We operate with radical honesty. From pricing to timelines, what you see is exactly what you get — no hidden surprises.",
+      "We operate with radical honesty. From pricing to timelines, what you see is exactly what you get no hidden surprises.",
   },
   {
     icon: Heart,
@@ -343,13 +343,13 @@ const VALUES = [
     icon: TrendingUp,
     title: "Measurable Impact",
     description:
-      "Every solution we build is tied to real metrics — time saved, revenue grown, and costs reduced. Impact you can actually see.",
+      "Every solution we build is tied to real metrics time saved, revenue grown, and costs reduced. Impact you can actually see.",
   },
 ];
 
 function OurValues() {
   return (
-    <section className="relative z-10 px-4 py-24 w-full max-w-6xl mx-auto after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent">
+    <section className="relative z-10 px-4 py-24 w-full max-w-6xl mx-auto after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent">
       <SectionHeader
         icon={Heart}
         pill="Our Values"
