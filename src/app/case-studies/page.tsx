@@ -126,7 +126,7 @@ export default function CaseStudiesPage() {
         {/* Summary stats */}
         <div className="grid grid-cols-3 gap-4 mt-4 w-full max-w-lg">
           {[
-            { value: "50+", label: "Projects Delivered" },
+            { value: "35+", label: "Projects Delivered" },
             { value: "30+", label: "Happy Clients" },
             { value: "3x", label: "Avg. ROI Boost" },
           ].map((s) => (
@@ -191,7 +191,7 @@ export default function CaseStudiesPage() {
         <div className="mt-16 text-center">
           <p className="text-zinc-400 text-sm mb-4">Want results like these for your business?</p>
           <Link
-            href="/contact"
+            href="tel:+917712994005"
             className="inline-flex items-center gap-2 bg-zinc-100 hover:bg-white text-zinc-900 font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
           >
             Book a Free Strategy Call <ArrowUpRight className="w-4 h-4" />
