@@ -2,12 +2,10 @@
 
 import { useState, useEffect } from "react";
 import {
-  Globe, Smartphone, Palette, ShoppingCart, Code2, Megaphone, Wrench,
-  Bot, Brain, TrendingUp, Eye, Cpu, Cloud, Server, GitBranch, Shield,
+  ShoppingCart, Megaphone, Wrench, Bot, Brain, TrendingUp, Eye, Cpu, Cloud, Server, GitBranch, Shield,
   Database, Monitor, Plug, Lock, Package, BarChart2, Zap, Settings,
   FlaskConical, HardDrive, Mail, MapPin, Check, ArrowUpRight,
-  Sparkles, Layers,
-  Briefcase, Loader2
+  Briefcase, Loader2, LayoutGrid
 } from "lucide-react";
 import { AnimatedList } from "../ui/animated-list";
 import { motion, type Variants } from "motion/react";
@@ -46,10 +44,10 @@ const cardHoverVariants: Variants = {
 };
 
 const IconMap: Record<string, React.FC<any>> = {
-  Globe, Smartphone, Palette, ShoppingCart, Code2, Megaphone, Wrench,
+  Globe: Cpu, Smartphone: Shield, Palette: LayoutGrid, ShoppingCart, Code2: Settings, Megaphone, Wrench,
   Bot, Brain, TrendingUp, Eye, Cpu, Cloud, Server, GitBranch, Shield,
   Database, Monitor, Plug, Lock, Package, BarChart2, Zap, Settings,
-  FlaskConical, HardDrive, Mail, MapPin, Sparkles, Layers, Briefcase
+  FlaskConical, HardDrive, Mail, MapPin, Sparkles: Zap, Layers: LayoutGrid, Briefcase
 };
 
 // ─── Mini graphic components ─────────────────────────────────────────────────
@@ -110,10 +108,10 @@ function NodesGraphic({ accent }: { accent: string }) {
         <line x1="25%" y1="65%" x2="50%" y2="50%" strokeWidth="1" />
       </svg>
       <div className={`relative z-10 w-14 h-14 bg-zinc-950 rounded-full border border-white/10 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.05)] ${accent}`}>
-        <Sparkles className="w-6 h-6" />
+        <Zap className="w-6 h-6" />
       </div>
       <div className="absolute top-[18%] left-[22%] w-9 h-9 bg-zinc-900 rounded-full border border-white/5 flex items-center justify-center text-zinc-500"><Cpu className="w-4 h-4" /></div>
-      <div className="absolute top-[15%] right-[22%] w-9 h-9 bg-zinc-900 rounded-full border border-white/5 flex items-center justify-center text-zinc-500"><Globe className="w-4 h-4" /></div>
+      <div className="absolute top-[15%] right-[22%] w-9 h-9 bg-zinc-900 rounded-full border border-white/5 flex items-center justify-center text-zinc-500"><Shield className="w-4 h-4" /></div>
       <div className="absolute bottom-[18%] left-[20%] w-9 h-9 bg-zinc-900 rounded-full border border-white/5 flex items-center justify-center text-zinc-500"><Database className="w-4 h-4" /></div>
     </div>
   );
@@ -126,10 +124,10 @@ interface JobCard {
   title: string;
   description: string;
   items: string[];
-  icon: React.ReactNode;
+  icon: React.ReactNode | string;
   accent: string;
   graphic: "cluster" | "tags" | "nodes";
-  graphicIcons?: React.ReactNode[];
+  graphicIcons?: (React.ReactNode | string)[];
   graphicTags?: string[];
 }
 
@@ -164,7 +162,20 @@ const DEPARTMENTS: Department[] = careersData.departments.map((dept: any) => ({
 
 // ─── Single card ──────────────────────────────────────────────────────────────
 
+function resolveIcon(icon: React.ReactNode | string, className: string): React.ReactNode {
+  if (typeof icon === "string") {
+    const IconComp = IconMap[icon] || Briefcase;
+    return <IconComp className={className} />;
+  }
+  return icon;
+}
+
 function JobCardComponent({ card }: { card: JobCard }) {
+  const resolvedIcon = resolveIcon(card.icon, "w-7 h-7");
+  const resolvedGraphicIcons = card.graphicIcons?.map((ic, i) =>
+    resolveIcon(ic, i === 0 ? "w-7 h-7" : "w-4 h-4")
+  );
+
   const renderGraphic = () => {
     if (card.graphic === "tags" && card.graphicTags)
       return <TagListGraphic tags={card.graphicTags} />;
@@ -172,7 +183,7 @@ function JobCardComponent({ card }: { card: JobCard }) {
       return <NodesGraphic accent={card.accent} />;
     return (
       <IconClusterGraphic
-        icons={card.graphicIcons ?? [card.icon]}
+        icons={resolvedGraphicIcons ?? [resolvedIcon]}
         accent={card.accent}
       />
     );
@@ -209,7 +220,7 @@ function JobCardComponent({ card }: { card: JobCard }) {
         {renderGraphic()}
 
         <div className="flex items-center gap-3 mb-3">
-          <div className={`shrink-0 ${card.accent}`}>{card.icon}</div>
+          <div className={`shrink-0 ${card.accent}`}>{resolvedIcon}</div>
           <h3 className="text-lg font-semibold text-zinc-100">{card.title}</h3>
         </div>
 
@@ -250,7 +261,7 @@ function DepartmentSection({ dept }: { dept: Department }) {
         className="flex flex-col items-center text-center w-full"
       >
         <div className="flex items-center gap-2 mb-6 bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-full px-4 py-1.5 shadow-lg">
-          <Layers className="w-4 h-4 text-zinc-300" />
+          <LayoutGrid className="w-4 h-4 text-zinc-300" />
           <span className="text-xs font-semibold tracking-wider text-zinc-300 uppercase">{dept.pill}</span>
         </div>
 

@@ -1,11 +1,11 @@
 {
   "brand": {
     "name": "Hindustaan Innovations",
-    "tagline": "New Gen AI Automation Partner",
+    "tagline": "Building Scalable Software for Modern Businesses",
     "email": "connect@hindustaan.in",
     "copyright": "© 2026 Hindustaan Innovations",
     "madeBy": "Hindustaan Innovations",
-    "whatsapp": "https://wa.me/919999999999"
+    "whatsapp": "https://wa.me/917000064349"
   },
   "navbar": {
     "navLinks": [
@@ -19,11 +19,11 @@
     "ctaLabel": "Get in Touch"
   },
   "hero": {
-    "pill": "New Gen AI Automation Partner",
+    "pill": "Software Development & Digital Solutions Partner",
     "headingLine1": "Build Smarter",
     "headingLine2": "Scale Faster.",
     "headingItalic": "With AI & Technology.",
-    "subheading": "From Websites to AI Automation & Cloud — We Build Complete Digital Solutions for Modern Businesses",
+    "subheading": "From Websites to Scalable Application & Cloud Solutions — We Build Complete Digital Solutions for Modern and Growing Businesses",
     "ctaLabel": "Book A Free Call"
   },
   "quote": {
@@ -40,49 +40,51 @@
     "cards": [
   {
     "title": "All-in-One Tech Partner",
-    "description": "From development to AI and cloud, everything under one roof"
+    "description": "From design to deployement, everything under one roof"
   },
   {
     "title": "Scalable Architecture",
-    "description": "Build systems that grow with your business"
+    "description": "We build high-performance systems that grow with your business"
   },
   {
-    "title": "Automation First Approach",
-    "description": "Reduce manual work and increase efficiency using AI"
+    "title": "Modern Tech Stack",
+    "description": "Using the latest technologies for speed, performance, and reliability"
   }
 ]
   },
   "services": {
     "pill": "SERVICES",
     "heading": "Smarter Services,",
-    "headingItalic": "Built with AI",
-    "subheading": "Everything you need to automate operations, boost productivity",
+    "headingItalic": "Built for Performance",
+    "subheading": "Everything you need to build and scale digital products",
     "cards": [
       {
-        "title": "Automate repetitive tasks",
-        "description": "We help you streamline internal operations by automating manual workflows",
-        "graphic": "task-list"
+        "title": "Website Development",
+    "description": "We create fast, responsive, and modern websites tailored to your business needs",
+        "graphic": "search-ui"
+
       },
       {
-        "title": "Automated Workflows",
-        "description": "Boost efficiency across teams with smart automation. Build intelligent workflows that automate multi-step processes across tools and platforms.",
-        "graphic": "workflow-nodes",
+       "title": "Web Application Development",
+    "description": "Build scalable and secure web applications with modern technologies",
+    "graphic": "workflow-nodes",
         "colSpan": 2
       },
       {
         "title": "Real-Time Intelligence",
         "description": "Make smarter decisions with live data insights. Tap into real-time data.",
-        "graphic": "search-ui"
+   "graphic": "task-list"
+
       },
       {
-        "title": "Custom AI Agent Development",
-        "description": "We develop custom AI agents that integrate seamlessly with your tools",
-        "graphic": "code-editor"
+        "title": "Mobile App Development",
+    "description": "Develop high-performance Android & iOS apps with seamless user experience",
+    "graphic": "code-editor"
       },
       {
-        "title": "AI Strategy Consulting",
-        "description": "Get expert guidance to implement AI solutions that drive business growth",
-        "graphic": "strategy-nodes"
+        "title": "Cloud & Deployment",
+    "description": "Deploy, manage, and scale your applications on AWS, Azure, or GCP",
+    "graphic": "strategy-nodes"
       }
     ]
   },
@@ -93,9 +95,9 @@
     "subheading": "Everything you need to automate operations, boost productivity",
     "cards": [
       {
-        "title": "Workflow Automation",
-        "description": "Automate complex business processes to boost speed, clarity, and efficiency.",
-        "icons": [
+        "title": "Custom Development",
+    "description": "End-to-end development tailored to your business requirements",
+     "icons": [
           "GitMerge",
           "BrainCircuit"
         ]
@@ -109,13 +111,10 @@
         ]
       },
       {
-        "title": "AI Assistant",
-        "description": "Deploy intelligent virtual agents to streamline tasks.",
-        "icons": [
-          "Bot",
-          "Sparkles"
-        ]
-      },
+    "title": "Cloud Deployment",
+    "description": "Deploy and scale applications effortlessly on cloud platforms",
+    "icons": ["Cloud", "Server"]
+  },
       {
         "title": "Sales & Marketing",
         "description": "Leverage AI to optimize campaigns, track leads, and personalize outreach.",
@@ -133,13 +132,10 @@
         ]
       },
       {
-        "title": "Seamless Integrations",
-        "description": "Connect your tools and apps for smooth, unified AI-powered workflows.",
-        "icons": [
-          "Plug",
-          "Database"
-        ]
-      }
+    "title": "Maintenance & Support",
+    "description": "Ongoing support and updates to keep your systems running smoothly",
+    "icons": ["Wrench", "RefreshCcw"]
+  }
     ]
   },
   "process": {
@@ -207,10 +203,10 @@
   "integrations": {
     "pill": "INTEGRATIONS",
     "heading": "Seamless",
-    "headingItalic": "Integrations",
-    "subheading": "Interact with all your favorite software without unnecessary fuss",
-    "quote": "Our AI automation plugs into your stack to create a unified, intelligent workflow"
-  },
+    "headingItalic": "Connectivity",
+"subheading": "Connect your applications with third-party tools and services effortlessly",
+"quote": "We ensure seamless integration between your systems for smooth and efficient workflows"
+},
   "testimonials": {
     "pill": "REVIEWS",
     "heading": "Trusted by",
@@ -266,7 +262,7 @@
     "pill": "SUCCESS STORIES",
     "heading": "Proven",
     "headingItalic": "Results",
-    "subheading": "See how our AI automation has transformed businesses across industries",
+    "subheading": "See how our software solutions have helped businesses grow and scale",
     "stories": [
       {
         "name": "Vikram Malhotra",
@@ -288,9 +284,9 @@
       }
     ],
     "metrics": [
-      "3x Productivity Boost",
-      "60% Manual Work Reduced",
-      "24/7 Automated Operations"
+  "3x Performance Improvement",
+  "50% Faster Operations",
+  "Highly Scalable Systems"
     ]
   },
   "faq": {
@@ -328,7 +324,7 @@
   },
   "cta": {
     "dividerLabel": "Reach out anytime",
-    "heading": "Ready to Automate Smarter?",
+    "heading": "Ready to Build Your Software?",
     "headingLine2": "Let's",
     "headingItalic": "Build Together",
     "subheading": "Schedule a Call and Begin Automating",

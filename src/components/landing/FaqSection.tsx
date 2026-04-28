@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import Link from "next/link";
 import { MessageCircleQuestion, ArrowUpRight, ChevronDown, HelpCircle } from "lucide-react";
 import data from "@/data.json";
 
@@ -35,10 +36,12 @@ export default function FaqSection() {
                         <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-8 leading-relaxed">
                             {faq.contactBox.text}
                         </p>
+                        <Link href={"contact"}>
                         <button className="flex items-center gap-2 px-5 py-2.5 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 border border-black/10 dark:border-white/10 rounded-lg text-sm font-medium text-zinc-900 dark:text-zinc-200 transition-all duration-200 group">
                             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                             {faq.contactBox.buttonLabel}
                         </button>
+                        </Link>
                     </div>
                 </div>
 

@@ -66,13 +66,46 @@ We retain intellectual property rights to any work not fully paid for.`,
 All prices are in Indian Rupees (INR) unless otherwise specified.`,
   },
   {
-    title: "6. Confidentiality",
+    title: "6. Cancellation & Refund Policy",
+    content: `Due to the custom nature of our digital services, we maintain a strict policy regarding cancellations and refunds:
+
+• Upfront deposits are non-refundable once substantial work or research has commenced.
+• If a project is cancelled before any work has begun, a full refund (minus payment processing fees) may be issued at our discretion.
+• For monthly retainers (e.g., SEO, Maintenance), cancellation requires a 30-day notice, and no partial refunds are provided for the current active month.
+• Delivered and approved milestones are strictly non-refundable.`,
+  },
+  {
+    title: "7. Scope Creep & Revisions",
+    content: `Any work requested outside the boundaries of the original Statement of Work (SOW) is considered "Scope Creep" and will be billed separately at our standard hourly rates or as a new fixed-price milestone.
+
+Unless stated otherwise in your SOW, our standard project lifecycle includes up to two (2) rounds of minor revisions at designated milestones. Further revisions will incur additional charges.`,
+  },
+  {
+    title: "8. Project Delays & Force Majeure",
+    content: `Project timelines provided are estimates. If you fail to provide necessary feedback, content, or approvals in a timely manner, project delivery dates will be adjusted accordingly. We are not liable for delays caused by client inaction.
+
+Neither party shall be held liable for any delay or failure in performance due to events beyond our reasonable control, including but not limited to natural disasters, acts of government, strikes, or widespread internet/power outages (Force Majeure).`,
+  },
+  {
+    title: "9. Third-Party Services & Subcontracting",
+    content: `We reserve the right to employ trusted subcontractors or third-party service providers to fulfill parts of our service obligations. All subcontractors are bound by strict confidentiality agreements.
+
+We may integrate third-party APIs, plugins, or hosting services into your project. We are not liable for any outages, data breaches, feature changes, or pricing updates instituted by these third-party providers.`,
+  },
+  {
+    title: "10. Confidentiality",
     content: `Both parties agree to keep confidential any proprietary information shared during the engagement. This includes business strategies, customer data, technical architecture, and pricing.
 
 We will not disclose your confidential information to third parties without your consent, except as required by law or to trusted service providers involved in delivering your project.`,
   },
   {
-    title: "7. Limitation of Liability",
+    title: "11. Indemnification",
+    content: `You agree to indemnify, defend, and hold harmless Hindustaan Innovations, its directors, and employees from any claims, damages, liabilities, and expenses arising from materials you provide to us.
+
+This includes, but is not limited to, claims that client-provided text, images, or logos infringe upon the copyright or trademark of any third party.`,
+  },
+  {
+    title: "12. Limitation of Liability",
     content: `To the maximum extent permitted by law, Hindustaan Innovations shall not be liable for:
 
 • Indirect, incidental, or consequential damages
@@ -83,13 +116,17 @@ We will not disclose your confidential information to third parties without your
 Our total liability for any claim arising from our services shall not exceed the total amount paid by you for the specific service giving rise to the claim.`,
   },
   {
-    title: "8. Warranties & Disclaimer",
-    content: `We warranty our deliverables to be free from defects for 30 days post-launch (for development projects). After this period, ongoing maintenance is available under a separate support agreement.
+    title: "13. Warranties & Disclaimer",
+    content: `We warranty our deliverables to be free from critical defects for 30 days post-launch (for development projects). After this period, ongoing maintenance is available under a separate support agreement.
 
 We do not guarantee specific business outcomes, search rankings, advertising performance, or revenue results from our marketing services — as these depend on numerous factors outside our control.`,
   },
   {
-    title: "9. Termination",
+    title: "14. Non-Solicitation",
+    content: `During the term of our engagement and for a period of twelve (12) months following its termination, you agree not to directly or indirectly solicit, hire, or engage any employee or contractor of Hindustaan Innovations without our prior written consent.`,
+  },
+  {
+    title: "15. Termination",
     content: `Either party may terminate a project agreement with 14 days written notice. Upon termination:
 
 • You will be invoiced for all work completed up to the termination date
@@ -98,17 +135,17 @@ We do not guarantee specific business outcomes, search rankings, advertising per
 • Deposits are non-refundable once substantial work has commenced`,
   },
   {
-    title: "10. Governing Law",
+    title: "16. Governing Law",
     content: `These Terms of Service are governed by the laws of India. Any disputes arising from these terms or our services shall be subject to the exclusive jurisdiction of the courts in [City], India.
 
 We encourage resolving disputes through good-faith negotiation first. If unresolved within 30 days, disputes may be referred to arbitration under the Arbitration and Conciliation Act, 1996.`,
   },
   {
-    title: "11. Contact",
+    title: "17. Contact",
     content: `For any questions about these Terms of Service, please contact:
 
 Hindustaan Innovations
-Email: info@hindustaan.in
+Email: connect@hindustaan.in
 Website: www.hindustaan.in
 
 Last updated: April 27, 2026`,

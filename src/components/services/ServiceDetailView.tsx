@@ -289,7 +289,7 @@ export function ServiceDetailView({ serviceId }: Props) {
               <p className="text-sm font-semibold text-zinc-100 mb-1">Ready to get started?</p>
               <p className="text-xs text-zinc-500 mb-4">Book a free consultation with our experts</p>
               <Link
-                href="/contact"
+                href="tel:+917712994005"
                 className="inline-flex items-center gap-2 bg-zinc-100 text-zinc-900 hover:bg-white px-5 py-2.5 rounded-xl text-xs font-semibold transition-all w-full justify-center"
               >
                 Book Free Call <ArrowUpRight className="w-3.5 h-3.5" />
