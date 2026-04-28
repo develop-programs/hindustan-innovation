@@ -379,6 +379,10 @@
           "label": "Email Address",
           "placeholder": "connect@hindustaan.in"
         },
+        "phone": {
+          "label": "Phone Number",
+          "placeholder": "+91 98765 43210"
+        },
         "subject": {
           "label": "Subject Of Interest",
           "placeholder": "Regarding Product"

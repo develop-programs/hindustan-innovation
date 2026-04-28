@@ -118,7 +118,7 @@ function AboutHero() {
 
         {/* Subheading */}
         <motion.p variants={fadeUp} className="text-zinc-400 text-base md:text-xl max-w-2xl leading-relaxed">
-          We are an AI automation company on a mission to make intelligent systems accessible to every Indian business — from early-stage startups to established enterprises.
+          We are a software services provider offering comprehensive software support — from development and integration to maintenance and ongoing technical assistance for startups and enterprises across India.
         </motion.p>
 
         {/* Stats row */}
@@ -218,14 +218,14 @@ function OurStory() {
           {/* Bento service grid */}
           <div className="relative grid grid-cols-2 gap-2.5">
             {[
-              { icon: Globe,        label: "Web & App Dev",       bg: "from-blue-500/10",    border: "border-blue-500/20",    color: "text-blue-400" },
-              { icon: Smartphone,  label: "Mobile Apps",          bg: "from-purple-500/10",  border: "border-purple-500/20",  color: "text-purple-400" },
-              { icon: Megaphone,   label: "Digital Marketing",    bg: "from-yellow-500/10",  border: "border-yellow-500/20",  color: "text-yellow-400" },
-              { icon: Bot,         label: "AI & Chatbots",        bg: "from-indigo-500/10",  border: "border-indigo-500/20",  color: "text-indigo-400" },
-              { icon: Cloud,       label: "Cloud & DevOps",       bg: "from-teal-500/10",    border: "border-teal-500/20",    color: "text-teal-400" },
-              { icon: ShoppingCart,label: "E-commerce",           bg: "from-green-500/10",   border: "border-green-500/20",   color: "text-green-400" },
-              { icon: Code2,       label: "Custom Software",      bg: "from-orange-500/10",  border: "border-orange-500/20",  color: "text-orange-400" },
-              { icon: Shield,      label: "Security",             bg: "from-red-500/10",     border: "border-red-500/20",     color: "text-red-400" },
+              { icon: Globe, label: "Web & App Dev", bg: "from-blue-500/10", border: "border-blue-500/20", color: "text-blue-400" },
+              { icon: Smartphone, label: "Mobile Apps", bg: "from-purple-500/10", border: "border-purple-500/20", color: "text-purple-400" },
+              { icon: Megaphone, label: "Digital Marketing", bg: "from-yellow-500/10", border: "border-yellow-500/20", color: "text-yellow-400" },
+              { icon: Bot, label: "AI & Chatbots", bg: "from-indigo-500/10", border: "border-indigo-500/20", color: "text-indigo-400" },
+              { icon: Cloud, label: "Cloud & DevOps", bg: "from-teal-500/10", border: "border-teal-500/20", color: "text-teal-400" },
+              { icon: ShoppingCart, label: "E-commerce", bg: "from-green-500/10", border: "border-green-500/20", color: "text-green-400" },
+              { icon: Code2, label: "Custom Software", bg: "from-orange-500/10", border: "border-orange-500/20", color: "text-orange-400" },
+              { icon: Shield, label: "Security", bg: "from-red-500/10", border: "border-red-500/20", color: "text-red-400" },
             ].map((item) => (
               <div
                 key={item.label}
@@ -579,15 +579,15 @@ function HowWeHelp() {
         className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-14"
       >
         <p className="text-zinc-400 text-sm">Ready to get started?</p>
-            <Link href="tel:+917712994005" target="_blank" rel="noopener noreferrer">
-    
-        <button
-          type="button"
-          className="flex items-center gap-2 bg-zinc-900/50 backdrop-blur-md border border-white/10 hover:bg-zinc-800/80 text-zinc-200 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 hover:border-white/20"
-        >
-          Book a Free Call
-          <ArrowUpRight className="w-4 h-4" />
-        </button>
+        <Link href="tel:+917712994005" target="_blank" rel="noopener noreferrer">
+
+          <button
+            type="button"
+            className="flex items-center gap-2 bg-zinc-900/50 backdrop-blur-md border border-white/10 hover:bg-zinc-800/80 text-zinc-200 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 hover:border-white/20"
+          >
+            Book a Free Call
+            <ArrowUpRight className="w-4 h-4" />
+          </button>
         </Link>
       </motion.div>
     </section>
