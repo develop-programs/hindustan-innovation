@@ -127,9 +127,9 @@ function AboutHero() {
           className="grid grid-cols-3 gap-6 mt-4 w-full max-w-2xl"
         >
           {[
-            { value: "50+", label: "Clients Served" },
-            { value: "35+", label: "Products Delivered" },
-            { value: "24/7", label: "Engineering Support" },
+            { value: "30+", label: "Happy Clients" },
+            { value: "35+", label: "Projects Delivered" },
+            { value: "24/7", label: "Support Available" },
           ].map((stat) => (
             <motion.div
               variants={fadeUp}

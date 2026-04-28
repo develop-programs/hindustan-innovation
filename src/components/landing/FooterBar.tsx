@@ -79,7 +79,7 @@ const COLUMNS = [
 ];
 
 const STATS = [
-  { value: "50+", label: "Projects Delivered" },
+  { value: "35+", label: "Projects Delivered" },
   { value: "30+", label: "Happy Clients" },
   { value: "3x", label: "Avg Productivity Boost" },
   { value: "24/7", label: "Support Available" },
