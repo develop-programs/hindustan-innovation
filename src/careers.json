@@ -29,9 +29,17 @@
           "icon": "Code2",
           "accent": "text-blue-400",
           "description": "Build robust web applications using React, Next.js, and Node.js. Experience with Tailwind CSS is a plus.",
-          "items": ["Full-time", "Remote / Hybrid", "Mid-Level"],
+          "items": [
+            "Full-time",
+            "Remote / Hybrid",
+            "Mid-Level"
+          ],
           "graphic": "cluster",
-          "graphicIcons": ["Code2", "Globe", "Layers"],
+          "graphicIcons": [
+            "Code2",
+            "Globe",
+            "Layers"
+          ],
           "colSpan": 3,
           "responsibilities": [
             "Architect, build, and maintain robust web applications using React, Next.js, and Node.js.",
@@ -88,7 +96,11 @@
           "description": "Build and maintain cloud infrastructure on AWS/GCP, design CI/CD pipelines, and ensure system reliability.",
           "items": ["Full-time", "Remote", "Mid-Level"],
           "graphic": "tags",
-          "graphicTags": ["AWS", "CI/CD", "Kubernetes"],
+          "graphicTags": [
+            "AWS",
+            "CI/CD",
+            "Kubernetes"
+          ],
           "colSpan": 6,
           "responsibilities": [
             "Manage and scale our cloud infrastructure using AWS or GCP.",
@@ -124,9 +136,17 @@
           "icon": "Palette",
           "accent": "text-pink-400",
           "description": "Create intuitive user interfaces and engaging experiences. Proficiency in Figma required.",
-          "items": ["Full-time", "Hybrid", "Mid-Level"],
+          "items": [
+            "Full-time",
+            "Hybrid",
+            "Mid-Level"
+          ],
           "graphic": "cluster",
-          "graphicIcons": ["Palette", "Smartphone", "Sparkles"],
+          "graphicIcons": [
+            "Palette",
+            "Smartphone",
+            "Sparkles"
+          ],
           "colSpan": 4,
           "responsibilities": [
             "Lead the design of web and mobile interfaces from wireframes to high-fidelity prototypes.",
@@ -153,7 +173,11 @@
           "icon": "Zap",
           "accent": "text-yellow-400",
           "description": "Bring our applications to life with smooth, high-performance micro-animations.",
-          "items": ["Contract", "Remote", "Junior / Mid"],
+          "items": [
+            "Contract",
+            "Remote",
+            "Junior / Mid"
+          ],
           "graphic": "nodes",
           "colSpan": 2,
           "responsibilities": [
