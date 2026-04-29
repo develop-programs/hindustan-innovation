@@ -92,7 +92,7 @@ const checkAndSendEmails = async () => {
         }
 
         const now = Date.now();
-        const fiveMinutes = 5 * 60 * 1000;
+        const fiveMinutes = 2 * 60 * 1000;
         
         if (leads.length >= 100 || (now - lastSent) >= fiveMinutes) {
             const res = await fetch("/api/popup", {
