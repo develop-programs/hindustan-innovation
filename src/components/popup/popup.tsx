@@ -92,9 +92,9 @@ const checkAndSendEmails = async () => {
         }
 
         const now = Date.now();
-        const twentyFourHours = 5 * 60 * 1000;
+        const fiveMinutes = 5 * 60 * 1000;
         
-        if (leads.length >= 100 || (now - lastSent) >= twentyFourHours) {
+        if (leads.length >= 100 || (now - lastSent) >= fiveMinutes) {
             const res = await fetch("/api/popup", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -121,11 +121,11 @@ export default function Popups() {
             setShowPopup(true);
         }, 1500);
 
-        // Check initially and set an interval to check every hour while page is open
+        // Check initially and set an interval to check every 1 minute while page is open
         checkAndSendEmails();
         const checkerInterval = window.setInterval(() => {
             checkAndSendEmails();
-        }, 60 * 60 * 1000);
+        }, 60 * 1000);
 
         return () => {
             window.clearTimeout(timer);
