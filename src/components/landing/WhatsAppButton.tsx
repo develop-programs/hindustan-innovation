@@ -6,7 +6,7 @@ import data from "@/data.json";
 
 export function WhatsAppButton() {
   const [hovered, setHovered] = useState(false);
-  const waLink = data.brand.whatsapp;
+  const waLink = (data.brand as { whatsapp?: string } | undefined)?.whatsapp;
 
   return (
     <div className="fixed bottom-7 right-7 z-50 flex items-center gap-3">

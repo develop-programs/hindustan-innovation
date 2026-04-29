@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { WhatsAppButton } from "@/components/landing/WhatsAppButton";
 import { ThemeProvider } from "@/providers/theme-provider";
+import Popups from "@/components/popup/popup";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -43,6 +44,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
           <WhatsAppButton />
+          <Popups />
         </ThemeProvider>
       </body>
     </html>
