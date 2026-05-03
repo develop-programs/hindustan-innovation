@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://hindustaan.in/sitemap.xml',
+    sitemap: 'https://hindustaan.in/sitemap.xml', // Sitemap Index → references sitemap-main, sitemap-services, sitemap-blog
   }
 }
